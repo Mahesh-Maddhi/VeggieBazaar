@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 const NavItem = (props) => {
 	const { name, path } = props.details;
-	console.log(props.details);
 	return (
-		<li className={(e) => (e.isActive ? 'nav-item active' : 'nav-item')}>
+		<li
+			className={((e) => (e.isActive ? 'nav-item active' : 'nav-item')) || ''}>
 			<NavLink className="nav-link" to={path}>
-				{name} <span className="sr-only">(current)</span>
+				{name}
 			</NavLink>
 		</li>
 	);

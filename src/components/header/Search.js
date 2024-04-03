@@ -8,8 +8,8 @@ const Search = () => {
 				type="search"
 				placeholder="Search"
 			/>
-			<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-				Search
+			<button className="btn my-2 my-sm-0" type="submit">
+				<i className="fa-solid fa-magnifying-glass icon"></i>
 			</button>
 		</form>
 	);

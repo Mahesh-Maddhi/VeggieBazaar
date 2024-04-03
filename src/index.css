@@ -1,13 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*,
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', Arial, sans-serif, system-ui, 'Arial Narrow', Arial,
+		sans-serif, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: none;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #92c34e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #92c34e;
+}
+
+/* ----------------------------------------- */
+/* ----------------HEADER------------------- */
+/* ------------------------------------------ */
+
+/* --------------------nav--------------------- */
+
+.active {
+	color: #82ae46 !important;
+}
+
+.navbar-light .navbar-brand {
+	color: #82ae46;
+	font-weight: bold;
+	transition: all 0.3s ease;
+	font-family: 'Zilla slab';
+	font-size: 25px;
+}
+.navbar-light .navbar-brand:hover {
+	color: #92c34e;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	font-weight: 600;
+}
+
+.btn .icon {
+	color: #82ae46;
+	font-size: 25px;
+}
+
+/* ---------------home---------------- */
+
+.home-section {
+	background-image: url('https://ik.imagekit.io/maheshmaddhi/images/fruits-and-vegetables-boxes.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: whitesmoke;
+	width: 100%;
+}
+.welcome-heading,
+.welcome-para {
+	color: white;
+	font-size: clamp(30px, 5vw, 50px);
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	filter: blur(0px);
+	padding: 18px 25px;
+	border-radius: 8px;
+	text-align: center;
+}
+.welcome-heading span {
+	color: #82ae46;
+}
+.welcome-para {
+	font-size: clamp(18px, 3vw, 30px);
+	margin: 15px;
+	padding: 10px 20px;
+}
+.welcome-para > a {
+	color: rgb(148, 236, 8);
+	font-weight: 600;
+}
+.welcome-para > a:hover {
+	transform: scale(1.05);
+}
+
+/* -------------------about--------------- */
+
+/* ---------------------------------------- */
+/* --------------FOOTER-------------------- */
+/* ---------------------------------------- */
+
+footer {
+	margin-top: 20px;
+	padding: 40px;
+	background-color: #f7f6f2;
+}
+.partner-image {
+	height: 150px;
+	width: 150px;
+}
+.partners-list {
+	list-style: none;
+	justify-content: space-evenly;
+}
+
+.vegefoods-icons-section {
+	margin: 20px;
+}
+.address-section {
+	margin: 20px;
+}
+address .line {
+	color: black;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	margin: 10px;
+}
+address .line i {
+	margin-right: 8px;
+}
+address .line p {
+	margin-bottom: 0px;
+}
+
+.social-icons {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	transition: all 0.3s ease;
+}
+
+.social-icons .icon {
+	font-size: 30px;
+	color: #92c34e;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.social-icons .fa-youtube:hover {
+	color: red;
+}
+.social-icons .fa-instagram:hover {
+	color: rgb(242, 0, 255);
+}
+.social-icons .fa-square-facebook:hover {
+	color: rgb(48, 106, 255);
+}
+.social-icons .fa-x-twitter:hover {
+	color: rgb(0, 0, 0);
 }

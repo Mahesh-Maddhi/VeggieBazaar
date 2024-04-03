@@ -5,13 +5,14 @@ import NavItem from './NavItem';
 const navItems = [
 	{ name: 'Home', path: '/' },
 	{ name: 'About', path: '/about' },
+	{ name: 'Shop', path: '/shop' },
 	{ name: 'Contact', path: '/contact' },
 ];
 const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav className="navbar navbar-expand-lg navbar-light bg-light shadow">
 			<Link to="/" className="navbar-brand">
-				Mahesh
+				VeggieBazaar
 			</Link>
 			<button
 				className="navbar-toggler"
