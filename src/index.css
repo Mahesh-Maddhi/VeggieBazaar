@@ -9,6 +9,7 @@ body {
 		'Fira Sans', 'Droid Sans', 'Helvetica Neue';
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
 }
 
 code {
@@ -111,26 +112,45 @@ code {
 /* --------------FOOTER-------------------- */
 /* ---------------------------------------- */
 
+hr {
+	background-color: #616161;
+}
 footer {
 	margin-top: 20px;
 	padding: 40px;
 	background-color: #f7f6f2;
 }
+.partners-section {
+	padding: 20px;
+}
 .partner-image {
 	height: 150px;
 	width: 150px;
+	/* border: 1px solid rgb(201, 201, 201);
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px grey; */
 }
 .partners-list {
 	list-style: none;
 	justify-content: space-evenly;
 }
 
-.vegefoods-icons-section {
-	margin: 20px;
-}
+.vegefoods-icons-section,
+.quick-links-section,
 .address-section {
-	margin: 20px;
+	margin: 10px 20px;
 }
+.quick-links-list {
+	list-style-type: none;
+	text-decoration: none;
+}
+.quick-links-list li a {
+	text-decoration: none;
+}
+.quick-links-list li:hover a {
+	color: #82ae46;
+}
+
 address .line {
 	color: black;
 	text-decoration: none;
@@ -138,8 +158,12 @@ address .line {
 	align-items: center;
 	margin: 10px;
 }
+.address .line:hover {
+	transform: scale(1.5);
+}
 address .line i {
-	margin-right: 8px;
+	margin-right: 12px;
+	font-size: 20px;
 }
 address .line p {
 	margin-bottom: 0px;
@@ -154,7 +178,7 @@ address .line p {
 
 .social-icons .icon {
 	font-size: 30px;
-	color: #92c34e;
+	color: #616161;
 	text-decoration: none;
 	cursor: pointer;
 }
