@@ -13,7 +13,12 @@ const Partners = () => {
 			<ul className="row partners-list">
 				{partnerImageUrls.map((imageUrl, index) => (
 					<li className="col-6 col-sm-4 col-md-3 col-lg-2" key={index}>
-						<img className="partner-image" src={imageUrl} alt="partner" />
+						<img
+							className="partner-image"
+							src={imageUrl}
+							alt="partner"
+							loading="lazy"
+						/>
 					</li>
 				))}
 			</ul>
