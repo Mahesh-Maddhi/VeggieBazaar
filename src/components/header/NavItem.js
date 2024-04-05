@@ -4,9 +4,8 @@ import { NavLink } from 'react-router-dom';
 const NavItem = (props) => {
 	const { name, path } = props.details;
 	return (
-		<li
-			className={((e) => (e.isActive ? 'nav-item active' : 'nav-item')) || ''}>
-			<NavLink className="nav-link" to={path}>
+		<li className="nav-item">
+			<NavLink className="nav-link" activeClassName="active" to={path}>
 				{name}
 			</NavLink>
 		</li>

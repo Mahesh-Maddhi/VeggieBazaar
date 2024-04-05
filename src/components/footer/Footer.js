@@ -1,5 +1,4 @@
 import React from 'react';
-import Partners from './Partners';
 import Address from './Address';
 import Social from './Social';
 import QuickLinks from './QuickLinks';
@@ -9,7 +8,6 @@ import NewsLetter from './NewsLetter';
 const Footer = () => {
 	return (
 		<>
-			<Partners />
 			<NewsLetter />
 			<footer className="footer">
 				<section className="row">

@@ -10,6 +10,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	scroll-behavior: smooth;
+	box-sizing: border-box;
 }
 
 code {
@@ -34,6 +35,15 @@ code {
 	background: #92c34e;
 }
 
+.spinner {
+	height: 60px;
+	width: 60px;
+	border: 6px solid rgb(241, 241, 241);
+	border-radius: 50%;
+	border-bottom-color: #92c34e;
+	animation: loading 0.8s linear infinite;
+}
+
 /* ----------------------------------------- */
 /* ----------------HEADER------------------- */
 /* ------------------------------------------ */
@@ -43,13 +53,21 @@ code {
 .active {
 	color: #82ae46 !important;
 }
-
+.navbar {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 10000;
+}
 .navbar-light .navbar-brand {
 	color: #82ae46;
 	font-weight: bold;
 	transition: all 0.3s ease;
 	font-family: 'Zilla slab';
 	font-size: 25px;
+}
+.navbar-light .navbar-brand:focus {
+	color: #82ae46;
 }
 .navbar-light .navbar-brand:hover {
 	color: #92c34e;
@@ -63,6 +81,10 @@ code {
 	color: #82ae46;
 	font-size: 25px;
 }
+
+/* ----------------------------------- */
+/* ---------------MAIN----------------- */
+/* ----------------------------------- */
 
 /* ---------------home---------------- */
 
@@ -78,6 +100,7 @@ code {
 	align-items: center;
 	color: whitesmoke;
 	width: 100%;
+	margin-top: 65px;
 }
 
 .welcome-heading,
@@ -108,49 +131,207 @@ code {
 	transform: scale(1.05);
 }
 
-/* -------------------about--------------- */
+/* ----------------categories--------------- */
 
+.our-products {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 30px auto;
+}
+.our-products-sub-heading {
+	color: #82ae46;
+	font-family: 'Zilla Slab', serif;
+	font-weight: 400;
+	font-size: 2rem;
+	font-style: italic;
+	margin-bottom: 15px;
+}
+.our-products-heading {
+	font-size: 2.5rem;
+	font-weight: 600;
+}
+.our-products-description {
+	margin: 26px 26px auto 26px;
+	color: #9f9f9f;
+}
+.categories {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+}
+.category-card {
+	height: 300px;
+	position: relative;
+	margin: 20px;
+	max-width: 300px;
+	border-radius: 8px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.category-card:hover {
+	box-shadow: 0px 0px 20px #92c34e;
+}
+.category-label {
+	position: absolute;
+	bottom: -16px;
+	left: 0px;
+	background-color: #82ae46;
+	color: white;
+	padding: 7px 26px;
+	font-size: 20px;
+}
+
+.category-vegetables-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	color: #82ae46;
+	font-family: 'Zilla Slab', serif;
+	font-weight: 400;
+	font-size: 2.2rem;
+	font-style: italic;
+	margin-bottom: 15px;
+}
+.category-special {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* border: 1px solid #82ae46; */
+}
+.button {
+	background-color: #82ae46;
+	color: white;
+	padding: 7px 14px;
+	border-radius: 20px;
+	font-size: 1rem;
+	border: 1px solid #82ae46;
+	cursor: pointer;
+}
+.category-btn {
+	margin-top: 20px;
+	text-decoration: none;
+}
+.category-btn:hover {
+	color: #82ae46;
+	background-color: #fff;
+	text-decoration: none;
+}
+.category-btn:active {
+	transform: scale(0.95);
+	border: 1px solid #82ae46;
+	outline: none;
+}
+.category-btn:focus {
+	border: 1px solid #82ae46;
+	outline: none;
+}
+
+.category-image {
+	width: 100%;
+	height: 100%;
+}
+/* -------------------about--------------- */
+.about-section {
+	margin-top: 65px;
+}
+/* ------------------shop------------------- */
+.shop-section {
+	margin-top: 65px;
+}
+.deal-of-the-day-section {
+	background-image: url('https://ik.imagekit.io/maheshmaddhi/veggieBazaar/bg-vegies.webp');
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.deal-div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	max-width: 500px;
+	margin-left: 30px;
+}
+.best-price {
+	font-size: 25px;
+	margin-top: 30px;
+	text-align: center;
+}
+.deal-head {
+	color: black;
+	text-align: center;
+}
+.deal-div > p span {
+	font-size: 20px;
+	font-family: 'poppins';
+	margin: 15px 0;
+}
+.para {
+	text-wrap: wrap;
+	max-width: 50%;
+	margin: 10px 10px 10px 0;
+}
+.price {
+	color: #ad6f8c;
+}
+/* -----------------contact---------------- */
+
+.contact-section {
+	margin-top: 65px;
+}
 /* ---------------------------------------- */
-/* --------------FOOTER-------------------- */
+/* ----------------FOOTER-------------------*/
 /* ---------------------------------------- */
 
 hr {
 	background-color: #616161;
 }
+
 footer {
 	margin-top: 20px;
 	padding: 40px;
 	background-color: #f7f6f2;
 }
 
-.news-letter-secction {
+.news-letter-section {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	padding: 70px 40px;
+	padding: 70px 20px;
 	margin-top: 100px;
 	background-color: #f7f6f2;
 	flex-wrap: wrap;
 }
-.email-button input {
+
+.email-form {
+	display: flex;
+}
+.email-form input {
 	padding: 15px 15px;
 	font-size: 14px;
 	margin: 0px;
 	border: none;
+	min-width: 200px;
+	border-radius: 3px;
+	flex-grow: 1;
 }
-.email-button > button,
+.email-form > button,
 button:focus {
 	background-color: #82ae46;
 	color: white;
 	border: none;
 	padding: 5px 10px;
 }
-.email-button > [type='email'] {
-	width: 400px;
-	border-radius: 3px;
-	/* border: none; */
-}
-.email-button > [type='email']:focus {
+
+.email-form > input:focus {
 	border: 2px solid rgba(130, 174, 70, 0.5);
 	outline: none;
 }
@@ -230,6 +411,10 @@ address .line p {
 	color: #616161;
 	text-decoration: none;
 	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.social-icons .icon:hover {
+	transform: scale(1.1);
 }
 
 .social-icons .fa-youtube:hover {
@@ -267,5 +452,14 @@ address .line p {
 	100% {
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes loading {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }

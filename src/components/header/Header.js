@@ -12,8 +12,12 @@ const Header = () => {
 			path: '/',
 			element: (
 				<>
-					<Navbar />
-					<Home />
+					<header>
+						<Navbar />
+					</header>
+					<main>
+						<Home />
+					</main>
 				</>
 			),
 			onError: <PageNotFound />,
@@ -22,8 +26,12 @@ const Header = () => {
 			path: '/about',
 			element: (
 				<>
-					<Navbar />
-					<About />
+					<header>
+						<Navbar />
+					</header>
+					<main>
+						<About />
+					</main>
 				</>
 			),
 		},
@@ -31,8 +39,12 @@ const Header = () => {
 			path: '/contact',
 			element: (
 				<>
-					<Navbar />
-					<Contact />
+					<header>
+						<Navbar />
+					</header>
+					<main>
+						<Contact />
+					</main>
 				</>
 			),
 		},
@@ -40,8 +52,12 @@ const Header = () => {
 			path: '/shop',
 			element: (
 				<>
-					<Navbar />
-					<Shop />
+					<header>
+						<Navbar />
+					</header>
+					<main>
+						<Shop />
+					</main>
 				</>
 			),
 		},
@@ -49,9 +65,7 @@ const Header = () => {
 
 	return (
 		<>
-			<main>
-				<RouterProvider router={router} />
-			</main>
+			<RouterProvider router={router} />
 		</>
 	);
 };
