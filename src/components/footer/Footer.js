@@ -31,7 +31,7 @@ const Footer = () => {
 					</p>
 					<div className="credits">
 						<p className="text-right">
-							This website is Developed with &#10084; by
+							This website is Developed with <span>&#10084;</span> by
 							<a
 								href="https://mahesh-maddhi.github.io/my-portfolio/"
 								target="_blank"

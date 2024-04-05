@@ -6,6 +6,8 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Shop from '../pages/Shop';
 import PageNotFound from '../pages/PageNotFound';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 const Header = () => {
 	const router = createBrowserRouter([
 		{
@@ -57,6 +59,32 @@ const Header = () => {
 					</header>
 					<main>
 						<Shop />
+					</main>
+				</>
+			),
+		},
+		{
+			path: '/login',
+			element: (
+				<>
+					<header>
+						<Navbar />
+					</header>
+					<main>
+						<Login />
+					</main>
+				</>
+			),
+		},
+		{
+			path: '/signup',
+			element: (
+				<>
+					<header>
+						<Navbar />
+					</header>
+					<main>
+						<Signup />
 					</main>
 				</>
 			),

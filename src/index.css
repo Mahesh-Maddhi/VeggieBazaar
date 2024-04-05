@@ -287,6 +287,99 @@ code {
 .contact-section {
 	margin-top: 65px;
 }
+
+/* ----------------login and register-------------------- */
+.register-section {
+	margin-top: 65px;
+}
+.login-section {
+	margin-top: 65px;
+	padding-top: 40px;
+}
+.registration-container,
+.login-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.registration-container {
+	gap: 50px;
+}
+.registration-image-container,
+.login-image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.registration-image {
+	height: 600px;
+	max-width: 400px;
+	border-radius: 10px;
+}
+.login-image {
+	height: 400px;
+	max-width: 350px;
+	border-radius: 10px;
+}
+.registration-form,
+.login-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: fit-content;
+}
+.registration-form > h2,
+.login-form > h2 {
+	text-decoration: underline;
+	color: #82ae46;
+	margin-top: 30px;
+}
+
+.input-field {
+	padding: 8px 10px;
+	width: 350px;
+	font-size: clamp(12px, 1.5vw, 18px);
+	border-radius: 5px;
+	border: 1px solid #82ae46;
+	outline: none;
+}
+
+label {
+	margin-top: 15px;
+	font-size: clamp(14px, 2vw, 20px);
+	font-weight: 500;
+}
+.eye-icon-div {
+	position: relative;
+}
+.eye-icon-div > i,
+.eye-icon-div > i {
+	font-size: 20px;
+	position: absolute;
+	right: 15px;
+	top: 12px;
+	cursor: pointer;
+}
+
+.registration-form div > button,
+.login-form div > button {
+	padding: 10px;
+	border-radius: 25px;
+	width: 150px;
+	margin: 30px 15px 30px 0;
+	color: white;
+	background-color: black;
+	outline: none;
+	border: none;
+	font-size: clamp(16px, 2vw, 20px);
+}
+.registration-form div > button:hover,
+.login-form div > button:hover {
+	background-color: #82ae46;
+}
+
 /* ---------------------------------------- */
 /* ----------------FOOTER-------------------*/
 /* ---------------------------------------- */
@@ -435,6 +528,11 @@ address .line p {
 	margin: 0px 5px;
 	font-weight: bold;
 }
+.credits p span {
+	color: red;
+	font-size: 18px;
+}
+
 .credits p a:hover {
 	color: #82ae46;
 }
