@@ -1,11 +1,10 @@
 import React from 'react';
-import Categories from './Categories';
-import DealOfTheDay from './DealOfTheDay';
-import Spinner from './Spinner';
+import { Categories, DealOfTheDay, Spinner, Modal } from '../utils';
 
 const Shop = () => {
 	return (
 		<section className="shop-section">
+			<Modal />
 			<Categories />;
 			<DealOfTheDay />
 			<Spinner />

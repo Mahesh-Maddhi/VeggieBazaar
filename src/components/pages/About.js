@@ -1,5 +1,5 @@
 import React from 'react';
-import Partners from './Partners';
+import { Partners } from '../utils';
 
 const About = () => {
 	return (

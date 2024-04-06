@@ -1,15 +1,15 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import React from 'react';
 import Navbar from './Navbar';
-import Home from '../pages/Home';
-import About from '../pages/About';
-import Contact from '../pages/Contact';
-import Shop from '../pages/Shop';
-import PageNotFound from '../pages/PageNotFound';
-import Login from '../pages/Login';
-import Signup from '../pages/Signup';
+import { Home, About, Contact, Shop, Login, Signup } from '../pages';
+import { PageNotFound } from '../utils';
+
 const Header = () => {
 	const router = createBrowserRouter([
+		{
+			path: '*',
+			element: <PageNotFound />,
+		},
 		{
 			path: '/',
 			element: (
@@ -22,7 +22,6 @@ const Header = () => {
 					</main>
 				</>
 			),
-			onError: <PageNotFound />,
 		},
 		{
 			path: '/about',
@@ -91,11 +90,7 @@ const Header = () => {
 		},
 	]);
 
-	return (
-		<>
-			<RouterProvider router={router} />
-		</>
-	);
+	return <RouterProvider router={router} />;
 };
 
 export default Header;

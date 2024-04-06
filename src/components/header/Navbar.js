@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Search from './Search';
+import { Search } from '../utils';
 import NavItem from './NavItem';
 const navItems = [
 	{ name: 'Home', path: '/' },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Categories from './Categories';
+import { Categories } from '../utils';
 const Home = () => {
 	return (
 		<div>
