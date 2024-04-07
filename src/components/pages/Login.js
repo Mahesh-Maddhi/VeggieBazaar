@@ -1,58 +1,104 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { requestServer } from '../utils';
+import { Modal } from '../utils';
 const Login = () => {
-	const handleSubmit = (e) => {
-		e.preventDefault();
+	const navigate = useNavigate();
+	const defaultUser = {
+		email: '',
+		password: '',
 	};
-	const toggleEyeButton = (e) => {
-		const element = e.target;
-		element.classList.toggle('fa-eye');
-		element.classList.toggle('fa-eye-slash');
+	const [user, setUser] = useState(defaultUser);
+	const [isPassword, setIsPassword] = useState(false);
+
+	const HandleOnChange = (target) => {
+		let newUser = { ...user, [target.name]: target.value };
+		setUser(newUser);
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		if (user.email && user.password) {
+			const options = {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(user),
+			};
+			const responsedata = await requestServer('/login', options);
+			console.log('res', responsedata);
+			<Modal message={responsedata?.message} />;
+			navigate('/');
+		}
+
+		e.target.reset();
+		setUser(defaultUser);
+	};
+	const toggleEyeButton = () => {
+		setIsPassword(!isPassword);
+		let passwordEl = document.getElementById('password');
+		passwordEl.type = isPassword ? 'password' : 'text';
 	};
 	return (
 		<section className="login-section">
 			<div className="login-container">
-				<div className="login-image-container col-12 col-lg-6">
-					<img
-						className="login-image"
-						src="https://ik.imagekit.io/maheshmaddhi/veggieBazaar/laptop-1.jpg"
-						alt="login"
-						loading="lazy"
-					/>
+				<div className="col-12 col-lg-6">
+					<div className="login-image-container ">
+						<img
+							className="login-image"
+							src="https://ik.imagekit.io/maheshmaddhi/veggieBazaar/laptop-1.jpg"
+							alt="login"
+							loading="lazy"
+						/>
+					</div>
 				</div>
-				<form className="login-form  col-12 col-lg-6" onSubmit={handleSubmit}>
-					<h2>Login</h2>
-					<label htmlFor="loginEmail" className="label">
-						Email
-					</label>
-					<input
-						type="text"
-						className="input-field"
-						placeholder="Enter your email address"
-						required
-					/>
-
-					<label htmlFor="loginPassword" className="label">
-						Password
-					</label>
-					<div className="eye-icon-div">
+				<div className="col-12 col-lg-6 row justify-content-center">
+					<form className="login-form  " onSubmit={handleSubmit}>
+						<h2>Login</h2>
+						<label htmlFor="loginEmail" className="label">
+							Email
+						</label>
 						<input
-							type="password"
+							type="text"
 							className="input-field"
-							placeholder="Enter your password"
+							placeholder="Enter your email address"
+							name="email"
+							onChange={(e) => HandleOnChange(e.target)}
+							value={user.email}
 							required
 						/>
-						<i className="fa-solid fa-eye" onClick={toggleEyeButton}></i>
-					</div>
 
-					<div>
-						<button type="submit" id="loginButton">
-							Login
-						</button>
-						<Link to="/signup">Create new account</Link>
-					</div>
-				</form>
+						<label htmlFor="loginPassword" className="label">
+							Password
+						</label>
+						<div className="eye-icon-div">
+							<input
+								id="password"
+								type="password"
+								className="input-field"
+								placeholder="Enter your password"
+								name="password"
+								onChange={(e) => HandleOnChange(e.target)}
+								value={user.password}
+								required
+							/>
+							{!isPassword ? (
+								<i className="fa-solid fa-eye" onClick={toggleEyeButton}></i>
+							) : (
+								<i
+									className="fa-solid fa-eye-slash"
+									onClick={toggleEyeButton}></i>
+							)}
+						</div>
+
+						<div>
+							<button type="submit">Login</button>
+							<Link to="/signup">Create new account</Link>
+						</div>
+					</form>
+				</div>
 			</div>
 		</section>
 	);

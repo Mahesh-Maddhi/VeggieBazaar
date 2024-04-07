@@ -5,7 +5,7 @@ import PageNotFound from './PageNotFound';
 import Partners from './Partners';
 import Search from './Search';
 import Spinner from './Spinner';
-
+import requestServer from './requestServer';
 export {
 	Categories,
 	DealOfTheDay,
@@ -14,4 +14,5 @@ export {
 	Partners,
 	Search,
 	Spinner,
+	requestServer,
 };

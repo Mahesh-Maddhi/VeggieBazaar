@@ -1,48 +1,41 @@
 import React from 'react';
 
-const Modal = () => {
-	return (
-		<div>
-			<button
-				type="button"
-				className="btn btn-primary"
-				data-toggle="modal"
-				data-target="#exampleModal">
-				Launch demo modal
-			</button>
+const Modal = ({ messageDetails }) => {
+	console.log(messageDetails);
+	const defaultMessageDetails = {
+		status: 'success',
+		message: 'Testing Message Modal',
+	};
+	const { status, message } = defaultMessageDetails;
 
-			<div
-				className="modal fade"
-				id="exampleModal"
-				tabindex="-1"
-				aria-labelledby="exampleModalLabel"
-				aria-hidden="true">
-				<div className="modal-dialog  modal-dialog-centered">
-					<div className="modal-content">
-						<div className="modal-header">
-							<h5 className="modal-title" id="exampleModalLabel">
-								Modal title
-							</h5>
-							<button
-								type="button"
-								className="close"
-								data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div className="modal-body">this is modal body</div>
-						<div className="modal-footer">
-							<button
-								type="button"
-								className="btn btn-secondary"
-								data-dismiss="modal">
-								Close
-							</button>
-							<button type="button" className="btn btn-primary">
-								Save changes
-							</button>
-						</div>
+	const handleClick = () => {
+		const modelEl = document.getElementById('exampleModal');
+		modelEl.style.display = 'none';
+	};
+	return (
+		<div
+			className="modal fade show"
+			id="exampleModal"
+			tabindex="-1"
+			style={{ display: 'block' }}>
+			<div className="modal-dialog  modal-dialog-centered">
+				<div className="modal-content">
+					<div className="modal-header">
+						<h5 className={`modal-title text-${status}`} id="exampleModalLabel">
+							{status}
+						</h5>
+						<button type="button" className="close" onClick={handleClick}>
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div className="modal-body">{message}</div>
+					<div className="modal-footer">
+						<button
+							onClick={handleClick}
+							type="button"
+							className="btn btn-secondary">
+							Ok
+						</button>
 					</div>
 				</div>
 			</div>

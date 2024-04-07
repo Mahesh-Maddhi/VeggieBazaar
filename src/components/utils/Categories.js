@@ -37,7 +37,9 @@ const Categories = () => {
 				</p>
 			</div>
 			<ul className="categories">
-				<li className="col-12 col-sm-12 col-md-6 col-lg-4 order-lg-1" key={6}>
+				<li
+					className="d-flex justify-content-center col-12 col-sm-12 col-md-6 col-lg-4 order-lg-1"
+					key={6}>
 					<div className="category-card category-special ">
 						<h3 className="category-vegetables-text">Vegetables</h3>
 						<p>Protect the health of every one</p>
@@ -50,7 +52,7 @@ const Categories = () => {
 				{categories.map((category, index) => {
 					return (
 						<li
-							className={`col-12 col-sm-12 col-md-6 col-lg-4 order-lg-${index}`}
+							className={`d-flex justify-content-center col-12 col-sm-12 col-md-6 col-lg-4 order-lg-${index}`}
 							key={index}>
 							<Link to="/shop">
 								<div className="category-card">

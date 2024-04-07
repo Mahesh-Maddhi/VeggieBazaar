@@ -160,11 +160,14 @@ code {
 	display: flex;
 	flex-wrap: wrap;
 	list-style-type: none;
+	align-items: center;
+	justify-content: center;
 }
 .category-card {
 	height: 300px;
 	position: relative;
 	margin: 20px;
+	width: 300px;
 	max-width: 300px;
 	border-radius: 8px;
 	overflow: hidden;
@@ -315,13 +318,13 @@ code {
 }
 
 .registration-image {
-	height: 600px;
+	height: calc(600px);
 	max-width: 400px;
 	border-radius: 10px;
 }
 .login-image {
-	height: 400px;
-	max-width: 350px;
+	height: calc(400px + 60px);
+	max-width: calc(350px + 40px);
 	border-radius: 10px;
 }
 .registration-form,
@@ -330,9 +333,15 @@ code {
 	flex-direction: column;
 	justify-content: center;
 	max-width: fit-content;
+	border: 1px solid #dbdbdb;
+	padding: 30px 20px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 10px grey;
+	margin-top: 10px;
 }
 .registration-form > h2,
 .login-form > h2 {
+	text-align: center;
 	text-decoration: underline;
 	color: #82ae46;
 	margin-top: 30px;
