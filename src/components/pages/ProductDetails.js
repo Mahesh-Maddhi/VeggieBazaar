@@ -1,25 +1,28 @@
-import React, { useState } from 'react';
-const defaultProduct = {
-	id: 95,
-	name: 'Tomato',
-	price: 90,
-	discounted_price: 50,
-	description:
-		'Tomatoes are juicy fruits commonly used as vegetables in cooking. They are rich in lycopene, an antioxidant that has been linked to various health benefits.',
-	rating: 4.3,
-	stock: 826,
-	category: 'Vegetables',
-	image: '../images/tomatoes.jpg',
-};
-const ProductDetails = () => {
-	const [quantity, setQuantity] = useState(1);
-	let data;
+import React, { useEffect, useState } from 'react';
+import { requestServer } from '../utils';
+import { useParams } from 'react-router-dom';
 
-	const product = data || defaultProduct;
-	console.log('products', product);
+const ProductDetails = () => {
+	let { productId } = useParams();
+
+	const [quantity, setQuantity] = useState(1);
+	const [product, setProduct] = useState(defaultProduct);
+
+	useEffect(() => {
+		const fetchDetails = async () => {
+			const data = await requestServer(
+				`http://localhost:3000/products/${productId}`
+			);
+			setProduct(data);
+		};
+		fetchDetails();
+	}, [productId]);
+
+	console.log('pro', product);
 	const {
 		name,
 		price,
+		image,
 		discounted_price,
 		description,
 		rating,
@@ -31,8 +34,12 @@ const ProductDetails = () => {
 			<div className="product-image-card">
 				<img
 					className="product-image"
-					src="https://ik.imagekit.io/maheshmaddhi/veggieBazaar/product-default-image.jpeg"
-					alt=""
+					src={image}
+					alt={name}
+					onError={(e) =>
+						(e.target.src =
+							'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/product-default-image.jpeg')
+					}
 				/>
 			</div>
 			<div className="product-details-card">
@@ -69,7 +76,13 @@ const ProductDetails = () => {
 						onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : prev))}>
 						-
 					</button>
-					<input className="count" type="number" value={quantity} min="1" />
+					<input
+						className="count"
+						type="number"
+						value={quantity}
+						min="1"
+						onChange={(e) => setQuantity(parseInt(e.target.value))}
+					/>
 					<button type="button" onClick={() => setQuantity((prev) => prev + 1)}>
 						+
 					</button>
@@ -81,5 +94,16 @@ const ProductDetails = () => {
 		</section>
 	);
 };
-
+const defaultProduct = {
+	id: 95,
+	name: 'Tomato',
+	price: 90,
+	discounted_price: 50,
+	description:
+		'Tomatoes are juicy fruits commonly used as vegetables in cooking. They are rich in lycopene, an antioxidant that has been linked to various health benefits.',
+	rating: 4.3,
+	stock: 826,
+	category: 'Vegetables',
+	image: '../images/tomatoes.jpg',
+};
 export default ProductDetails;

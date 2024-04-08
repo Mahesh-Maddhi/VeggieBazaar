@@ -36,7 +36,7 @@ const ProductCard = ({ productDetails }) => {
 					<div className="bottom-area d-flex px-3">
 						<div className="m-auto d-flex">
 							<Link
-								href="#"
+								to={`/products/${id}`}
 								className="add-to-cart d-flex justify-content-center align-items-center text-center">
 								<span>
 									<i className="fa-solid fa-bars"></i>
@@ -50,7 +50,7 @@ const ProductCard = ({ productDetails }) => {
 								</span>
 							</Link>
 							<Link
-								href="#"
+								to={`/products/${id}`}
 								className="heart d-flex justify-content-center align-items-center ">
 								<span>
 									<i className="fa-solid fa-heart"></i>

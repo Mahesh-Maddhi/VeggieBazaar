@@ -8,8 +8,9 @@ import Products from './Products';
 import Search from './Search';
 import ShowProducts from './ShowProducts';
 import Spinner from './Spinner';
+import Testimonial from './Testimonial';
+import Testimonials from './Testimonials';
 import requestServer from './requestServer';
-
 export {
 	Categories,
 	DealOfTheDay,
@@ -22,4 +23,6 @@ export {
 	Products,
 	ProductCard,
 	ShowProducts,
+	Testimonial,
+	Testimonials,
 };

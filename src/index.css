@@ -480,9 +480,9 @@ code {
 	/* padding: 10px; */
 }
 .product-count-container input[type='number'] {
-	-webkit-appearance: textfield;
+	/* -webkit-appearance: textfield;
 	-moz-appearance: textfield;
-	appearance: textfield;
+	appearance: textfield; */
 	text-align: center;
 	padding: 10px;
 	outline: none;
