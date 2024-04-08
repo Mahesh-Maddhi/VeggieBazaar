@@ -10,7 +10,8 @@ export const productsData = {
 			rating: 4.3,
 			stock: 826,
 			category: 'Vegetables',
-			image: '../images/tomatoes.jpg',
+			image:
+				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/tomotos.webp',
 		},
 		{
 			id: 96,
@@ -34,7 +35,8 @@ export const productsData = {
 			rating: 4.4,
 			stock: 767,
 			category: 'Vegetables',
-			image: '../images/broccoli.jpg',
+			image:
+				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/broccoli.jpg?updatedAt=1712129712159',
 		},
 		{
 			id: 98,
@@ -70,7 +72,8 @@ export const productsData = {
 			rating: 4.4,
 			stock: 836,
 			category: 'Vegetables',
-			image: '../images/bell_pepper.jpg',
+			image:
+				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/bell-pepper-capsicum.jpg',
 		},
 		{
 			id: 101,
@@ -432,7 +435,8 @@ export const productsData = {
 			rating: 4.3,
 			stock: 809,
 			category: 'Fruits',
-			image: '../images/strawberry.jpg',
+			image:
+				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/strawberry.jpg',
 		},
 		{
 			id: 131,

@@ -2,7 +2,6 @@ import React from 'react';
 import ProductCard from './ProductCard';
 
 const Products = ({ categoryDetails }) => {
-	console.log(categoryDetails);
 	const { category, products } = categoryDetails;
 	return (
 		<section className="products-section">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Modal = ({ messageDetails }) => {
+const Modal = () => {
 	const [isOpen, setIsOpen] = useState(true);
 	const defaultMessageDetails = {
 		status: 'success',
@@ -17,7 +17,6 @@ const Modal = ({ messageDetails }) => {
 				<div
 					className="modal fade show"
 					id="exampleModal"
-					tabindex="-1"
 					style={{ display: 'block' }}>
 					<div className="modal-dialog  modal-dialog-centered">
 						<div className="modal-content">

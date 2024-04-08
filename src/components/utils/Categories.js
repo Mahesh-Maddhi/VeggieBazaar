@@ -15,13 +15,13 @@ const categories = [
 		image_url: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juice.jpg',
 	},
 	{
-		category: 'Dried',
-		image_url: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/cerels.jpg',
-	},
-	{
-		category: 'Vegetables',
+		category: '',
 		image_url:
 			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/all-vegetables.jpg',
+	},
+	{
+		category: 'Dried',
+		image_url: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/cerels.jpg',
 	},
 ];
 

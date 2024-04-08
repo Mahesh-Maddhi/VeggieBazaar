@@ -22,7 +22,6 @@ const categories = [
 ];
 
 const ShowProducts = () => {
-	console.log('cat', categories);
 	return (
 		<section>
 			{categories.map((categoryDetails) => (

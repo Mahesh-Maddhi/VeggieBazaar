@@ -2,18 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ productDetails }) => {
-	const { name, price, discounted_price } = productDetails;
+	const { id, name, price, discounted_price, image } = productDetails;
 
 	return (
-		<article className="col-md-6 col-lg-3">
-			<div className="product">
-				<Link href="#" className="img-prod">
+		<Link
+			className="col-md-6 col-lg-3 text-decoration-none"
+			to={`/products/${id}`}>
+			<article className="product">
+				<div className="img-prod">
 					<img
 						className="img-fluid"
-						src="https://ik.imagekit.io/maheshmaddhi/veggieBazaar/tomotos.webp"
+						src={image}
 						alt={name}
+						loading="lazy"
+						onError={(e) =>
+							(e.target.src =
+								'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/product-default-image.jpeg')
+						}
 					/>
-				</Link>
+				</div>
 				<div className="text py-3 pb-4 px-3 text-center">
 					<h3>
 						<p>{name}</p>
@@ -52,8 +59,8 @@ const ProductCard = ({ productDetails }) => {
 						</div>
 					</div>
 				</div>
-			</div>
-		</article>
+			</article>
+		</Link>
 	);
 };
 
