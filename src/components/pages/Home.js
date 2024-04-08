@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Categories } from '../utils';
+import { Categories, DealOfTheDay } from '../utils';
 const Home = () => {
 	return (
 		<div>
@@ -14,6 +14,7 @@ const Home = () => {
 				</p>
 			</section>
 			<Categories />
+			<DealOfTheDay />
 		</div>
 	);
 };

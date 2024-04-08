@@ -3,9 +3,13 @@ import DealOfTheDay from './DealOfTheDay';
 import Modal from './Modal';
 import PageNotFound from './PageNotFound';
 import Partners from './Partners';
+import ProductCard from './ProductCard';
+import Products from './Products';
 import Search from './Search';
+import ShowProducts from './ShowProducts';
 import Spinner from './Spinner';
 import requestServer from './requestServer';
+
 export {
 	Categories,
 	DealOfTheDay,
@@ -15,4 +19,7 @@ export {
 	Search,
 	Spinner,
 	requestServer,
+	Products,
+	ProductCard,
+	ShowProducts,
 };

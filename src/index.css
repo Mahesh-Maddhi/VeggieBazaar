@@ -286,6 +286,138 @@ code {
 .price {
 	color: #ad6f8c;
 }
+
+/* ----------------shop/categories-card----------- */
+.category-heading {
+	text-align: center;
+}
+.product-container {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 30px;
+}
+
+/* ----------------shop/product-card----------- */
+.product {
+	display: block;
+	width: 100%;
+	margin: 20px;
+	position: relative;
+	transition: all 0.3s ease;
+	border: 1px solid #f0f0f0;
+}
+@media (max-width: 990px) {
+	.product {
+		margin-bottom: 30px;
+	}
+}
+.product .img-prod {
+	position: relative;
+	display: block;
+	overflow: hidden;
+}
+
+.product .img-prod span.status {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 2px 10px;
+	color: #fff;
+	font-weight: 300;
+	background: #82ae46;
+	font-size: 12px;
+}
+.product .img-prod img {
+	transform: scale(1);
+	transition: all 0.3s ease;
+}
+.product .img-prod:hover img,
+.product .img-prod:focus img {
+	transform: scale(1.1);
+}
+.product .img {
+	display: block;
+	height: 500px;
+}
+.product .icon {
+	width: 60px;
+	height: 60px;
+	background: #fff;
+	opacity: 0;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+.product .icon span {
+	color: #000000;
+}
+.product:hover .icon {
+	opacity: 1;
+}
+.product:hover .img-prod .overlay {
+	opacity: 0;
+}
+.product .text {
+	background: #fff;
+	position: relative;
+	width: 100%;
+}
+.product .text h3 {
+	font-size: 14px;
+	margin-bottom: 5px;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-family: 'Poppins', Arial, sans-serif;
+}
+.product .text h3 a {
+	color: #000000;
+}
+.product .text p.price {
+	margin-bottom: 0;
+	color: #82ae46;
+	font-weight: 400;
+}
+.product .text p.price span.price-dc {
+	text-decoration: line-through;
+	color: #b3b3b3;
+}
+.product .text p.price span.price-sale {
+	color: #82ae46;
+}
+.product .text .pricing {
+	width: 100%;
+	transition: all 0.3s ease;
+}
+.product .text .bottom-area {
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+.product .text .bottom-area a {
+	color: #fff;
+	width: 100%;
+	background: #82ae46;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+.product .text .bottom-area .m-auto {
+	margin: 0 auto;
+}
+.product:hover {
+	box-shadow: 0px 7px 15px -5px rgba(0, 0, 0, 0.07);
+}
+.product:hover .pricing {
+	opacity: 0;
+}
+.product:hover .text .bottom-area {
+	opacity: 1;
+}
+
 /* -----------------contact---------------- */
 
 .contact-section {
@@ -551,7 +683,9 @@ address .line p {
 	font-weight: bold;
 	color: #82ae46;
 }
-
+.fade {
+	animation: fade 0.8s ease-out;
+}
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
@@ -569,5 +703,16 @@ address .line p {
 	}
 	100% {
 		transform: rotate(360deg);
+	}
+}
+
+@keyframes fade {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, -150%, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
 	}
 }

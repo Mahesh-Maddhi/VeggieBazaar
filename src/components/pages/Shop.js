@@ -1,13 +1,13 @@
 import React from 'react';
-import { Categories, DealOfTheDay, Spinner, Modal } from '../utils';
+import { DealOfTheDay, Spinner, Modal, ShowProducts } from '../utils';
 
 const Shop = () => {
 	return (
 		<section className="shop-section">
 			<Modal />
-			<Categories />;
-			<DealOfTheDay />
 			<Spinner />
+			<ShowProducts />
+			<DealOfTheDay />
 		</section>
 	);
 };
