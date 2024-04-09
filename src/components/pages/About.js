@@ -1,11 +1,11 @@
 import React from 'react';
-import { Partners } from '../utils';
-
+import { Modal, Partners, Testimonials } from '../utils';
 const About = () => {
 	return (
 		<section className="about-section">
-			<div>About</div>
 			<Partners />
+			<Testimonials />
+			<Modal />
 		</section>
 	);
 };

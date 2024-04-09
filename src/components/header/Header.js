@@ -1,7 +1,15 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import React from 'react';
 import Navbar from './Navbar';
-import { Home, About, Contact, Shop, Login, Signup } from '../pages';
+import {
+	Home,
+	About,
+	Contact,
+	Shop,
+	Login,
+	Signup,
+	ProductDetails,
+} from '../pages';
 import { PageNotFound } from '../utils';
 
 const Header = () => {
@@ -84,6 +92,19 @@ const Header = () => {
 					</header>
 					<main>
 						<Signup />
+					</main>
+				</>
+			),
+		},
+		{
+			path: '/products/:productId',
+			element: (
+				<>
+					<header>
+						<Navbar />
+					</header>
+					<main>
+						<ProductDetails />
 					</main>
 				</>
 			),
