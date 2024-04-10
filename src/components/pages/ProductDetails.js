@@ -11,7 +11,7 @@ const ProductDetails = () => {
 	useEffect(() => {
 		const fetchDetails = async () => {
 			const data = await requestServer(
-				`http://localhost:3000/products/${productId}`
+				`https://veggie-bazaar.vercel.app/products/${productId}`
 			);
 			setProduct(data);
 		};

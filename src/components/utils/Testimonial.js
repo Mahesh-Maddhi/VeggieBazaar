@@ -12,7 +12,7 @@ const Testimonial = () => {
 							class="user-img mb-5"
 							style={{
 								backgroundImage:
-									"url('https://ik.imagekit.io/maheshmaddhi/veggieBazaar/person_1.jpg.webp')",
+									"url('https://ik.imagekit.io/maheshmaddhi/veggieBazaar/default-user-grey.webp')",
 								backgroundSize: 'contain',
 							}}>
 							<span class="quote d-flex align-items-center justify-content-center">
