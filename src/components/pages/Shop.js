@@ -1,10 +1,9 @@
 import React from 'react';
-import { DealOfTheDay, Spinner, ShowProducts } from '../utils';
+import { DealOfTheDay, ShowProducts } from '../utils';
 
 const Shop = () => {
 	return (
 		<section className="shop-section">
-			<Spinner />
 			<ShowProducts />
 			<DealOfTheDay />
 		</section>

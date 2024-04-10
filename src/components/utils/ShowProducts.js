@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Products from './Products';
 import axios from 'axios';
+import Spinner from './Spinner';
 const categories = ['Vegetables', 'Fruits', 'Juices', 'Dried'];
 
 const ShowProducts = () => {
 	const [categoryProducts, setCategoryProducts] = useState([]);
+	const [isLoading, setLoading] = useState(true);
 	useEffect(() => {
 		const fetchProducts = async (category) => {
 			try {
@@ -26,17 +28,22 @@ const ShowProducts = () => {
 		};
 		fetchData();
 	}, []);
+	useEffect(() => {
+		setLoading(false);
+	}, [categoryProducts]);
 
 	console.log(categoryProducts);
 
 	return (
 		<section>
-			{categoryProducts.map((categoryDetails) => (
-				<Products
-					categoryDetails={categoryDetails}
-					key={categoryDetails.category}
-				/>
-			))}
+			{isLoading && <Spinner />}
+			{!isLoading &&
+				categoryProducts.map((categoryDetails) => (
+					<Products
+						categoryDetails={categoryDetails}
+						key={categoryDetails.category}
+					/>
+				))}
 		</section>
 	);
 };

@@ -9,6 +9,7 @@ import {
 	Login,
 	Signup,
 	ProductDetails,
+	Cart,
 } from '../pages';
 import { PageNotFound } from '../utils';
 
@@ -105,6 +106,19 @@ const Header = () => {
 					</header>
 					<main>
 						<ProductDetails />
+					</main>
+				</>
+			),
+		},
+		{
+			path: '/cart',
+			element: (
+				<>
+					<header>
+						<Navbar />
+					</header>
+					<main>
+						<Cart />
 					</main>
 				</>
 			),
