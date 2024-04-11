@@ -25,14 +25,18 @@ const ShowProducts = () => {
 			});
 			const products = await Promise.all(promises);
 			setCategoryProducts(products);
+			console.log(1);
 		};
 		fetchData();
+		console.log('useeffect');
 	}, []);
 	useEffect(() => {
 		setLoading(false);
+		console.log('useeffect2');
 	}, [categoryProducts]);
+	console.log(2);
 
-	console.log(categoryProducts);
+	console.log('prducts', categoryProducts);
 
 	return (
 		<section>
