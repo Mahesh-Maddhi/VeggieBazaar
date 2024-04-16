@@ -1,3 +1,6 @@
+import Banner from './Banner';
+import CartItem from './CartItem';
+import CartItemsContainer from './CartItemsContainer';
 import Categories from './Categories';
 import DealOfTheDay from './DealOfTheDay';
 import Modal from './Modal';
@@ -25,4 +28,7 @@ export {
 	ShowProducts,
 	Testimonial,
 	Testimonials,
+	Banner,
+	CartItem,
+	CartItemsContainer,
 };

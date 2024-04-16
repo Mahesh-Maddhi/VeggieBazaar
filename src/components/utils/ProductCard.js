@@ -5,9 +5,11 @@ const ProductCard = ({ productDetails }) => {
 	const { id, name, price, discounted_price, image } = productDetails;
 
 	return (
-		<Link
-			className="col-md-6 col-lg-3 text-decoration-none"
-			to={`/products/${id}`}>
+		<div
+			onClick={() => {
+				window.location.href = `/products/${id}`;
+			}}
+			className="col-md-6 col-lg-3 text-decoration-none">
 			<article className="product">
 				<div className="img-prod">
 					<img
@@ -43,7 +45,7 @@ const ProductCard = ({ productDetails }) => {
 								</span>
 							</Link>
 							<Link
-								href="#"
+								to="#"
 								className="buy-now d-flex justify-content-center align-items-center mx-1">
 								<span>
 									<i className="fa-solid fa-cart-arrow-down"></i>
@@ -60,7 +62,7 @@ const ProductCard = ({ productDetails }) => {
 					</div>
 				</div>
 			</article>
-		</Link>
+		</div>
 	);
 };
 
