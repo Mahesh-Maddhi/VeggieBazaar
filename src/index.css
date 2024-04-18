@@ -543,7 +543,58 @@ code {
 .contact-section {
 	margin-top: 65px;
 }
+.contact-landing-image-card{
+	margin: 0px;
+	margin-top: 65px;
+	color: whitesmoke;
+	background-image: url('https://ik.imagekit.io/maheshmaddhi/veggieBazaar/all-fruits-vegetables.webp?updatedAt=1712485861892');
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: cover;
+	min-width: 100vw;
+	min-height: 40vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+}
+.home-contact-card{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.contact-nav-link{
+	text-decoration: none;
+	color: whitesmoke;
+}
+.contact-nav-link:hover{
+	text-decoration: none;
+	color: whitesmoke;
+}
+.contact-heading{
+	font-size: 2rem;
+	font-weight: 800;
+}
+.para{
+	width: 50%;
+}
 
+.card{
+	background-color: #f7f7f7;
+	padding: 20px ;
+	border-radius: 5px;
+	min-height: 7rem;
+}
+.button-text{
+	font-size: 1.2rem !important;
+	border-radius: 2rem;
+}
+.form-bg{
+	background-color: #f7f7f7;
+	padding: 20px ;
+	border-radius: 5px;
+}
 /* ----------------login and register-------------------- */
 .register-section {
 	margin-top: 65px;
