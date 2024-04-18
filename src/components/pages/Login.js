@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { requestServer } from '../utils';
-import { Modal } from '../utils';
+import { toast } from 'react-toastify';
 const Login = () => {
-	const [message, setMessage] = useState(null);
 	const navigate = useNavigate();
 	console.log('rendered');
 	useEffect(() => {
@@ -24,12 +23,7 @@ const Login = () => {
 		let newUser = { ...user, [target.name]: target.value };
 		setUser(newUser);
 	};
-	const showMessage = (message, status) => {
-		setMessage({
-			message,
-			status,
-		});
-	};
+	const showMessage = (message) => toast.success(message);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -48,7 +42,7 @@ const Login = () => {
 			if (responsedata.token) {
 				localStorage.setItem('auth_token', responsedata.token);
 			}
-			showMessage(responsedata.message, 'success');
+			showMessage(responsedata.message);
 			navigate('/');
 		}
 
@@ -62,8 +56,6 @@ const Login = () => {
 	};
 	return (
 		<section className="login-section">
-			{message && <Modal message={message} />}
-
 			<div className="login-container">
 				<div className="col-12 col-lg-6">
 					<div className="login-image-container ">

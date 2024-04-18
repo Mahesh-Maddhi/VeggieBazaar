@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Modal, requestServer } from '../utils';
+import { requestServer } from '../utils';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
 	const navigate = useNavigate();
@@ -35,7 +36,8 @@ const Signup = () => {
 		console.log(options);
 		const responsedata = await requestServer('/addUser', options);
 		console.log('res', responsedata);
-		<Modal message={responsedata?.message} />;
+		const notify = () => toast.success(responsedata.message);
+		notify();
 		navigate('/login');
 
 		e.target.reset();

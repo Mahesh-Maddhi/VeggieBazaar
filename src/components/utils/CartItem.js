@@ -29,11 +29,11 @@ const CartItem = (props) => {
 						value={qty}
 						min="1"
 						max="100"
-						onChange={(e) =>
-							setQuantity((prev) =>
-								e.target.value > 0 ? e.target.value : prev
-							)
-						}
+						maxLength="2"
+						onChange={(e) => {
+							const newValue = e.target.value.slice(0, 2);
+							setQuantity(newValue > 0 ? newValue : 0);
+						}}
 					/>
 				</div>
 			</td>

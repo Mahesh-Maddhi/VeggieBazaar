@@ -2,8 +2,8 @@ import Banner from './Banner';
 import CartItem from './CartItem';
 import CartItemsContainer from './CartItemsContainer';
 import Categories from './Categories';
+import Coupon from './Coupon';
 import DealOfTheDay from './DealOfTheDay';
-import Modal from './Modal';
 import PageNotFound from './PageNotFound';
 import Partners from './Partners';
 import ProductCard from './ProductCard';
@@ -14,10 +14,10 @@ import Spinner from './Spinner';
 import Testimonial from './Testimonial';
 import Testimonials from './Testimonials';
 import requestServer from './requestServer';
+
 export {
 	Categories,
 	DealOfTheDay,
-	Modal,
 	PageNotFound,
 	Partners,
 	Search,
@@ -31,4 +31,5 @@ export {
 	Banner,
 	CartItem,
 	CartItemsContainer,
+	Coupon,
 };

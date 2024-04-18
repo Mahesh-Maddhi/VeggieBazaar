@@ -17,6 +17,10 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
+.Toastify {
+	/* margin-top: 105px; */
+	z-index: 10000;
+}
 
 ::-webkit-scrollbar {
 	width: 10px;
@@ -543,11 +547,11 @@ code {
 .contact-section {
 	margin-top: 65px;
 }
-.contact-landing-image-card{
+.contact-landing-image-card {
 	margin: 0px;
-	margin-top: 65px;
+	margin-top: 60px;
 	color: whitesmoke;
-	background-image: url('https://ik.imagekit.io/maheshmaddhi/veggieBazaar/all-fruits-vegetables.webp?updatedAt=1712485861892');
+	background-image: url('https://ik.imagekit.io/maheshmaddhi/veggieBazaar/all-fruits-vegetables.webp');
 	background-repeat: no-repeat;
 	background-position: right;
 	background-size: cover;
@@ -559,40 +563,40 @@ code {
 	align-items: center;
 	text-transform: uppercase;
 }
-.home-contact-card{
+.home-contact-card {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.contact-nav-link{
+.contact-nav-link {
 	text-decoration: none;
 	color: whitesmoke;
 }
-.contact-nav-link:hover{
+.contact-nav-link:hover {
 	text-decoration: none;
 	color: whitesmoke;
 }
-.contact-heading{
+.contact-heading {
 	font-size: 2rem;
 	font-weight: 800;
 }
-.para{
+.para {
 	width: 50%;
 }
 
-.card{
+.card {
 	background-color: #f7f7f7;
-	padding: 20px ;
+	padding: 20px;
 	border-radius: 5px;
 	min-height: 7rem;
 }
-.button-text{
+.button-text {
 	font-size: 1.2rem !important;
 	border-radius: 2rem;
 }
-.form-bg{
+.form-bg {
 	background-color: #f7f7f7;
-	padding: 20px ;
+	padding: 20px;
 	border-radius: 5px;
 }
 /* ----------------login and register-------------------- */

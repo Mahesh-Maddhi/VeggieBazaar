@@ -1,5 +1,9 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Navbar from './Navbar';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { ToastContainer } from 'react-toastify';
+
 import {
 	Home,
 	About,
@@ -17,6 +21,7 @@ const Layout = ({ children }) => {
 		<>
 			<header>
 				<Navbar />
+				<ToastContainer position="bottom-right" />
 			</header>
 			<main>{children}</main>
 		</>

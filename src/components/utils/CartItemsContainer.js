@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import CartItem from './CartItem';
 import requestServer from './requestServer';
-import { useNavigate } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import Coupon from './Coupon';
+import { toast } from 'react-toastify';
 const CartItemsContainer = () => {
 	const navigate = useNavigate();
-	const [cartItems, setCartItems] = useState(null);
+	const [cartItems, setCartItems] = useState([]);
 
 	const token = localStorage.getItem('auth_token');
 	if (!token) {
@@ -24,7 +25,14 @@ const CartItemsContainer = () => {
 			`/deleteProductFromCart/${id}`,
 			options
 		);
-		console.log('res-delete from  cart', responsedata);
+		console.log('res- delete from  cart', responsedata);
+
+		const notify = () => toast.success('Item removed successfully');
+		notify();
+
+		const newCartItems = cartItems.filter((cartItem) => cartItem.id !== id);
+
+		setCartItems(newCartItems);
 	};
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -47,7 +55,8 @@ const CartItemsContainer = () => {
 			setCartItems(data);
 		};
 		setProducts();
-	}, []);
+	}, [token]);
+	console.log(1);
 	return (
 		<div className="container">
 			<div className="row">
@@ -78,76 +87,25 @@ const CartItemsContainer = () => {
 									})}
 							</tbody>
 						</table>
-						{!cartItems && (
+						{cartItems.length < 1 && (
 							<div className="empty-cart ">
 								<h5 className="">Add items to cart</h5>
+								<Link to="/shop" className="btn btn-success">
+									Shop Now
+								</Link>
 							</div>
 						)}
 					</div>
 				</div>
 			</div>
-			{/* <div className="row justify-content-end">
-				<div className="col-lg-4 mt-5 cart-wrap ftco-animate fadeInUp ftco-animated">
-					<div className="cart-total mb-3">
-						<h3>Coupon Code</h3>
-						<p>Enter your coupon code if you have one</p>
-						<form className="info">
-							<div className="form-group">
-								<label for="">Coupon code</label>
-								<input
-									type="text"
-									className="form-control text-left px-3"
-									placeholder=""
-								/>
-							</div>
-						</form>
-					</div>
-					<p>
-						<a href="checkout.html" className="btn btn-primary py-3 px-4">
-							Apply Coupon
-						</a>
-					</p>
+			<div className="row justify-content-end">
+				<div className="col-lg-6 mt-5 cart-wrap">
+					<Coupon />
 				</div>
-				<div className="col-lg-4 mt-5 cart-wrap ftco-animate fadeInUp ftco-animated">
-					<div className="cart-total mb-3">
-						<h3>Estimate shipping and tax</h3>
-						<p>Enter your destination to get a shipping estimate</p>
-						<form className="info">
-							<div className="form-group">
-								<label for="">Country</label>
-								<input
-									type="text"
-									className="form-control text-left px-3"
-									placeholder=""
-								/>
-							</div>
-							<div className="form-group">
-								<label for="country">State/Province</label>
-								<input
-									type="text"
-									className="form-control text-left px-3"
-									placeholder=""
-								/>
-							</div>
-							<div className="form-group">
-								<label for="country">Zip/Postal Code</label>
-								<input
-									type="text"
-									className="form-control text-left px-3"
-									placeholder=""
-								/>
-							</div>
-						</form>
-					</div>
-					<p>
-						<a href="" className="btn btn-primary py-3 px-4">
-							Estimate
-						</a>
-					</p>
-				</div>
-				<div className="col-lg-4 mt-5 cart-wrap ftco-animate fadeInUp ftco-animated">
-					<div className="cart-total mb-3">
-						<h3>Cart Totals</h3>
+
+				<div className="col-lg-6 mt-5 cart-wrap ">
+					<div className="cart-total mb-3 p-5 shadow border m-2">
+						<h5 className="text-center">Cart Totals</h5>
 						<p className="d-flex">
 							<span>Subtotal</span>
 							<span>$20.60</span>
@@ -165,14 +123,14 @@ const CartItemsContainer = () => {
 							<span>Total</span>
 							<span>$17.60</span>
 						</p>
+						<p className="text-center">
+							<Link to="/checkout" className="btn btn-success">
+								Proceed to Checkout
+							</Link>
+						</p>
 					</div>
-					<p>
-						<a href="c" className="btn btn-primary py-3 px-4">
-							Proceed to Checkout
-						</a>
-					</p>
 				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 };

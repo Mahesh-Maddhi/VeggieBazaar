@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner, requestServer } from '../utils';
 import { useParams, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 const ProductDetails = () => {
 	let { productId } = useParams();
 
@@ -31,6 +32,9 @@ const ProductDetails = () => {
 		console.log(options);
 		const responsedata = await requestServer('/addProductToCart', options);
 		console.log('res-addto cart', responsedata);
+		const notify = () => toast.success('Item Added to Cart Successfully');
+
+		notify();
 
 		navigate('/cart');
 	};
