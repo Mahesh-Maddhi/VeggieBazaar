@@ -1,5 +1,4 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import React from 'react';
 import Navbar from './Navbar';
 import {
 	Home,
@@ -13,114 +12,81 @@ import {
 } from '../pages';
 import { PageNotFound } from '../utils';
 
+const Layout = ({ children }) => {
+	return (
+		<>
+			<header>
+				<Navbar />
+			</header>
+			<main>{children}</main>
+		</>
+	);
+};
 const Header = () => {
 	const router = createBrowserRouter([
-		{
-			path: '*',
-			element: <PageNotFound />,
-		},
+		{ path: '*', element: <PageNotFound /> },
 		{
 			path: '/',
 			element: (
-				<>
-					<header>
-						<Navbar />
-					</header>
-					<main>
-						<Home />
-					</main>
-				</>
+				<Layout>
+					<Home />
+				</Layout>
 			),
 		},
 		{
 			path: '/about',
 			element: (
-				<>
-					<header>
-						<Navbar />
-					</header>
-					<main>
-						<About />
-					</main>
-				</>
+				<Layout>
+					<About />
+				</Layout>
 			),
 		},
 		{
 			path: '/contact',
 			element: (
-				<>
-					<header>
-						<Navbar />
-					</header>
-					<main>
-						<Contact />
-					</main>
-				</>
+				<Layout>
+					<Contact />
+				</Layout>
 			),
 		},
 		{
 			path: '/shop',
 			element: (
-				<>
-					<header>
-						<Navbar />
-					</header>
-					<main>
-						<Shop />
-					</main>
-				</>
+				<Layout>
+					<Shop />
+				</Layout>
 			),
 		},
 		{
 			path: '/login',
 			element: (
-				<>
-					<header>
-						<Navbar />
-					</header>
-					<main>
-						<Login />
-					</main>
-				</>
+				<Layout>
+					<Login />
+				</Layout>
 			),
 		},
 		{
 			path: '/signup',
 			element: (
-				<>
-					<header>
-						<Navbar />
-					</header>
-					<main>
-						<Signup />
-					</main>
-				</>
+				<Layout>
+					<Signup />
+				</Layout>
 			),
 		},
 		{
 			path: '/products/:productId',
 			element: (
-				<>
-					<header>
-						<Navbar />
-					</header>
-					<main>
-						<ProductDetails />
-					</main>
-				</>
+				<Layout>
+					<ProductDetails />
+				</Layout>
 			),
 		},
 		{
 			path: '/cart',
 			element: (
-				<>
-					<header>
-						<Navbar />
-					</header>
-					<main>
-						<Cart />
-					</main>
-				</>
+				<Layout>
+					<Cart />
+				</Layout>
 			),
 		},
 	]);

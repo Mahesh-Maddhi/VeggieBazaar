@@ -729,6 +729,17 @@ label {
 .quantity-input::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 }
+
+.empty-cart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30vh;
+	width: 100%;
+}
+.empty-cart h5 {
+	text-align: center;
+}
 /* ---------------page-not-found ------------- */
 
 .page-not-found {

@@ -1,13 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner, requestServer } from '../utils';
-import { useParams } from 'react-router-dom';
-
+import { useParams, useNavigate } from 'react-router-dom';
 const ProductDetails = () => {
 	let { productId } = useParams();
+
+	const navigate = useNavigate();
 
 	const [quantity, setQuantity] = useState(1);
 	const [isLoading, setLoading] = useState(true);
 	const [product, setProduct] = useState(defaultProduct);
+
+	const onAddToCart = async (id) => {
+		const token = localStorage.getItem('auth_token');
+		if (!token) {
+			navigate('/login');
+		}
+
+		const data = {
+			productId: id,
+			quantity,
+		};
+		const options = {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `BEARER ${token}`,
+			},
+			body: JSON.stringify(data),
+		};
+		console.log(options);
+		const responsedata = await requestServer('/addProductToCart', options);
+		console.log('res-addto cart', responsedata);
+
+		navigate('/cart');
+	};
 
 	useEffect(() => {
 		setLoading(true);
@@ -19,12 +45,16 @@ const ProductDetails = () => {
 		};
 		fetchDetails();
 	}, [productId]);
+
 	useEffect(() => {
-		setLoading(false);
+		if (product.id !== undefined) {
+			setLoading(false);
+		}
 	}, [product]);
 
 	console.log('pro', product);
 	const {
+		id,
 		name,
 		price,
 		image,
@@ -102,9 +132,7 @@ const ProductDetails = () => {
 						<button
 							type="button"
 							className="add-to-cart-btn"
-							onClick={() => {
-								window.location.href = '/cart';
-							}}>
+							onClick={() => onAddToCart(id)}>
 							Add to Cart
 						</button>
 					</div>
@@ -114,15 +142,14 @@ const ProductDetails = () => {
 	);
 };
 const defaultProduct = {
-	id: 95,
+	id: 0,
 	name: 'name',
-	price: 90,
-	discounted_price: 50,
-	description:
-		'Tomatoes are juicy fruits commonly used as vegetables in cooking. They are rich in lycopene, an antioxidant that has been linked to various health benefits.',
-	rating: 4.3,
-	stock: 826,
-	category: 'Vegetables',
+	price: 0,
+	discounted_price: 0,
+	description: 'Description goes here.',
+	rating: 0.0,
+	stock: 0,
+	category: 'category',
 	image:
 		'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/product-default-image.jpeg',
 };

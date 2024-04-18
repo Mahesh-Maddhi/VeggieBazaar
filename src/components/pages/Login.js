@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { requestServer } from '../utils';
 import { Modal } from '../utils';
 const Login = () => {
+	const [message, setMessage] = useState(null);
 	const navigate = useNavigate();
+	console.log('rendered');
+	useEffect(() => {
+		const token = localStorage.getItem('auth_token');
+		if (token) {
+			navigate('/');
+		}
+	});
+
 	const defaultUser = {
 		email: '',
 		password: '',
@@ -14,6 +23,12 @@ const Login = () => {
 	const HandleOnChange = (target) => {
 		let newUser = { ...user, [target.name]: target.value };
 		setUser(newUser);
+	};
+	const showMessage = (message, status) => {
+		setMessage({
+			message,
+			status,
+		});
 	};
 
 	const handleSubmit = async (e) => {
@@ -27,9 +42,13 @@ const Login = () => {
 				},
 				body: JSON.stringify(user),
 			};
+			console.log(options);
 			const responsedata = await requestServer('/login', options);
 			console.log('res', responsedata);
-			<Modal message={responsedata?.message} />;
+			if (responsedata.token) {
+				localStorage.setItem('auth_token', responsedata.token);
+			}
+			showMessage(responsedata.message, 'success');
 			navigate('/');
 		}
 
@@ -43,6 +62,8 @@ const Login = () => {
 	};
 	return (
 		<section className="login-section">
+			{message && <Modal message={message} />}
+
 			<div className="login-container">
 				<div className="col-12 col-lg-6">
 					<div className="login-image-container ">

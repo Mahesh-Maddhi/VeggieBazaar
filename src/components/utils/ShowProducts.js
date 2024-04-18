@@ -13,6 +13,7 @@ const ShowProducts = () => {
 				const response = await axios.get(
 					`https://veggie-bazaar.vercel.app/categories/${category}`
 				);
+
 				return { category, products: response.data };
 			} catch (error) {
 				console.log(error);
@@ -23,20 +24,21 @@ const ShowProducts = () => {
 			const promises = categories.map(async (category) => {
 				return await fetchProducts(category);
 			});
+			console.log('promises', promises);
 			const products = await Promise.all(promises);
 			setCategoryProducts(products);
-			console.log(1);
+			console.log(1, 'category setCategoryProducts');
 		};
 		fetchData();
-		console.log('useeffect');
+		console.log('useeffect-fetchData');
 	}, []);
 	useEffect(() => {
 		setLoading(false);
-		console.log('useeffect2');
+		console.log('useeffect-loadingFalse');
 	}, [categoryProducts]);
-	console.log(2);
+	console.log('full component render', 2);
 
-	console.log('prducts', categoryProducts);
+	console.log('products', categoryProducts);
 
 	return (
 		<section>

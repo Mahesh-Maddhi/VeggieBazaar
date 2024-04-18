@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
-const Modal = () => {
+const Modal = (props) => {
+	console.log(props);
 	const [isOpen, setIsOpen] = useState(true);
 	const defaultMessageDetails = {
 		status: 'success',
 		message: 'Testing Message Modal',
 	};
-	const { status, message } = defaultMessageDetails;
+	const { status, message } = props.message || defaultMessageDetails;
 
 	const handleClick = () => {
 		setIsOpen(false);

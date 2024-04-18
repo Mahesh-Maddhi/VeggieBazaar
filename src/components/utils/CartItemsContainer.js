@@ -1,65 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CartItem from './CartItem';
-
-const cartItems = [
-	{
-		id: 1,
-		name: 'Bell Pepper',
-		price: 70,
-		discounted_price: 60,
-		quantity: 1,
-		description:
-			'Bell peppers, also known as sweet peppers, come in various colors such as red, yellow, and green. They are crunchy and sweet, and can be eaten raw or cooked in a variety of dishes.',
-		rating: 4.4,
-		stock: 836,
-		category: 'Vegetables',
-		image:
-			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/capsicum.jpg',
-	},
-	{
-		id: 102,
-		name: 'Orange',
-		price: 70,
-		quantity: 2,
-		discounted_price: 60,
-		description:
-			'Oranges are citrus fruits with a bright and tangy flavor. They are rich in vitamin C, antioxidants, and fiber, making them a refreshing and nutritious snack.',
-		rating: 4.1,
-		stock: 960,
-		category: 'Fruits',
-		image:
-			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/orange.jpeg',
-	},
-	{
-		id: 200,
-		name: 'Apple Juice',
-		price: 100,
-		quantity: 2,
-		discounted_price: 90,
-		description:
-			'Apple juice is a refreshing beverage made from pressed apples. It has a sweet and tangy flavor and is rich in vitamins and antioxidants.',
-		rating: 4.4,
-		stock: 980,
-		category: 'Juices',
-		image:
-			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/apple-juice.jpeg',
-	},
-	{
-		id: 401,
-		name: 'Almonds',
-		price: 50,
-		quantity: 1,
-		discounted_price: 45,
-		description:
-			'Almonds are nutrient-rich nuts that are high in protein, healthy fats, and essential vitamins and minerals. They make for a delicious and crunchy snack.',
-		rating: 4.8,
-		stock: 1200,
-		category: 'dried',
-		image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/almonds.jpg',
-	},
-];
+import requestServer from './requestServer';
+import { useNavigate } from 'react-router-dom';
 
 const CartItemsContainer = () => {
+	const navigate = useNavigate();
+	const [cartItems, setCartItems] = useState(null);
+
+	const token = localStorage.getItem('auth_token');
+	if (!token) {
+		navigate('/login');
+	}
+	const onDelete = async (id) => {
+		const options = {
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `BEARER ${token}`,
+			},
+		};
+		console.log(options);
+		const responsedata = await requestServer(
+			`/deleteProductFromCart/${id}`,
+			options
+		);
+		console.log('res-delete from  cart', responsedata);
+	};
+	useEffect(() => {
+		const fetchProducts = async () => {
+			try {
+				const options = {
+					method: 'GET',
+					headers: {
+						'Content-Type': 'application/json',
+						Authorization: `BEARER ${token}`,
+					},
+				};
+				const responsedata = await requestServer('/cart', options);
+				return responsedata;
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		const setProducts = async () => {
+			const data = await fetchProducts();
+			setCartItems(data);
+		};
+		setProducts();
+	}, []);
 	return (
 		<div className="container">
 			<div className="row">
@@ -76,12 +64,25 @@ const CartItemsContainer = () => {
 									<th>Total</th>
 								</tr>
 							</thead>
+
 							<tbody>
-								{cartItems.map((cartItem) => {
-									return <CartItem {...cartItem} />;
-								})}
+								{cartItems &&
+									cartItems.map((cartItem) => {
+										return (
+											<CartItem
+												cartItem={cartItem}
+												onDelete={onDelete}
+												key={cartItem.id}
+											/>
+										);
+									})}
 							</tbody>
 						</table>
+						{!cartItems && (
+							<div className="empty-cart ">
+								<h5 className="">Add items to cart</h5>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>
