@@ -32,11 +32,17 @@ const ProductDetails = () => {
 		console.log(options);
 		const responsedata = await requestServer('/addProductToCart', options);
 		console.log('res-addto cart', responsedata);
-		const notify = () => toast.success('Item Added to Cart Successfully');
+		if (responsedata) {
+			const notify = () => toast.success('Item Added to Cart Successfully');
 
-		notify();
+			notify();
 
-		navigate('/cart');
+			navigate('/cart');
+		} else {
+			const notify = () => toast.error('something went wrong');
+
+			notify();
+		}
 	};
 
 	useEffect(() => {

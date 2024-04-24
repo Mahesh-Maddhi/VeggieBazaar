@@ -1,6 +1,6 @@
 const requestServer = async (url, options = { method: 'GET' }) => {
 	if (url.startsWith('/')) {
-		url = `http://localhost:7200${url}`;
+		url = `https://veggie-bazaar.vercel.app${url}`;
 	}
 	console.log(url);
 	try {

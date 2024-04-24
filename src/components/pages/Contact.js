@@ -57,9 +57,9 @@ const Contact = () => {
 							title="maps"
 							height="600"
 							style={{ border: 0 }}
-							allowfullscreen=""
+							allowFullScreen=""
 							loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade"></iframe>
+							referrerPolicy="no-referrer-when-downgrade"></iframe>
 					</div>
 					<form className="form form-bg p-5  col-lg-6">
 						<div className="mb-3">
@@ -72,7 +72,7 @@ const Contact = () => {
 								placeholder="Your Name"
 							/>
 						</div>
-						<div class="mb-3">
+						<div className="mb-3">
 							<input
 								type="text"
 								className="form-control  py-4"
@@ -82,7 +82,7 @@ const Contact = () => {
 								placeholder="Your Email"
 							/>
 						</div>
-						<div class="mb-3">
+						<div className="mb-3">
 							<input
 								type="text"
 								className="form-control py-4"

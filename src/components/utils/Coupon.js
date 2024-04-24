@@ -15,7 +15,7 @@ const Coupon = () => {
 					/>
 				</div>
 				<p className="text-center mt-3">
-					<Link to="/checkout" className="btn btn-success">
+					<Link to="/checkout" className="btn primary-button">
 						Apply Coupon
 					</Link>
 				</p>

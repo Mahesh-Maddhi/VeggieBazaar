@@ -23,7 +23,6 @@ const Login = () => {
 		let newUser = { ...user, [target.name]: target.value };
 		setUser(newUser);
 	};
-	const showMessage = (message) => toast.success(message);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -39,11 +38,15 @@ const Login = () => {
 			console.log(options);
 			const responsedata = await requestServer('/login', options);
 			console.log('res', responsedata);
-			if (responsedata.token) {
+			if (responsedata?.token) {
 				localStorage.setItem('auth_token', responsedata.token);
+				const notify = () => toast.success('Login Successful');
+				notify();
+				navigate('/');
+			} else {
+				const notify = () => toast.error('Something went wrong!');
+				notify();
 			}
-			showMessage(responsedata.message);
-			navigate('/');
 		}
 
 		e.target.reset();

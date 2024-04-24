@@ -3,7 +3,7 @@ import '../../testimonials.css';
 const Testimonial = ({ name, review, imageUrl }) => {
 	return (
 		<>
-			<div className="item">
+			<div className="item col-12">
 				<div className="testimony-wrap p-4 pb-5">
 					<div
 						className="user-img mb-5"

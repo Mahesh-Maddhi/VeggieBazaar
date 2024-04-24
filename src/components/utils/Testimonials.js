@@ -38,6 +38,26 @@ const testimonials = [
 			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/default-user-grey.webp',
 	},
 ];
+const responsiveOptions = {
+	0: {
+		items: 1,
+		nav: true,
+	},
+	768: {
+		items: 3,
+		nav: false,
+	},
+	1200: {
+		items: 4,
+		nav: true,
+		loop: true,
+	},
+	2000: {
+		items: 5,
+		nav: true,
+		loop: true,
+	},
+};
 
 const Testimonials = () => {
 	return (
@@ -55,7 +75,12 @@ const Testimonials = () => {
 					</div>
 				</div>
 				<div className="row">
-					<OwlCarousel className="owl-theme" loop margin={10} nav>
+					<OwlCarousel
+						className="owl-theme"
+						loop
+						margin={10}
+						nav
+						responsive={responsiveOptions}>
 						{testimonials.map((testimonial, index) => {
 							return <Testimonial {...testimonial} key={index} />;
 						})}

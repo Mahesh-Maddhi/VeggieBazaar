@@ -87,10 +87,10 @@ const CartItemsContainer = () => {
 									})}
 							</tbody>
 						</table>
-						{cartItems.length < 1 && (
+						{(cartItems?.length < 1 || !cartItems) && (
 							<div className="empty-cart ">
 								<h5 className="">Add items to cart</h5>
-								<Link to="/shop" className="btn btn-success">
+								<Link to="/shop" className="btn primary-button ">
 									Shop Now
 								</Link>
 							</div>
@@ -124,7 +124,7 @@ const CartItemsContainer = () => {
 							<span>$17.60</span>
 						</p>
 						<p className="text-center">
-							<Link to="/checkout" className="btn btn-success">
+							<Link to="/checkout" className="btn  primary-button">
 								Proceed to Checkout
 							</Link>
 						</p>
