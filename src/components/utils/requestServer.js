@@ -1,8 +1,10 @@
 const requestServer = async (url, options = { method: 'GET' }) => {
 	if (url.startsWith('/')) {
-		url = `https://veggie-bazaar.vercel.app${url}`;
+		// url = `https://veggie-bazaar.vercel.app${url}`;
+		url = `http://localhost:7200${url}`;
 	}
 	console.log(url);
+	console.log(options);
 	try {
 		const response = await fetch(url, options);
 		if (!response.ok) {
@@ -12,6 +14,7 @@ const requestServer = async (url, options = { method: 'GET' }) => {
 			);
 		}
 		const data = await response.json();
+		console.log('responsedata', data);
 		return data;
 	} catch (error) {
 		console.log(error.message);

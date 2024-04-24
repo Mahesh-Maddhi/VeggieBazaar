@@ -48,9 +48,7 @@ const ProductDetails = () => {
 	useEffect(() => {
 		setLoading(true);
 		const fetchDetails = async () => {
-			const data = await requestServer(
-				`https://veggie-bazaar.vercel.app/products/${productId}`
-			);
+			const data = await requestServer(`/products/${productId}`);
 			setProduct(data);
 		};
 		fetchDetails();

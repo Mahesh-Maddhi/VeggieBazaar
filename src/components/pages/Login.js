@@ -35,7 +35,6 @@ const Login = () => {
 				},
 				body: JSON.stringify(user),
 			};
-			console.log(options);
 			const responsedata = await requestServer('/login', options);
 			console.log('res', responsedata);
 			if (responsedata?.token) {
