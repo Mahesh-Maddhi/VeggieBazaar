@@ -67,16 +67,6 @@
 .testimony-section .owl-dots {
 	text-align: center;
 }
-.testimony-section .owl-dots .owl-dot {
-	width: 10px;
-	height: 10px;
-	margin: 5px;
-	border-radius: 50%;
-	background: rgba(0, 0, 0, 0.2);
-}
-.testimony-section .owl-dots .owl-dot.active {
-	background: #82ae46;
-}
 
 .testimony-wrap {
 	display: block;

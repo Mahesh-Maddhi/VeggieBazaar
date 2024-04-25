@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { requestServer } from '../utils';
-import { Modal } from '../utils';
+import { toast } from 'react-toastify';
 const Login = () => {
 	const navigate = useNavigate();
+	console.log('rendered');
+	useEffect(() => {
+		const token = localStorage.getItem('auth_token');
+		if (token) {
+			navigate('/');
+		}
+	});
+
 	const defaultUser = {
 		email: '',
 		password: '',
@@ -29,8 +37,15 @@ const Login = () => {
 			};
 			const responsedata = await requestServer('/login', options);
 			console.log('res', responsedata);
-			<Modal message={responsedata?.message} />;
-			navigate('/');
+			if (responsedata?.token) {
+				localStorage.setItem('auth_token', responsedata.token);
+				const notify = () => toast.success('Login Successful');
+				notify();
+				navigate('/');
+			} else {
+				const notify = () => toast.error('Something went wrong!');
+				notify();
+			}
 		}
 
 		e.target.reset();

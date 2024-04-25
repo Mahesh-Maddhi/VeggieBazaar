@@ -1,65 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CartItem from './CartItem';
-
-const cartItems = [
-	{
-		id: 1,
-		name: 'Bell Pepper',
-		price: 70,
-		discounted_price: 60,
-		quantity: 1,
-		description:
-			'Bell peppers, also known as sweet peppers, come in various colors such as red, yellow, and green. They are crunchy and sweet, and can be eaten raw or cooked in a variety of dishes.',
-		rating: 4.4,
-		stock: 836,
-		category: 'Vegetables',
-		image:
-			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/capsicum.jpg',
-	},
-	{
-		id: 102,
-		name: 'Orange',
-		price: 70,
-		quantity: 2,
-		discounted_price: 60,
-		description:
-			'Oranges are citrus fruits with a bright and tangy flavor. They are rich in vitamin C, antioxidants, and fiber, making them a refreshing and nutritious snack.',
-		rating: 4.1,
-		stock: 960,
-		category: 'Fruits',
-		image:
-			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/orange.jpeg',
-	},
-	{
-		id: 200,
-		name: 'Apple Juice',
-		price: 100,
-		quantity: 2,
-		discounted_price: 90,
-		description:
-			'Apple juice is a refreshing beverage made from pressed apples. It has a sweet and tangy flavor and is rich in vitamins and antioxidants.',
-		rating: 4.4,
-		stock: 980,
-		category: 'Juices',
-		image:
-			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/apple-juice.jpeg',
-	},
-	{
-		id: 401,
-		name: 'Almonds',
-		price: 50,
-		quantity: 1,
-		discounted_price: 45,
-		description:
-			'Almonds are nutrient-rich nuts that are high in protein, healthy fats, and essential vitamins and minerals. They make for a delicious and crunchy snack.',
-		rating: 4.8,
-		stock: 1200,
-		category: 'dried',
-		image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/almonds.jpg',
-	},
-];
-
+import requestServer from './requestServer';
+import { Link, useNavigate } from 'react-router-dom';
+import Coupon from './Coupon';
+import { toast } from 'react-toastify';
 const CartItemsContainer = () => {
+	const navigate = useNavigate();
+	const [cartItems, setCartItems] = useState([]);
+
+	const token = localStorage.getItem('auth_token');
+	if (!token) {
+		navigate('/login');
+	}
+	const onDelete = async (id) => {
+		const options = {
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `BEARER ${token}`,
+			},
+		};
+		console.log(options);
+		const responsedata = await requestServer(
+			`/deleteProductFromCart/${id}`,
+			options
+		);
+		console.log('res- delete from  cart', responsedata);
+
+		const notify = () => toast.success('Item removed successfully');
+		notify();
+
+		const newCartItems = cartItems.filter((cartItem) => cartItem.id !== id);
+
+		setCartItems(newCartItems);
+	};
+	useEffect(() => {
+		const fetchProducts = async () => {
+			try {
+				const options = {
+					method: 'GET',
+					headers: {
+						'Content-Type': 'application/json',
+						Authorization: `BEARER ${token}`,
+					},
+				};
+				const responsedata = await requestServer('/cart', options);
+				return responsedata;
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		const setProducts = async () => {
+			const data = await fetchProducts();
+			setCartItems(data);
+		};
+		setProducts();
+	}, [token]);
+	console.log(1);
 	return (
 		<div className="container">
 			<div className="row">
@@ -76,77 +73,39 @@ const CartItemsContainer = () => {
 									<th>Total</th>
 								</tr>
 							</thead>
+
 							<tbody>
-								{cartItems.map((cartItem) => {
-									return <CartItem {...cartItem} />;
-								})}
+								{cartItems &&
+									cartItems.map((cartItem) => {
+										return (
+											<CartItem
+												cartItem={cartItem}
+												onDelete={onDelete}
+												key={cartItem.id}
+											/>
+										);
+									})}
 							</tbody>
 						</table>
+						{(cartItems?.length < 1 || !cartItems) && (
+							<div className="empty-cart ">
+								<h5 className="">Add items to cart</h5>
+								<Link to="/shop" className="btn primary-button ">
+									Shop Now
+								</Link>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>
-			{/* <div className="row justify-content-end">
-				<div className="col-lg-4 mt-5 cart-wrap ftco-animate fadeInUp ftco-animated">
-					<div className="cart-total mb-3">
-						<h3>Coupon Code</h3>
-						<p>Enter your coupon code if you have one</p>
-						<form className="info">
-							<div className="form-group">
-								<label for="">Coupon code</label>
-								<input
-									type="text"
-									className="form-control text-left px-3"
-									placeholder=""
-								/>
-							</div>
-						</form>
-					</div>
-					<p>
-						<a href="checkout.html" className="btn btn-primary py-3 px-4">
-							Apply Coupon
-						</a>
-					</p>
+			<div className="row justify-content-end">
+				<div className="col-lg-6 mt-5 cart-wrap">
+					<Coupon />
 				</div>
-				<div className="col-lg-4 mt-5 cart-wrap ftco-animate fadeInUp ftco-animated">
-					<div className="cart-total mb-3">
-						<h3>Estimate shipping and tax</h3>
-						<p>Enter your destination to get a shipping estimate</p>
-						<form className="info">
-							<div className="form-group">
-								<label for="">Country</label>
-								<input
-									type="text"
-									className="form-control text-left px-3"
-									placeholder=""
-								/>
-							</div>
-							<div className="form-group">
-								<label for="country">State/Province</label>
-								<input
-									type="text"
-									className="form-control text-left px-3"
-									placeholder=""
-								/>
-							</div>
-							<div className="form-group">
-								<label for="country">Zip/Postal Code</label>
-								<input
-									type="text"
-									className="form-control text-left px-3"
-									placeholder=""
-								/>
-							</div>
-						</form>
-					</div>
-					<p>
-						<a href="" className="btn btn-primary py-3 px-4">
-							Estimate
-						</a>
-					</p>
-				</div>
-				<div className="col-lg-4 mt-5 cart-wrap ftco-animate fadeInUp ftco-animated">
-					<div className="cart-total mb-3">
-						<h3>Cart Totals</h3>
+
+				<div className="col-lg-6 mt-5 cart-wrap ">
+					<div className="cart-total mb-3 p-5 shadow border m-2">
+						<h5 className="text-center">Cart Totals</h5>
 						<p className="d-flex">
 							<span>Subtotal</span>
 							<span>$20.60</span>
@@ -164,14 +123,14 @@ const CartItemsContainer = () => {
 							<span>Total</span>
 							<span>$17.60</span>
 						</p>
+						<p className="text-center">
+							<Link to="/checkout" className="btn  primary-button">
+								Proceed to Checkout
+							</Link>
+						</p>
 					</div>
-					<p>
-						<a href="c" className="btn btn-primary py-3 px-4">
-							Proceed to Checkout
-						</a>
-					</p>
 				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 };

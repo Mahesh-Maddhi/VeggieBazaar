@@ -1,32 +1,21 @@
 import React from 'react';
 import '../../testimonials.css';
-const Testimonial = () => {
+const Testimonial = ({ name, review, imageUrl }) => {
 	return (
 		<>
-			<div
-				class="owl-item cloned active centered"
-				style={{ width: '210px', marginRight: '30px' }}>
-				<div class="item">
-					<div class="testimony-wrap p-4 pb-5">
-						<div
-							class="user-img mb-5"
-							style={{
-								backgroundImage:
-									"url('https://ik.imagekit.io/maheshmaddhi/veggieBazaar/default-user-grey.webp')",
-								backgroundSize: 'contain',
-							}}>
-							<span class="quote d-flex align-items-center justify-content-center">
-								<i className="fa-solid fa-quote-right"></i>
-							</span>
-						</div>
-						<div class="text text-center">
-							<p class="mb-5 pl-4 line">
-								Far far away, behind the word mountains, far from the countries
-								Vokalia and Consonantia, there live the blind texts.
-							</p>
-							<p class="name">Garreth Smith</p>
-							<span class="position">UI Designer</span>
-						</div>
+			<div className="item col-12">
+				<div className="testimony-wrap p-4 pb-5">
+					<div
+						className="user-img mb-5"
+						style={{
+							backgroundImage: `url(${imageUrl})`,
+							backgroundSize: 'contain',
+							backgroundRepeat: 'no-repeat',
+							backgroundPositionX: 'center',
+						}}></div>
+					<div className="text text-center">
+						<p className="mb-5 pl-4 line">{review}</p>
+						<p className="name">{name}</p>
 					</div>
 				</div>
 			</div>

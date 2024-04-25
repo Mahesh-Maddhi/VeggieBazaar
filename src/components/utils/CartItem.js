@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 
-const CartItem = (item) => {
-	const { id, name, image, discounted_price, description, quantity } = item;
+const CartItem = (props) => {
+	console.log('prop', props);
+	const { onDelete } = props;
+	const { id, name, image, discounted_price, description, quantity } =
+		props.cartItem;
 	const [qty, setQuantity] = useState(quantity);
 
-	const removeItem = (id) => {
-		console.log(id);
-	};
 	return (
 		<tr className="text-center">
 			<td className="product-remove ">
-				<i
-					className="fa-solid fa-xmark p-2 "
-					onClick={() => removeItem(id)}></i>
+				<i className="fa-solid fa-xmark p-2 " onClick={() => onDelete(id)}></i>
 			</td>
 			<td className="image-prod">
 				<img className="img" src={image} alt={name} />
@@ -31,11 +29,11 @@ const CartItem = (item) => {
 						value={qty}
 						min="1"
 						max="100"
-						onChange={(e) =>
-							setQuantity((prev) =>
-								e.target.value > 0 ? e.target.value : prev
-							)
-						}
+						maxLength="2"
+						onChange={(e) => {
+							const newValue = e.target.value.slice(0, 2);
+							setQuantity(newValue > 0 ? newValue : 0);
+						}}
 					/>
 				</div>
 			</td>

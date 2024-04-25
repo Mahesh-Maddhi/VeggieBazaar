@@ -7,13 +7,16 @@ const DealOfTheDay = () => {
 				<p className="our-products-sub-heading">Best price for you</p>
 				<h2 className="our-products-heading">Deal of the day</h2>
 				<p className="our-products-description">
-					Far far away, behind the word mountains, far from the countries
-					Vokalia and Consonantia
+					Fresh Spinach! Versatile and nutritious, perfect for salads,
+					smoothies, and sautés. Don't miss out on this healthy offer!
 				</p>
 				<p className="our-products-sub-heading">
 					Spinach <br />
 					<span>
-						<span className="price align">₹60 </span>now ₹35 only
+						<span className="price align">
+							<strong>₹60 </strong>
+						</span>
+						now <strong>₹35</strong> only
 					</span>
 				</p>
 			</div>

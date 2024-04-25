@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Products from './Products';
-import axios from 'axios';
 import Spinner from './Spinner';
+import requestServer from './requestServer';
 const categories = ['Vegetables', 'Fruits', 'Juices', 'Dried'];
 
 const ShowProducts = () => {
@@ -10,10 +10,12 @@ const ShowProducts = () => {
 	useEffect(() => {
 		const fetchProducts = async (category) => {
 			try {
-				const response = await axios.get(
-					`https://veggie-bazaar.vercel.app/categories/${category}`
-				);
-				return { category, products: response.data };
+				// const response = await axios.get(
+				// 	`https://veggie-bazaar.vercel.app/categories/${category}`
+				// );
+				const products = await requestServer(`/categories/${category}`);
+
+				return { category, products: products };
 			} catch (error) {
 				console.log(error);
 				return { category, products: [] };
@@ -23,20 +25,21 @@ const ShowProducts = () => {
 			const promises = categories.map(async (category) => {
 				return await fetchProducts(category);
 			});
+			console.log('promises', promises);
 			const products = await Promise.all(promises);
 			setCategoryProducts(products);
-			console.log(1);
+			console.log(1, 'category setCategoryProducts');
 		};
 		fetchData();
-		console.log('useeffect');
+		console.log('useeffect-fetchData');
 	}, []);
 	useEffect(() => {
 		setLoading(false);
-		console.log('useeffect2');
+		console.log('useeffect-loadingFalse');
 	}, [categoryProducts]);
-	console.log(2);
+	console.log('full component render', 2);
 
-	console.log('prducts', categoryProducts);
+	console.log('products', categoryProducts);
 
 	return (
 		<section>

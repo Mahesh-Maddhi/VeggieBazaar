@@ -1,13 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ productDetails }) => {
-	const { id, name, price, discounted_price, image } = productDetails;
+	const { productId, name, price, discounted_price, image } = productDetails;
+	const navigate = useNavigate();
 
 	return (
 		<div
 			onClick={() => {
-				window.location.href = `/products/${id}`;
+				navigate(`/products/${productId}`);
 			}}
 			className="col-md-6 col-lg-3 text-decoration-none">
 			<article className="product">
@@ -38,7 +39,7 @@ const ProductCard = ({ productDetails }) => {
 					<div className="bottom-area d-flex px-3">
 						<div className="m-auto d-flex">
 							<Link
-								to={`/products/${id}`}
+								to={`/products/${productId}`}
 								className="add-to-cart d-flex justify-content-center align-items-center text-center">
 								<span>
 									<i className="fa-solid fa-bars"></i>
@@ -52,7 +53,7 @@ const ProductCard = ({ productDetails }) => {
 								</span>
 							</Link>
 							<Link
-								to={`/products/${id}`}
+								to={`/products/${productId}`}
 								className="heart d-flex justify-content-center align-items-center ">
 								<span>
 									<i className="fa-solid fa-heart"></i>

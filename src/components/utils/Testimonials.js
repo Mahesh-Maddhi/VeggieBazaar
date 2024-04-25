@@ -1,67 +1,90 @@
 import React from 'react';
-
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Testimonial from './Testimonial';
-import '../../testimonials.css';
+
+const testimonials = [
+	{
+		name: 'Sai Reddy',
+		review:
+			"The vegetables I received were incredibly fresh and flavorful. I'm impressed with the quality and prompt delivery!",
+		imageUrl: 'https://avatars.githubusercontent.com/u/75177691?v=4',
+	},
+
+	{
+		name: 'Mahesh Kummari',
+		review:
+			'This website makes vegetable shopping so convenient! The user-friendly interface and quick delivery are unbeatable.',
+		imageUrl: 'https://avatars.githubusercontent.com/u/136167735?v=4',
+	},
+	{
+		name: 'Mahesh Maddhi',
+		review:
+			"I love the eco-friendly packaging used by this website. It's great to see a company that cares about the environment!",
+		imageUrl: 'https://avatars.githubusercontent.com/u/110802391?v=4',
+	},
+	{
+		name: 'Prasad Madigela',
+		review:
+			'This website makes vegetable shopping so convenient! The user-friendly interface and quick delivery are unbeatable.',
+		imageUrl: 'https://avatars.githubusercontent.com/u/160470088?v=4',
+	},
+	{
+		name: 'Ram',
+		review:
+			"The vegetables I received were incredibly fresh and flavorful. I'm impressed with the quality and prompt delivery!",
+		imageUrl:
+			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/default-user-grey.webp',
+	},
+];
+const responsiveOptions = {
+	0: {
+		items: 1,
+		nav: true,
+	},
+	768: {
+		items: 3,
+		nav: false,
+	},
+	1200: {
+		items: 4,
+		nav: true,
+		loop: true,
+	},
+	2000: {
+		items: 5,
+		nav: true,
+		loop: true,
+	},
+};
+
 const Testimonials = () => {
 	return (
-		<section class="ftco-section testimony-section">
-			<div class="container">
-				<div class="row justify-content-center mb-5 pb-3">
-					<div class="col-md-7 heading-section ftco-animate text-center fadeInUp ftco-animated">
-						<span class="subheading">Testimony</span>
-						<h2 class="mb-4">Our satisfied customer says</h2>
+		<section className="testimony-section">
+			<div className="container">
+				<div className="row justify-content-center mb-5 pb-3">
+					<div className="col-md-7 heading-section text-center">
+						<span className="our-products-sub-heading">Testimony</span>
+						<h2 className="mb-4">Our satisfied customer says</h2>
 						<p>
-							Far far away, behind the word mountains, far from the countries
-							Vokalia and Consonantia, there live the blind texts. Separated
-							they live in
+							Explore glowing reviews about our fresh veggies, easy shopping
+							experience, and outstanding service. Dive into why customers keep
+							choosing us!
 						</p>
 					</div>
 				</div>
-				<div class="row ftco-animate fadeInUp ftco-animated">
-					<div class="col-md-12">
-						<div class="carousel-testimony owl-carousel owl-loaded owl-drag">
-							{/* container */}
-							<div class="owl-stage-outer">
-								<div
-									class="owl-stage"
-									style={{
-										transition: 'all 0s ease 0s',
-										width: '2641px',
-										// transform: 'translate3d(-960px, 0px, 0px)',
-									}}>
-									<Testimonial />
-									<Testimonial />
-									<Testimonial />
-									<Testimonial />
-								</div>
-							</div>
-							<div class="owl-nav disabled">
-								<button role="presentation" class="owl-prev">
-									<span class="ion-ios-arrow-back"></span>
-								</button>
-								<button role="presentation" class="owl-next">
-									<span class="ion-ios-arrow-forward"></span>
-								</button>
-							</div>
-							<div class="owl-dots">
-								<button class="owl-dot">
-									<span></span>
-								</button>
-								<button class="owl-dot">
-									<span></span>
-								</button>
-								<button class="owl-dot active">
-									<span></span>
-								</button>
-								<button class="owl-dot">
-									<span></span>
-								</button>
-								<button class="owl-dot">
-									<span></span>
-								</button>
-							</div>
-						</div>
-					</div>
+				<div className="row">
+					<OwlCarousel
+						className="owl-theme"
+						loop
+						margin={10}
+						nav
+						responsive={responsiveOptions}>
+						{testimonials.map((testimonial, index) => {
+							return <Testimonial {...testimonial} key={index} />;
+						})}
+					</OwlCarousel>
 				</div>
 			</div>
 		</section>
