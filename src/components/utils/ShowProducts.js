@@ -10,12 +10,8 @@ const ShowProducts = () => {
 	useEffect(() => {
 		const fetchProducts = async (category) => {
 			try {
-				// const response = await axios.get(
-				// 	`https://veggie-bazaar.vercel.app/categories/${category}`
-				// );
-				const products = await requestServer(`/categories/${category}`);
-
-				return { category, products: products };
+				const productsArray = await requestServer(`/categories/${category}`);
+				return { category, products: productsArray };
 			} catch (error) {
 				console.log(error);
 				return { category, products: [] };
