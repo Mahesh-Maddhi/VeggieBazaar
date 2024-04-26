@@ -13,7 +13,6 @@ const CartItemsContainer = () => {
 		navigate('/login');
 	}
 	const onDelete = async (deleteId) => {
-		console.log('idd', deleteId);
 		const newCartItems = cartItems.filter(
 			(cartItem) => cartItem.productId !== deleteId
 		);

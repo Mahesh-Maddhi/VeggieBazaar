@@ -60,7 +60,6 @@ const ProductDetails = () => {
 		}
 	}, [product]);
 
-	console.log('pro', product);
 	const {
 		productId,
 		name,
@@ -118,6 +117,7 @@ const ProductDetails = () => {
 						<p className="description">{description}</p>
 						<div className="product-count-container">
 							<button
+								className="btn"
 								type="button"
 								onClick={() =>
 									setQuantity((prev) => (prev > 1 ? prev - 1 : prev))
@@ -132,6 +132,7 @@ const ProductDetails = () => {
 								onChange={(e) => setQuantity(parseInt(e.target.value))}
 							/>
 							<button
+								className="btn"
 								type="button"
 								onClick={() => setQuantity((prev) => prev + 1)}>
 								+

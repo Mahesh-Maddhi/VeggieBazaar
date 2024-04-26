@@ -27,7 +27,7 @@ const CartItem = (props) => {
 				</h3>
 				<p className="description">{description}</p>
 			</td>
-			<td className="price">${discounted_price}</td>
+			<td className="price">₹{discounted_price}</td>
 			<td className="quantity">
 				<div className="input-group mb-3">
 					<input
@@ -45,7 +45,7 @@ const CartItem = (props) => {
 					/>
 				</div>
 			</td>
-			<td className="total">${discounted_price * qty}</td>
+			<td className="total">₹{discounted_price * qty}</td>
 		</tr>
 	);
 };
