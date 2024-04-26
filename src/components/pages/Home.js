@@ -24,7 +24,11 @@ const Home = () => {
 					</p>
 				) : (
 					<p className="fadeIn">
-						<Link className="primary-button text-white btn">Shop now</Link>
+						<Link
+							to={'/shop'}
+							className="category-button button text-white btn">
+							Shop now
+						</Link>
 					</p>
 				)}
 			</section>

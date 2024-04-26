@@ -891,6 +891,77 @@ label {
 .empty-cart h5 {
 	text-align: center;
 }
+
+/* --------------checkout-section------------- */
+
+.checkout-section {
+	margin-top: 65px;
+}
+.billing-heading {
+	font-size: 24px;
+}
+
+.billing-form .form-group {
+	position: relative;
+}
+
+.billing-form label {
+	color: #000000;
+	font-size: 14px;
+}
+
+.billing-form .icon {
+	position: absolute;
+	top: 50% !important;
+	right: 15px;
+	font-size: 14px;
+	transform: translateY(-50%);
+}
+.billing-form .icon span {
+	color: black !important;
+}
+
+.billing-form .select-wrap {
+	position: relative;
+}
+.billing-form .select-wrap select {
+	appearance: none;
+}
+
+.billing-form .form-control {
+	font-weight: 300;
+	border: transparent;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	height: 58px;
+	padding-left: 15px;
+	padding-right: 15px;
+	background: transparent;
+	color: rgba(0, 0, 0, 0.4);
+	font-size: 14px;
+	box-shadow: none;
+}
+
+.billing-form .form-control:focus,
+.billing-form .form-control:active {
+	border-color: #82ae46 !important;
+}
+
+.billing-form textarea.form-control {
+	height: inherit !important;
+}
+
+.cart-detail {
+	width: 100%;
+	display: block;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.cart-detail.cart-total {
+	border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.cart-detail .btn-primary {
+	display: block;
+	width: 100%;
+}
 /* ---------------page-not-found ------------- */
 
 .page-not-found {

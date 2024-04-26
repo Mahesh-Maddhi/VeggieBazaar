@@ -16,6 +16,7 @@ import {
 	Signup,
 	ProductDetails,
 	Cart,
+	CheckOut,
 } from '../pages';
 import { PageNotFound } from '../utils';
 import { useEffect } from 'react';
@@ -100,6 +101,14 @@ const Header = () => {
 			element: (
 				<Layout>
 					<Cart />
+				</Layout>
+			),
+		},
+		{
+			path: '/checkout',
+			element: (
+				<Layout>
+					<CheckOut />
 				</Layout>
 			),
 		},
