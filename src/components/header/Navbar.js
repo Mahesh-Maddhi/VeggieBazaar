@@ -32,6 +32,11 @@ const Navbar = () => {
 					))}
 				</ul>
 				<Search />
+				<div className="items">
+					<Link to="/cart" className="fa-solid fa-cart-shopping icon">
+						<span className="cart-items-count">0</span>
+					</Link>
+				</div>
 			</div>
 		</nav>
 	);

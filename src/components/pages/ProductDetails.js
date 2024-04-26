@@ -3,7 +3,7 @@ import { Spinner, requestServer } from '../utils';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 const ProductDetails = () => {
-	let { productId } = useParams();
+	const { id } = useParams();
 
 	const navigate = useNavigate();
 
@@ -11,14 +11,14 @@ const ProductDetails = () => {
 	const [isLoading, setLoading] = useState(true);
 	const [product, setProduct] = useState(defaultProduct);
 
-	const onAddToCart = async (id) => {
+	const onAddToCart = async (productId) => {
 		const token = localStorage.getItem('auth_token');
 		if (!token) {
 			navigate('/login');
 		}
 
 		const data = {
-			productId: id,
+			productId,
 			quantity,
 		};
 		const options = {
@@ -30,10 +30,10 @@ const ProductDetails = () => {
 			body: JSON.stringify(data),
 		};
 		console.log(options);
-		const responsedata = await requestServer('/addProductToCart', options);
+		const responsedata = await requestServer('/addToCart', options);
 		console.log('res-addto cart', responsedata);
 		if (responsedata) {
-			const notify = () => toast.success('Item Added to Cart Successfully');
+			const notify = () => toast.success(responsedata?.message);
 
 			notify();
 
@@ -48,21 +48,21 @@ const ProductDetails = () => {
 	useEffect(() => {
 		setLoading(true);
 		const fetchDetails = async () => {
-			const data = await requestServer(`/products/${productId}`);
+			const data = await requestServer(`/products/${id}`);
 			setProduct(data);
 		};
 		fetchDetails();
-	}, [productId]);
+	}, [id]);
 
 	useEffect(() => {
-		if (product.id !== undefined) {
+		if (product.productId !== undefined) {
 			setLoading(false);
 		}
 	}, [product]);
 
 	console.log('pro', product);
 	const {
-		id,
+		productId,
 		name,
 		price,
 		image,
@@ -140,7 +140,7 @@ const ProductDetails = () => {
 						<button
 							type="button"
 							className="add-to-cart-btn"
-							onClick={() => onAddToCart(id)}>
+							onClick={() => onAddToCart(productId)}>
 							Add to Cart
 						</button>
 					</div>

@@ -1,22 +1,30 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const CartItem = (props) => {
 	console.log('prop', props);
 	const { onDelete } = props;
-	const { id, name, image, discounted_price, description, quantity } =
+	const { productId, name, image, discounted_price, description, quantity } =
 		props.cartItem;
 	const [qty, setQuantity] = useState(quantity);
 
 	return (
 		<tr className="text-center">
 			<td className="product-remove ">
-				<i className="fa-solid fa-xmark p-2 " onClick={() => onDelete(id)}></i>
+				<i
+					className="fa-solid fa-xmark p-2 "
+					onClick={() => onDelete(productId)}></i>
 			</td>
 			<td className="image-prod">
-				<img className="img" src={image} alt={name} />
+				<Link className="text-decoration-none" to={`/products/${productId}`}>
+					<img className="img" src={image} alt={name} />
+				</Link>
 			</td>
 			<td className="product-name">
-				<h3>{name}</h3>
+				<h3>
+					<Link className="text-decoration-none" to={`/products/${productId}`}>
+						{name}
+					</Link>
+				</h3>
 				<p className="description">{description}</p>
 			</td>
 			<td className="price">${discounted_price}</td>

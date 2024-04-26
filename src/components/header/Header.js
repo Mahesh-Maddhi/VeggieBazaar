@@ -79,7 +79,7 @@ const Header = () => {
 			),
 		},
 		{
-			path: '/products/:productId',
+			path: '/products/:id',
 			element: (
 				<Layout>
 					<ProductDetails />
