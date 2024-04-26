@@ -90,6 +90,26 @@ code {
 	color: var(--secondary-color);
 	font-size: 25px;
 }
+.items .icon {
+	color: var(--secondary-color);
+	font-size: 23px;
+	text-decoration: none;
+	position: relative;
+}
+.items .icon .cart-items-count {
+	position: absolute;
+	top: -10px;
+	left: 15px;
+	width: fit-content;
+	height: fit-content;
+	color: white;
+	font-weight: 400;
+	font-size: 12px;
+	background-color: var(--secondary-color);
+	padding: 3px;
+	border-radius: 50%;
+	border: 1px solid white;
+}
 
 .primary-button {
 	display: inline-block;
@@ -264,6 +284,55 @@ code {
 /* -------------------about--------------- */
 .about-section {
 	margin-top: 65px;
+}
+.developers {
+	padding-top: 20px;
+}
+/* .developers:nth-child(even) .developer-card .developer-photo {
+	order: 1;
+} */
+/* ----------developers Card---------------- */
+
+.developer-card {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 16px;
+	margin: 40px 10px;
+}
+.developer-photo {
+	border-radius: 50%;
+	width: 250px;
+	height: 250px;
+	object-fit: cover;
+}
+/* .developer-photo:nth-child(1) {
+	order: 2;
+} */
+
+.developer-title {
+	font-size: 20px;
+	margin: 16px 0;
+}
+
+.developer-role {
+	font-size: 16px;
+	color: #666;
+}
+
+.developer-description {
+	font-size: 14px;
+	color: #888;
+}
+@media screen and (max-width: 765px) {
+	.developer-card {
+		flex-direction: column;
+	}
+	.details {
+		text-align: center;
+	}
 }
 
 /* ------------------shop------------------- */
@@ -779,6 +848,12 @@ label {
 	height: 100px;
 	margin: 0 auto;
 }
+.image-prod {
+	transition: all 0.1s ease-in;
+}
+.image-prod:hover {
+	transform: scale(1.1);
+}
 .table tbody tr td.product-name {
 	width: 30%;
 }
@@ -869,7 +944,7 @@ footer {
 	flex-grow: 1;
 }
 .email-form > button,
-button:focus {
+.email-form > button:focus {
 	background-color: var(--secondary-color);
 	color: white;
 	border: none;

@@ -12,7 +12,8 @@ const CartItemsContainer = () => {
 	if (!token) {
 		navigate('/login');
 	}
-	const onDelete = async (id) => {
+	const onDelete = async (deleteId) => {
+		console.log('idd', deleteId);
 		const options = {
 			method: 'DELETE',
 			headers: {
@@ -22,15 +23,17 @@ const CartItemsContainer = () => {
 		};
 		console.log(options);
 		const responsedata = await requestServer(
-			`/deleteProductFromCart/${id}`,
+			`/deleteProductFromCart/${deleteId}`,
 			options
 		);
 		console.log('res- delete from  cart', responsedata);
 
-		const notify = () => toast.success('Item removed successfully');
+		const notify = () => toast.success(responsedata?.message);
 		notify();
 
-		const newCartItems = cartItems.filter((cartItem) => cartItem.id !== id);
+		const newCartItems = cartItems.filter(
+			(cartItem) => cartItem.productId !== deleteId
+		);
 
 		setCartItems(newCartItems);
 	};
@@ -56,7 +59,6 @@ const CartItemsContainer = () => {
 		};
 		setProducts();
 	}, [token]);
-	console.log(1);
 	return (
 		<div className="container">
 			<div className="row">
@@ -81,7 +83,7 @@ const CartItemsContainer = () => {
 											<CartItem
 												cartItem={cartItem}
 												onDelete={onDelete}
-												key={cartItem.id}
+												key={cartItem.productId}
 											/>
 										);
 									})}

@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-const Banner = () => {
+const Banner = (props) => {
+	const {
+		section,
+		title,
+		bgImageUrl = 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/bg/veggies-bg.jpg',
+	} = props;
 	return (
 		<section className="banner-section ">
 			<div
 				className="row banner align-items-center justify-content-center"
 				style={{
-					backgroundImage:
-						'url("https://ik.imagekit.io/maheshmaddhi/veggieBazaar/bg/veggies-bg.jpg")',
+					backgroundImage: `url("${bgImageUrl}")`,
 				}}>
 				<div className="col-md-9 text-center  text-white">
 					<p className="text-white ">
@@ -16,9 +20,9 @@ const Banner = () => {
 								Home
 							</Link>
 						</span>{' '}
-						<span className="">Cart</span>
+						<span className="">{section}</span>
 					</p>
-					<h1 className="">My Cart</h1>
+					<h1 className="">{title}</h1>
 				</div>
 			</div>
 		</section>
