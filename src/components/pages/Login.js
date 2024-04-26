@@ -42,6 +42,9 @@ const Login = () => {
 				const notify = () => toast.success('Login Successful');
 				notify();
 				navigate('/');
+			} else if (responsedata?.message) {
+				const notify = () => toast.success(responsedata.message);
+				notify();
 			} else {
 				const notify = () => toast.error('Something went wrong!');
 				notify();

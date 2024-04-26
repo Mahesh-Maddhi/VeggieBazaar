@@ -1,7 +1,10 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {
+	RouterProvider,
+	createBrowserRouter,
+	useLocation,
+} from 'react-router-dom';
 import Navbar from './Navbar';
 import 'react-toastify/dist/ReactToastify.css';
-
 import { ToastContainer } from 'react-toastify';
 
 import {
@@ -15,8 +18,14 @@ import {
 	Cart,
 } from '../pages';
 import { PageNotFound } from '../utils';
+import { useEffect } from 'react';
 
 const Layout = ({ children }) => {
+	const location = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location]);
 	return (
 		<>
 			<header>

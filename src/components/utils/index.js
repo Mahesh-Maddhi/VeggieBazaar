@@ -34,4 +34,5 @@ export {
   CartItemsContainer,
   Coupon,
   GoogleMap,
+
 };

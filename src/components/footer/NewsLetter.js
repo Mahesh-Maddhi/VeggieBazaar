@@ -1,6 +1,16 @@
-import React from 'react';
-
+import React, { useRef } from 'react';
+import { toast } from 'react-toastify';
 const NewsLetter = () => {
+	const emailRef = useRef(null);
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const email = emailRef.current.value;
+		const notify = () =>
+			toast(`${email} subscribed our news letter Successfully`);
+
+		notify();
+	};
 	return (
 		<section className="news-letter-section">
 			<div className="col-12 col-sm-12 col-md-12 col-lg-6">
@@ -9,8 +19,13 @@ const NewsLetter = () => {
 			</div>
 			<form
 				className="email-form row col-12 col-sm-12 col-md-12 col-lg-6"
-				onSubmit={(e) => e.preventDefault()}>
-				<input type="email" placeholder="Enter email address" />
+				onSubmit={(e) => handleSubmit(e)}>
+				<input
+					ref={emailRef}
+					type="email"
+					placeholder="Enter email address"
+					required
+				/>
 				<button type="submit">subscribe</button>
 			</form>
 		</section>

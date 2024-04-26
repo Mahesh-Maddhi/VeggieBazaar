@@ -36,7 +36,7 @@ const Signup = () => {
 		console.log(options);
 		const responsedata = await requestServer('/addUser', options);
 		console.log('res', responsedata);
-		const notify = () => toast.success(responsedata.message);
+		const notify = () => toast.success(responsedata?.message);
 		notify();
 		navigate('/login');
 

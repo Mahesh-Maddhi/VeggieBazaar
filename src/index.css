@@ -1072,6 +1072,10 @@ address .line p {
 .fade {
   animation: fade 0.8s ease-out;
 }
+
+.fadeIn {
+	animation: fadeIn 0.8s ease-out;
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
