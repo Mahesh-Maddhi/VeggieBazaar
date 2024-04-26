@@ -4,6 +4,7 @@ import CartItemsContainer from './CartItemsContainer';
 import Categories from './Categories';
 import Coupon from './Coupon';
 import DealOfTheDay from './DealOfTheDay';
+import DeveloperCard from './DeveloperCard';
 import PageNotFound from './PageNotFound';
 import Partners from './Partners';
 import ProductCard from './ProductCard';
@@ -14,7 +15,6 @@ import Spinner from './Spinner';
 import Testimonial from './Testimonial';
 import Testimonials from './Testimonials';
 import requestServer from './requestServer';
-
 export {
 	Categories,
 	DealOfTheDay,
@@ -31,5 +31,6 @@ export {
 	Banner,
 	CartItem,
 	CartItemsContainer,
+	DeveloperCard,
 	Coupon,
 };

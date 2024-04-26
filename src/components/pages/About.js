@@ -1,6 +1,5 @@
 import React from 'react';
-import { Banner, Partners, Testimonials } from '../utils';
-import DeveloperCard from '../utils/DeveloperCard';
+import { Banner, DeveloperCard, Partners, Testimonials } from '../utils';
 const About = () => {
 	const bannerDetails = {
 		section: 'About',

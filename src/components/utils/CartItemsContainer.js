@@ -14,6 +14,11 @@ const CartItemsContainer = () => {
 	}
 	const onDelete = async (deleteId) => {
 		console.log('idd', deleteId);
+		const newCartItems = cartItems.filter(
+			(cartItem) => cartItem.productId !== deleteId
+		);
+
+		setCartItems(newCartItems);
 		const options = {
 			method: 'DELETE',
 			headers: {
@@ -30,12 +35,6 @@ const CartItemsContainer = () => {
 
 		const notify = () => toast.success(responsedata?.message);
 		notify();
-
-		const newCartItems = cartItems.filter(
-			(cartItem) => cartItem.productId !== deleteId
-		);
-
-		setCartItems(newCartItems);
 	};
 	useEffect(() => {
 		const fetchProducts = async () => {
