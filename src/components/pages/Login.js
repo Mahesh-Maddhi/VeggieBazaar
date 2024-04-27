@@ -103,7 +103,9 @@ const Login = () => {
 								required
 							/>
 							{!isPassword ? (
-								<i className="fa-solid fa-eye" onClick={toggleEyeButton}></i>
+								<i
+									className="fa-solid fa-eye"
+									onClick={toggleEyeButton}></i>
 							) : (
 								<i
 									className="fa-solid fa-eye-slash"

@@ -19,8 +19,13 @@ const ShowProducts = () => {
 			console.log('set-products-from-cloud');
 			const fetchProducts = async (category) => {
 				try {
-					const productsArray = await requestServer(`/categories/${category}`);
-					return { category, products: productsArray };
+					const productsArray = await requestServer(
+						`/categories/${category}`,
+					);
+					return {
+						category,
+						products: productsArray,
+					};
 				} catch (error) {
 					console.log(error);
 					return { category, products: [] };

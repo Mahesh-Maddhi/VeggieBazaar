@@ -90,17 +90,22 @@ const ProductDetails = () => {
 					<div className="product-details-card">
 						<h3 className="product-name">{name}</h3>
 						<p className="description">
-							<strong className="text-dark">Category :</strong> {category}
+							<strong className="text-dark">Category :</strong>{' '}
+							{category}
 						</p>
 						<div className="rating-container">
 							<p className="rating">{rating}</p>
 							<p className="stars-icon-card">
-								{[...Array(Math.floor(rating))].map((_, index) => (
-									<i
-										className="fa-solid fa-star"
-										style={{ color: 'gold' }}
-										key={index}></i>
-								))}
+								{[...Array(Math.floor(rating))].map(
+									(_, index) => (
+										<i
+											className="fa-solid fa-star"
+											style={{
+												color: 'gold',
+											}}
+											key={index}></i>
+									),
+								)}
 							</p>
 							<p>
 								100 <span>Rated</span>
@@ -111,7 +116,9 @@ const ProductDetails = () => {
 						</div>
 
 						<div className="price-container">
-							<h3 className="actual-price">₹ {discounted_price}</h3>
+							<h3 className="actual-price">
+								₹ {discounted_price}
+							</h3>
 							<p className="price">₹ {price}</p>
 						</div>
 						<p className="description">{description}</p>
@@ -120,7 +127,9 @@ const ProductDetails = () => {
 								className="btn"
 								type="button"
 								onClick={() =>
-									setQuantity((prev) => (prev > 1 ? prev - 1 : prev))
+									setQuantity((prev) =>
+										prev > 1 ? prev - 1 : prev,
+									)
 								}>
 								-
 							</button>
@@ -129,7 +138,9 @@ const ProductDetails = () => {
 								type="number"
 								value={quantity}
 								min="1"
-								onChange={(e) => setQuantity(parseInt(e.target.value))}
+								onChange={(e) =>
+									setQuantity(parseInt(e.target.value))
+								}
 							/>
 							<button
 								className="btn"
@@ -159,7 +170,6 @@ const defaultProduct = {
 	rating: 0.0,
 	stock: 0,
 	category: 'category',
-	image:
-		'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/product-default-image.jpeg',
+	image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/product-default-image.jpeg',
 };
 export default ProductDetails;

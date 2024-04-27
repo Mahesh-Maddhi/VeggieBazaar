@@ -29,7 +29,9 @@ const About = () => {
 			<div className="developers">
 				<h1 className="text-center m-2">Our Team</h1>
 				{developers.map((developer) => {
-					return <DeveloperCard {...developer} key={developer.title} />;
+					return (
+						<DeveloperCard {...developer} key={developer.title} />
+					);
 				})}
 			</div>
 

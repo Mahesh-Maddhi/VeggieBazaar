@@ -10,7 +10,11 @@ const PaymentMethod = (props) => {
 				<div className="col-md-12">
 					<div className="radio">
 						<label>
-							<input type="radio" name="paymentmethod" className="mr-2" />{' '}
+							<input
+								type="radio"
+								name="paymentmethod"
+								className="mr-2"
+							/>{' '}
 							Direct Bank Tranfer
 						</label>
 					</div>
@@ -20,8 +24,12 @@ const PaymentMethod = (props) => {
 				<div className="col-md-12">
 					<div className="radio">
 						<label>
-							<input type="radio" name="paymentmethod" className="mr-2" /> Check
-							Payment
+							<input
+								type="radio"
+								name="paymentmethod"
+								className="mr-2"
+							/>{' '}
+							Check Payment
 						</label>
 					</div>
 				</div>
@@ -30,7 +38,11 @@ const PaymentMethod = (props) => {
 				<div className="col-md-12">
 					<div className="radio">
 						<label>
-							<input type="radio" name="paymentmethod" className="mr-2" />{' '}
+							<input
+								type="radio"
+								name="paymentmethod"
+								className="mr-2"
+							/>{' '}
 							Paypal
 						</label>
 					</div>
@@ -40,8 +52,8 @@ const PaymentMethod = (props) => {
 				<div className="col-md-12">
 					<div className="checkbox">
 						<label>
-							<input type="checkbox" value="" className="mr-2" /> I have read
-							and accept the terms and conditions
+							<input type="checkbox" value="" className="mr-2" />{' '}
+							I have read and accept the terms and conditions
 						</label>
 					</div>
 				</div>

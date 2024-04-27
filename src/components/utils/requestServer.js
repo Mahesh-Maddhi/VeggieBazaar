@@ -10,7 +10,7 @@ const requestServer = async (url, options = { method: 'GET' }) => {
 		if (!response.ok) {
 			console.log(response);
 			throw Error(
-				`Error Occured while Fetching with satus code ${response.status} -> ${response.statusText}`
+				`Error Occured while Fetching with satus code ${response.status} -> ${response.statusText}`,
 			);
 		}
 		const data = await response.json();

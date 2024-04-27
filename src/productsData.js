@@ -10,8 +10,7 @@ export const productsData = {
 			rating: 4.4,
 			stock: 836,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/capsicum.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/capsicum.jpg',
 		},
 		{
 			id: 2,
@@ -23,8 +22,7 @@ export const productsData = {
 			rating: 4.1,
 			stock: 769,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/carrots.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/carrots.jpg',
 		},
 		{
 			id: 3,
@@ -36,8 +34,7 @@ export const productsData = {
 			rating: 4.4,
 			stock: 767,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/broccoli.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/broccoli.jpg',
 		},
 
 		{
@@ -50,8 +47,7 @@ export const productsData = {
 			rating: 4.3,
 			stock: 811,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/cucumber.webp',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/cucumber.webp',
 		},
 		{
 			id: 5,
@@ -63,8 +59,7 @@ export const productsData = {
 			rating: 4.4,
 			stock: 627,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/cauliflower.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/cauliflower.jpg',
 		},
 		{
 			id: 6,
@@ -76,8 +71,7 @@ export const productsData = {
 			rating: 4.3,
 			stock: 826,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/tomotos.webp',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/tomotos.webp',
 		},
 
 		{
@@ -90,8 +84,7 @@ export const productsData = {
 			rating: 4,
 			stock: 645,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/potato.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/potato.jpg',
 		},
 		{
 			id: 8,
@@ -103,8 +96,7 @@ export const productsData = {
 			rating: 4.4,
 			stock: 511,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/onion.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/onion.jpg',
 		},
 		{
 			id: 9,
@@ -116,8 +108,7 @@ export const productsData = {
 			rating: 4.5,
 			stock: 630,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/beans.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/beans.jpg',
 		},
 		{
 			id: 10,
@@ -129,8 +120,7 @@ export const productsData = {
 			rating: 4.5,
 			stock: 703,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/pink-cabbage.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/pink-cabbage.jpg',
 		},
 		{
 			id: 11,
@@ -142,8 +132,7 @@ export const productsData = {
 			rating: 4.1,
 			stock: 928,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/mushroom.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/mushroom.jpg',
 		},
 
 		{
@@ -156,8 +145,7 @@ export const productsData = {
 			rating: 4.3,
 			stock: 726,
 			category: 'Vegetables',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/radish.jpeg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vegetables/radish.jpeg',
 		},
 	],
 	Fruits: [
@@ -171,8 +159,7 @@ export const productsData = {
 			rating: 4.1,
 			stock: 909,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/apple.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/apple.jpg',
 		},
 		{
 			id: 101,
@@ -184,8 +171,7 @@ export const productsData = {
 			rating: 4.2,
 			stock: 520,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/banana.webp',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/banana.webp',
 		},
 		{
 			id: 102,
@@ -197,8 +183,7 @@ export const productsData = {
 			rating: 4.1,
 			stock: 960,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/orange.jpeg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/orange.jpeg',
 		},
 		{
 			id: 103,
@@ -210,8 +195,7 @@ export const productsData = {
 			rating: 4.3,
 			stock: 866,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/grapes.webp',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/grapes.webp',
 		},
 		{
 			id: 104,
@@ -223,8 +207,7 @@ export const productsData = {
 			rating: 4.3,
 			stock: 809,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/strawberrys.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/strawberrys.jpg',
 		},
 		{
 			id: 105,
@@ -236,8 +219,7 @@ export const productsData = {
 			rating: 4.2,
 			stock: 798,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/pineapple.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/pineapple.jpg',
 		},
 		{
 			id: 106,
@@ -249,8 +231,7 @@ export const productsData = {
 			rating: 4.3,
 			stock: 797,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/mango.jpeg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/mango.jpeg',
 		},
 		{
 			id: 107,
@@ -262,8 +243,7 @@ export const productsData = {
 			rating: 4.3,
 			stock: 968,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/watermelon.webp',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/watermelon.webp',
 		},
 		{
 			id: 108,
@@ -275,8 +255,7 @@ export const productsData = {
 			rating: 4.2,
 			stock: 762,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/peach.jpeg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/peach.jpeg',
 		},
 		{
 			id: 109,
@@ -288,8 +267,7 @@ export const productsData = {
 			rating: 4.1,
 			stock: 877,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/pear.webp',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/pear.webp',
 		},
 		{
 			id: 110,
@@ -301,8 +279,7 @@ export const productsData = {
 			rating: 4.1,
 			stock: 989,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/plum.jpeg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/plum.jpeg',
 		},
 		{
 			id: 111,
@@ -314,8 +291,7 @@ export const productsData = {
 			rating: 4.4,
 			stock: 715,
 			category: 'Fruits',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/cherries.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits/cherries.jpg',
 		},
 	],
 	Juices: [
@@ -329,8 +305,7 @@ export const productsData = {
 			rating: 4.4,
 			stock: 980,
 			category: 'Juices',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/apple-juice.jpeg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/apple-juice.jpeg',
 		},
 		{
 			id: 201,
@@ -342,8 +317,7 @@ export const productsData = {
 			rating: 4.4,
 			stock: 750,
 			category: 'Juices',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/banana-smoothie.avif',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/banana-smoothie.avif',
 		},
 		{
 			id: 202,
@@ -355,8 +329,7 @@ export const productsData = {
 			rating: 4,
 			stock: 890,
 			category: 'Juices',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/orange-juice.webp',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/orange-juice.webp',
 		},
 		{
 			id: 203,
@@ -368,8 +341,7 @@ export const productsData = {
 			rating: 4.4,
 			stock: 661,
 			category: 'Juices',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/grape-juice.webp',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/grape-juice.webp',
 		},
 		{
 			id: 204,
@@ -381,8 +353,7 @@ export const productsData = {
 			rating: 4.3,
 			stock: 500,
 			category: 'Juices',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/strawberry-smoothie.jpeg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/strawberry-smoothie.jpeg',
 		},
 		{
 			id: 205,
@@ -394,8 +365,7 @@ export const productsData = {
 			rating: 4.2,
 			stock: 705,
 			category: 'Juices',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/pineapple-juice.jpeg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/pineapple-juice.jpeg',
 		},
 		{
 			id: 206,
@@ -407,8 +377,7 @@ export const productsData = {
 			rating: 4,
 			stock: 673,
 			category: 'Juices',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/mango-smoothie.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/mango-smoothie.jpg',
 		},
 		{
 			id: 207,
@@ -420,8 +389,7 @@ export const productsData = {
 			rating: 4.4,
 			stock: 697,
 			category: 'Juices',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/watermelon-juice.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juices/watermelon-juice.jpg',
 		},
 	],
 
@@ -436,8 +404,7 @@ export const productsData = {
 			rating: 4.8,
 			stock: 1200,
 			category: 'dried',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/almonds.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/almonds.jpg',
 		},
 		{
 			id: 402,
@@ -449,8 +416,7 @@ export const productsData = {
 			rating: 4.7,
 			stock: 1000,
 			category: 'dried',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/Cashews.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/Cashews.jpg',
 		},
 		{
 			id: 403,
@@ -462,8 +428,7 @@ export const productsData = {
 			rating: 4.6,
 			stock: 900,
 			category: 'dried',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/pistachios.webp',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/pistachios.webp',
 		},
 		{
 			id: 404,
@@ -475,8 +440,7 @@ export const productsData = {
 			rating: 4.5,
 			stock: 1100,
 			category: 'dried',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/walnuts.jpeg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/walnuts.jpeg',
 		},
 		{
 			id: 405,
@@ -488,8 +452,7 @@ export const productsData = {
 			rating: 4.4,
 			stock: 800,
 			category: 'dried',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/pumpkinseeds.jpeg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/pumpkinseeds.jpeg',
 		},
 		{
 			id: 406,
@@ -501,8 +464,7 @@ export const productsData = {
 			rating: 4.3,
 			stock: 950,
 			category: 'dried',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/sunflower-seeds.webp',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/sunflower-seeds.webp',
 		},
 		{
 			id: 407,
@@ -514,8 +476,7 @@ export const productsData = {
 			rating: 4.6,
 			stock: 850,
 			category: 'dried',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/Hazlenuts.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/Hazlenuts.jpg',
 		},
 		{
 			id: 408,
@@ -527,8 +488,7 @@ export const productsData = {
 			rating: 4.5,
 			stock: 1000,
 			category: 'dried',
-			image:
-				'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/chia-seeds.jpg',
+			image: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/dried/chia-seeds.jpg',
 		},
 	],
 };

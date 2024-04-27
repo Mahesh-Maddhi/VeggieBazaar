@@ -16,7 +16,9 @@ const NewsLetter = () => {
 		<section className="news-letter-section">
 			<div className="col-12 col-sm-12 col-md-12 col-lg-6">
 				<h4>Subscribe to our Newsletter</h4>
-				<p>Get e-mail updates about our latest shops and special offers</p>
+				<p>
+					Get e-mail updates about our latest shops and special offers
+				</p>
 			</div>
 			<form
 				className="email-form row col-12 col-sm-12 col-md-12 col-lg-6"
