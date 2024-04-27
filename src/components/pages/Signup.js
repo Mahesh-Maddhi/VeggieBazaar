@@ -120,7 +120,9 @@ const Signup = () => {
 						/>
 						<i
 							className={
-								isPasswordVisible ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'
+								isPasswordVisible
+									? 'fa-solid fa-eye-slash'
+									: 'fa-solid fa-eye'
 							}
 							onClick={togglePasswordVisibility}></i>
 					</div>

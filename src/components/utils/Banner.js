@@ -16,7 +16,9 @@ const Banner = (props) => {
 				<div className="col-md-9 text-center  text-white">
 					<p className="text-white ">
 						<span className="mr-2">
-							<Link to="/" className="text-decoration-none text-white">
+							<Link
+								to="/"
+								className="text-decoration-none text-white">
 								Home
 							</Link>
 						</span>{' '}

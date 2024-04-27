@@ -13,7 +13,9 @@ const Partners = () => {
 			<h3 className="heading text-center">our Partners</h3>
 			<ul className="row partners-list">
 				{partnerImageUrls.map((imageUrl, index) => (
-					<li className="col-6 col-sm-4 col-md-3 col-lg-2" key={index}>
+					<li
+						className="col-6 col-sm-4 col-md-3 col-lg-2"
+						key={index}>
 						<img
 							className="partner-image"
 							src={imageUrl}

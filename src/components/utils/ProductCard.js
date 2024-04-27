@@ -32,7 +32,9 @@ const ProductCard = ({ productDetails }) => {
 						<div className="pricing">
 							<p className="price">
 								<span className="mr-2 price-dc">₹ {price}</span>
-								<span className="price-sale">₹ {discounted_price}</span>
+								<span className="price-sale">
+									₹ {discounted_price}
+								</span>
 							</p>
 						</div>
 					</div>

@@ -15,13 +15,17 @@ const CartItem = (props) => {
 					onClick={() => onDelete(productId)}></i>
 			</td>
 			<td className="image-prod">
-				<Link className="text-decoration-none" to={`/products/${productId}`}>
+				<Link
+					className="text-decoration-none"
+					to={`/products/${productId}`}>
 					<img className="img" src={image} alt={name} />
 				</Link>
 			</td>
 			<td className="product-name">
 				<h3>
-					<Link className="text-decoration-none" to={`/products/${productId}`}>
+					<Link
+						className="text-decoration-none"
+						to={`/products/${productId}`}>
 						{name}
 					</Link>
 				</h3>

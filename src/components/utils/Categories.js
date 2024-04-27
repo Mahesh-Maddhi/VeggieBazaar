@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 const categories = [
 	{
 		category: 'Vegetables',
-		image_url: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vege-shop.jpg',
+		image_url:
+			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/vege-shop.jpg',
 	},
 	{
 		category: 'Fruits',
@@ -21,7 +22,8 @@ const categories = [
 	},
 	{
 		category: 'Dried',
-		image_url: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/cerels.jpg',
+		image_url:
+			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/cerels.jpg',
 	},
 ];
 
@@ -32,8 +34,8 @@ const Categories = () => {
 				<p className="our-products-sub-heading">Featured Products</p>
 				<h2 className="our-products-heading">Our Products</h2>
 				<p className="our-products-description">
-					Choose fresh, colorful, organic, local, seasonal vegetables for
-					optimal health.
+					Choose fresh, colorful, organic, local, seasonal vegetables
+					for optimal health.
 				</p>
 			</div>
 			<ul className="categories">
@@ -62,7 +64,9 @@ const Categories = () => {
 										src={category.image_url}
 										alt={category.category}
 									/>
-									<p className="category-label">{category.category}</p>
+									<p className="category-label">
+										{category.category}
+									</p>
 								</div>
 							</Link>
 						</li>

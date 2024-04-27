@@ -38,13 +38,20 @@ const BillingForm = (props) => {
 							<div className="icon">
 								<span className="ion-ios-arrow-down"></span>
 							</div>
-							<select name="state" id="state" className="form-control">
+							<select
+								name="state"
+								id="state"
+								className="form-control">
 								<option value="Telangana">Telangana</option>
-								<option value="Andhra Pradesh">Andhra Pradesh</option>
+								<option value="Andhra Pradesh">
+									Andhra Pradesh
+								</option>
 								<option value="Kerala">Kerala</option>
 								<option value="Karnataka">Karnataka</option>
 								<option value="Maharastra">Maharastra</option>
-								<option value="Madhya Pradesh">Madhya Pradesh</option>
+								<option value="Madhya Pradesh">
+									Madhya Pradesh
+								</option>
 							</select>
 						</div>
 					</div>
@@ -126,11 +133,19 @@ const BillingForm = (props) => {
 					<div className="form-group mt-4">
 						<div className="radio">
 							<label className="mr-3">
-								<input type="radio" name="optradio" value="createaccount" />{' '}
+								<input
+									type="radio"
+									name="optradio"
+									value="createaccount"
+								/>{' '}
 								Create an Account?{' '}
 							</label>
 							<label>
-								<input type="radio" name="optradio" value="differentaddress" />{' '}
+								<input
+									type="radio"
+									name="optradio"
+									value="differentaddress"
+								/>{' '}
 								Ship to different address
 							</label>
 						</div>

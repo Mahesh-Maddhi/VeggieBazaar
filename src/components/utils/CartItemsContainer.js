@@ -14,7 +14,7 @@ const CartItemsContainer = () => {
 	}
 	const onDelete = async (deleteId) => {
 		const newCartItems = cartItems.filter(
-			(cartItem) => cartItem.productId !== deleteId
+			(cartItem) => cartItem.productId !== deleteId,
 		);
 
 		setCartItems(newCartItems);
@@ -28,7 +28,7 @@ const CartItemsContainer = () => {
 		console.log(options);
 		const responsedata = await requestServer(
 			`/deleteProductFromCart/${deleteId}`,
-			options
+			options,
 		);
 		console.log('res- delete from  cart', responsedata);
 
@@ -90,7 +90,9 @@ const CartItemsContainer = () => {
 						{(cartItems?.length < 1 || !cartItems) && (
 							<div className="empty-cart ">
 								<h5 className="">Add items to cart</h5>
-								<Link to="/shop" className="btn primary-button ">
+								<Link
+									to="/shop"
+									className="btn primary-button ">
 									Shop Now
 								</Link>
 							</div>
@@ -124,7 +126,9 @@ const CartItemsContainer = () => {
 							<span>$17.60</span>
 						</p>
 						<p className="text-center">
-							<Link to="/checkout" className="btn  primary-button">
+							<Link
+								to="/checkout"
+								className="btn  primary-button">
 								Proceed to Checkout
 							</Link>
 						</p>

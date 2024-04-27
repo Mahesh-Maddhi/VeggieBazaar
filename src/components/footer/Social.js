@@ -6,8 +6,8 @@ const Social = () => {
 			<div className="veggie-foods">
 				<h5>Veggie Bazaar</h5>
 				<p>
-					Fresh, Flavorful, Local Produce Delivered to Your Table. Taste the
-					Difference!
+					Fresh, Flavorful, Local Produce Delivered to Your Table.
+					Taste the Difference!
 				</p>
 			</div>
 			<div className="social-icons">

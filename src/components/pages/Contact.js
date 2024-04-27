@@ -27,7 +27,10 @@ const Contact = () => {
 			body: JSON.stringify(formData),
 		};
 		console.log('options :', options);
-		const sendMessages = await requestServer('/contact/addMessage', options);
+		const sendMessages = await requestServer(
+			'/contact/addMessage',
+			options,
+		);
 		// console.log("sendMsg :", sendMessages);
 
 		const notify = () => toast.success(sendMessages?.message);
@@ -43,8 +46,8 @@ const Contact = () => {
 					<div className="col-sm-10 col-md-5 col-lg-3  ">
 						<div className="card ">
 							<p>
-								<span>Address:</span> 1-11, Secundrabad, Hyderabad, 500007,
-								Telangana, India.
+								<span>Address:</span> 1-11, Secundrabad,
+								Hyderabad, 500007, Telangana, India.
 							</p>
 						</div>
 					</div>
@@ -65,7 +68,8 @@ const Contact = () => {
 					<div className="  col-sm-10 col-md-5 col-lg-3 ">
 						<div className="card ">
 							<p>
-								<span>Website:</span> https://helpdesk.veggiebazaar.com
+								<span>Website:</span>{' '}
+								https://helpdesk.veggiebazaar.com
 							</p>
 						</div>
 					</div>
@@ -122,7 +126,9 @@ const Contact = () => {
 								// required
 							></textarea>
 						</div>
-						<button type="submit" className="button button-text py-3 px-5 mt-4">
+						<button
+							type="submit"
+							className="button button-text py-3 px-5 mt-4">
 							Send Message
 						</button>
 					</form>

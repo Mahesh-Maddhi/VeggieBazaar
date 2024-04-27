@@ -15,12 +15,13 @@ const Home = () => {
 		<div>
 			<section className="home-section">
 				<h1 className="welcome-heading">
-					Welcome to <span>Veggie Bazaar</span>!!!...
+					Welcome to <span>Veggie Bazaar</span>
+					!!!...
 				</h1>
 				{!isLogin ? (
 					<p className="welcome-para">
-						Please <Link to="/login">Login</Link> to Shop and access the all
-						features.
+						Please <Link to="/login">Login</Link> to Shop and access
+						the all features.
 					</p>
 				) : (
 					<p className="fadeIn">
