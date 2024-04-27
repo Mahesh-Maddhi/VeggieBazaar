@@ -16,6 +16,9 @@ import Testimonial from './Testimonial';
 import Testimonials from './Testimonials';
 import requestServer from './requestServer';
 import GoogleMap from './GoogleMap';
+import CartTotal from './CartTotal';
+import BillingForm from './BillingForm';
+import PaymentMethod from './PaymentMethod';
 export {
 	Categories,
 	DealOfTheDay,
@@ -35,4 +38,7 @@ export {
 	DeveloperCard,
 	Coupon,
 	GoogleMap,
+	BillingForm,
+	PaymentMethod,
+	CartTotal,
 };

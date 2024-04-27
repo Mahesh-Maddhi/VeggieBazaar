@@ -7,7 +7,6 @@ import Login from './Login';
 import ProductDetails from './ProductDetails';
 import Shop from './Shop';
 import Signup from './Signup';
-
 export {
 	About,
 	Contact,
