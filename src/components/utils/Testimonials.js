@@ -27,7 +27,7 @@ const testimonials = [
 		imageUrl: 'https://avatars.githubusercontent.com/u/160470088?v=4',
 	},
 	{
-		name: 'Ram',
+		name: 'Satish',
 		review: "The vegetables I received were incredibly fresh and flavorful. I'm impressed with the quality and prompt delivery!",
 		imageUrl:
 			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/default-user-grey.webp',

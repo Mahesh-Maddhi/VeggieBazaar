@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 const PaymentMethod = (props) => {
-	const { handleOrder } = props.onOrder;
+	const { handleOrder } = props;
+	console.log(props);
 	console.log(handleOrder);
 	return (
-		<div className="cart-detail p-3 p-md-4">
+		<form
+			className="cart-detail p-3 p-md-4"
+			onSubmit={(e) => handleOrder(e)}>
 			<h3 className="billing-heading mb-4">Payment Method</h3>
 			<div className="form-group">
 				<div className="col-md-12">
@@ -52,21 +54,25 @@ const PaymentMethod = (props) => {
 				<div className="col-md-12">
 					<div className="checkbox">
 						<label>
-							<input type="checkbox" value="" className="mr-2" />{' '}
+							<input
+								type="checkbox"
+								value=""
+								className="mr-2"
+								required
+							/>{' '}
 							I have read and accept the terms and conditions
 						</label>
 					</div>
 				</div>
 			</div>
 			<p>
-				<Link
-					to="/shop"
+				<button
 					className="btn button primary-button  px-4"
-					onClick={() => handleOrder()}>
+					type="submit">
 					Place an order
-				</Link>
+				</button>
 			</p>
-		</div>
+		</form>
 	);
 };
 

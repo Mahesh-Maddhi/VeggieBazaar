@@ -18,7 +18,7 @@ import {
 	Cart,
 	CheckOut,
 } from '../pages';
-import { PageNotFound } from '../utils';
+import { PageNotFound, ScrollToTop } from '../utils';
 import { useEffect } from 'react';
 
 const Layout = ({ children }) => {
@@ -32,6 +32,7 @@ const Layout = ({ children }) => {
 			<header>
 				<Navbar />
 				<ToastContainer position="bottom-right" />
+				<ScrollToTop />
 			</header>
 			<main>{children}</main>
 		</>

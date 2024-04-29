@@ -1,9 +1,9 @@
 import React from 'react';
 
 const BillingForm = (props) => {
-	const { handleSubmit } = props.onSubmit;
+	const { handleBilling } = props;
 	return (
-		<form className="billing-form" onSubmit={(e) => handleSubmit(e)}>
+		<form className="billing-form" onSubmit={(e) => handleBilling(e)}>
 			<h3 className="mb-4 billing-heading">Billing Details</h3>
 			<div className="row align-items-end">
 				<div className="col-md-6">
@@ -26,23 +26,25 @@ const BillingForm = (props) => {
 							className="form-control"
 							placeholder=""
 							required
-							name="LastName"
+							name="lastName"
 						/>
 					</div>
 				</div>
-				<div className="w-100"></div>
+
 				<div className="col-md-12">
 					<div className="form-group">
 						<label htmlFor="state">State </label>
 						<div className="select-wrap">
 							<div className="icon">
-								<span className="ion-ios-arrow-down"></span>
+								<span className="fa-solid fa-angle-down"></span>
 							</div>
 							<select
 								name="state"
 								id="state"
 								className="form-control">
-								<option value="Telangana">Telangana</option>
+								<option value="Telangana" selected>
+									Telangana
+								</option>
 								<option value="Andhra Pradesh">
 									Andhra Pradesh
 								</option>
@@ -56,54 +58,56 @@ const BillingForm = (props) => {
 						</div>
 					</div>
 				</div>
-				<div className="w-100"></div>
+
 				<div className="col-md-6">
 					<div className="form-group">
-						<label htmlFor="streetaddress">Street Address</label>
+						<label htmlFor="street">Street Address</label>
 						<input
 							type="text"
 							className="form-control"
 							placeholder="House number and street name"
 							required
-							name="streetaddress"
+							name="street"
 						/>
 					</div>
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
+						<label htmlFor="street">Village / Mandal</label>
 						<input
 							type="text"
 							className="form-control"
-							placeholder="Appartment, suite, unit etc: (optional)"
+							placeholder="village/Mandal"
+							name="mandal"
 						/>
 					</div>
 				</div>
-				<div className="w-100"></div>
+
 				<div className="col-md-6">
 					<div className="form-group">
-						<label htmlFor="towncity">Town / City</label>
-						<input
-							type="text"
-							className="form-control"
-							placeholder=""
-							required
-							name="towncity"
-						/>
-					</div>
-				</div>
-				<div className="col-md-6">
-					<div className="form-group">
-						<label htmlFor="postcodezip">Postcode / ZIP *</label>
+						<label htmlFor="district">District / City</label>
 						<input
 							type="text"
 							className="form-control"
 							placeholder=""
 							required
-							name="postcodezip"
+							name="district"
 						/>
 					</div>
 				</div>
-				<div className="w-100"></div>
+				<div className="col-md-6">
+					<div className="form-group">
+						<label htmlFor="pincode">pincode / ZIP *</label>
+						<input
+							type="text"
+							className="form-control"
+							placeholder=""
+							required
+							name="pincode"
+						/>
+					</div>
+				</div>
+
 				<div className="col-md-6">
 					<div className="form-group">
 						<label htmlFor="phone">Phone</label>
@@ -124,32 +128,41 @@ const BillingForm = (props) => {
 							className="form-control"
 							placeholder=""
 							required
-							name="emailaddress"
+							name="email"
 						/>
 					</div>
 				</div>
-				<div className="w-100"></div>
 				<div className="col-md-12">
-					<div className="form-group mt-4">
-						<div className="radio">
-							<label className="mr-3">
+					<div className="form-group">
+						<div className="radio d-flex align-items-center flex-wrap">
+							<label className="mr-5">
 								<input
 									type="radio"
-									name="optradio"
-									value="createaccount"
-								/>{' '}
-								Create an Account?{' '}
+									className="mr-2"
+									required
+									name="shippingAddress"
+									value="previousAddress"
+								/>
+								Use Previous Address
 							</label>
 							<label>
 								<input
 									type="radio"
-									name="optradio"
-									value="differentaddress"
-								/>{' '}
-								Ship to different address
+									className="mr-2"
+									required
+									name="shippingAddress"
+									value="newAddress"
+								/>
+								Use New Address
 							</label>
 						</div>
 					</div>
+				</div>
+
+				<div className="col-md-12">
+					<button type="submit" className="btn button primary-button">
+						Update Address
+					</button>
 				</div>
 			</div>
 		</form>
