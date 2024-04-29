@@ -10,7 +10,7 @@ const partnerImageUrls = [
 const Partners = () => {
 	return (
 		<section className="partners-section mt-5">
-			<h3 className="heading text-center">our Partners</h3>
+			<h3 className="heading text-center">Our Partners</h3>
 			<ul className="row partners-list">
 				{partnerImageUrls.map((imageUrl, index) => (
 					<li

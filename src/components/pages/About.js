@@ -26,11 +26,16 @@ const About = () => {
 	return (
 		<section className="about-section">
 			<Banner {...bannerDetails} />
-			<div className="developers">
-				<h1 className="text-center m-2">Our Team</h1>
+			<h1 className="text-center m-4">Our Team</h1>
+			<div className="developers d-flex flex-wrap">
 				{developers.map((developer) => {
 					return (
-						<DeveloperCard {...developer} key={developer.title} />
+						<div className="col-12 col-md-6">
+							<DeveloperCard
+								{...developer}
+								key={developer.title}
+							/>
+						</div>
 					);
 				})}
 			</div>
