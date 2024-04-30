@@ -62,10 +62,13 @@ const Home = () => {
 			</section>
 			<section className="services-section">
 				<div className="container">
+					<h3 className="mt-5 text-center">Our Services</h3>
 					<div className="row py-5">
 						{services.map((service) => {
 							return (
-								<div className="col-md-3 text-center d-flex align-self-stretch ">
+								<div
+									className="col-md-3 text-center d-flex align-self-stretch "
+									key={services.title}>
 									<div className="media services mb-md-0 mb-4 border py-4 px-3 rounded shadow">
 										<div
 											className={`icon active d-flex justify-content-center align-items-center mb-2 bg-${service.backgroundColor}`}>
