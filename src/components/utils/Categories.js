@@ -16,7 +16,7 @@ const categories = [
 		image_url: 'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/juice.jpg',
 	},
 	{
-		category: '',
+		category: 'All',
 		image_url:
 			'https://ik.imagekit.io/maheshmaddhi/veggieBazaar/all-vegetables.jpg',
 	},

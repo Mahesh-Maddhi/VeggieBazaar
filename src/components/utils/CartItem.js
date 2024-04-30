@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 const CartItem = (props) => {
-	console.log('prop', props);
 	const { onDelete } = props;
 	const { productId, name, image, discounted_price, description, quantity } =
 		props.cartItem;

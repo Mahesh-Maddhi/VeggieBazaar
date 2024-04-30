@@ -18,11 +18,11 @@ const Banner = (props) => {
 						<span className="mr-2">
 							<Link
 								to="/"
-								className="text-decoration-none text-white">
+								className="text-decoration-none text-white font-weight-bold ">
 								Home
 							</Link>
 						</span>{' '}
-						<span className="">{section}</span>
+						<span className="font-weight-bold">{section}</span>
 					</p>
 					<h1 className="">{title}</h1>
 				</div>

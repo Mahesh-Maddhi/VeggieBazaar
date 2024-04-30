@@ -22,6 +22,7 @@ import PaymentMethod from './PaymentMethod';
 import UserDetails from './UserDetails';
 import Address from './Address';
 import Logout from './Logout';
+import ScrollToTop from './ScrollToTop';
 export {
 	Categories,
 	DealOfTheDay,
@@ -47,4 +48,5 @@ export {
 	UserDetails,
 	Address,
 	Logout,
+	ScrollToTop,
 };

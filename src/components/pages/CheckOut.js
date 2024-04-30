@@ -6,12 +6,21 @@ const CheckOut = () => {
 		section: 'Checkout',
 		title: 'Check Out',
 	};
-	const handleSubmit = (e) => {
+	const handleBilling = (e) => {
 		e.preventDefault();
 		console.log(e.target);
+		const formData = new FormData(e.target);
+		const formObject = Array.from(formData.entries()).reduce(
+			(acc, [key, value]) => {
+				acc[key] = value;
+				return acc;
+			},
+			{},
+		);
+		console.log(formObject);
 	};
-	const handleOrder = () => {
-		console.log('hello');
+	const handleOrder = (e) => {
+		e.preventDefault();
 		toast.success('Order Placed Successfully');
 	};
 
@@ -20,7 +29,7 @@ const CheckOut = () => {
 			<Banner {...bannerDetails} />
 			<div className="container mt-3">
 				<div className="row justify-content-center">
-					<BillingForm onSubmit={handleSubmit} />
+					<BillingForm handleBilling={handleBilling} />
 					<div className="col-xl-7"></div>
 					<div className="col-xl-5">
 						<div className="row mt-5 pt-3">
@@ -28,7 +37,7 @@ const CheckOut = () => {
 								<CartTotal />
 							</div>
 							<div className="col-md-12">
-								<PaymentMethod onOrder={handleOrder} />
+								<PaymentMethod handleOrder={handleOrder} />
 							</div>
 						</div>
 					</div>

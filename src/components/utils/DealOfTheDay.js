@@ -14,9 +14,10 @@ const DealOfTheDay = () => {
 					Spinach <br />
 					<span>
 						<span className="price align">
-							<strong>₹60 </strong>
+							<strong style={{ fontSize: '25px' }}>₹60 </strong>
 						</span>
-						now <strong>₹35</strong> only
+						now <strong style={{ fontSize: '30px' }}>₹35</strong>{' '}
+						only
 					</span>
 				</p>
 			</div>
