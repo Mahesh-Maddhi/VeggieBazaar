@@ -47,9 +47,9 @@ code {
 .spinner {
 	height: 60px;
 	width: 60px;
-	border: 6px solid rgb(241, 241, 241);
+	border: 6px solid var(--main-color);
 	border-radius: 50%;
-	border-bottom-color: var(--main-color);
+	border-bottom-color: transparent;
 	animation: loading 0.8s linear infinite;
 }
 
@@ -430,8 +430,29 @@ form .icon:active {
 	.details {
 		text-align: center;
 	}
+	.developer-description {
+		text-align: left;
+	}
 }
+/* --------------search-------------------- */
 
+.search-section {
+	margin-top: 65px;
+	min-height: 100dvh;
+}
+.empty-search-results {
+	height: 80dvh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.search-results {
+	min-height: 60dvh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
 /* ------------------shop------------------- */
 .shop-section {
 	margin-top: 65px;
@@ -503,6 +524,8 @@ form .icon:active {
 .product-container {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 	padding: 30px;
 }
 
@@ -510,7 +533,8 @@ form .icon:active {
 .product {
 	display: block;
 	width: 100%;
-	margin: 20px;
+	max-width: 450px;
+	margin: 20px auto;
 	position: relative;
 	transition: all 0.3s ease;
 	border: 1px solid #f0f0f0;

@@ -20,7 +20,7 @@ import {
 } from '../pages';
 import { PageNotFound, ScrollToTop } from '../utils';
 import { useEffect } from 'react';
-
+import SearchResults from '../pages/SearchResults';
 const Layout = ({ children }) => {
 	const location = useLocation();
 
@@ -110,6 +110,14 @@ const Header = () => {
 			element: (
 				<Layout>
 					<CheckOut />
+				</Layout>
+			),
+		},
+		{
+			path: '/search',
+			element: (
+				<Layout>
+					<SearchResults />
 				</Layout>
 			),
 		},

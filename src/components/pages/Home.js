@@ -60,20 +60,20 @@ const Home = () => {
 					</p>
 				)}
 			</section>
-			<section class="services-section">
-				<div class="container">
-					<div class="row py-5">
+			<section className="services-section">
+				<div className="container">
+					<div className="row py-5">
 						{services.map((service) => {
 							return (
-								<div class="col-md-3 text-center d-flex align-self-stretch ">
-									<div class="media services mb-md-0 mb-4 border py-4 px-3 rounded shadow">
+								<div className="col-md-3 text-center d-flex align-self-stretch ">
+									<div className="media services mb-md-0 mb-4 border py-4 px-3 rounded shadow">
 										<div
-											class={`icon active d-flex justify-content-center align-items-center mb-2 bg-${service.backgroundColor}`}>
+											className={`icon active d-flex justify-content-center align-items-center mb-2 bg-${service.backgroundColor}`}>
 											<span
-												class={`fa-solid fa-${service.icon}`}></span>
+												className={`fa-solid fa-${service.icon}`}></span>
 										</div>
-										<div class="media-body">
-											<h3 class="heading">
+										<div className="media-body">
+											<h3 className="heading">
 												{service.title}
 											</h3>
 											<span>{service.description}</span>
