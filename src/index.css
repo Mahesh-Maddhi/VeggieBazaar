@@ -495,6 +495,26 @@ form .icon:active {
 .price {
 	color: #ad6f8c;
 }
+@media screen and (min-width: 768px) {
+	.deal-div {
+		margin-right: 0.5rem;
+	}
+}
+@media screen and (min-width: 992px) {
+	.deal-div {
+		margin-right: 2rem;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.deal-div {
+		margin-right: 2rem;
+	}
+}
+@media screen and (min-width: 1440px) {
+	.deal-div {
+		margin-right: 8rem;
+	}
+}
 
 /* ----------------shop/categories-card----------- */
 .category-heading {
@@ -806,6 +826,28 @@ form .icon:active {
 	padding: 20px;
 	border-radius: 5px;
 }
+.map-form-card row {
+	gap: 1rem;
+}
+@media screen and (max-width: 992px) {
+	.card {
+		margin-top: 1.5rem;
+	}
+}
+@media screen and (max-width: 375px) {
+	.button-text {
+		font-size: 1rem !important;
+		border-radius: 2rem;
+		padding-left: 2rem !important;
+		padding-right: 2rem !important;
+	}
+}
+@media screen and (max-width: 768px) {
+	.map {
+		margin-bottom: 2rem;
+	}
+}
+
 /* ----------------login and register-------------------- */
 .register-section {
 	margin-top: 65px;
@@ -1101,7 +1143,18 @@ label {
 	font-size: 23px;
 	text-decoration: none;
 }
-/* ---------------page-not-found ------------- */
+.dashboard-login {
+	align-items: center;
+}
+.x-icon {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: clamp(20px, 25px, 40px);
+	cursor: pointer;
+}
+
+/* --------------------------------------------page-not-found ------------------------------------------------------ */
 
 .page-not-found {
 	height: 80vh;
@@ -1315,3 +1368,17 @@ address .line p {
 		transform: translate3d(0, 0, 0);
 	}
 }
+@media screen and (max-width: 368px) {
+	.email-form > button {
+		margin-top: 1rem;
+		align-items: center;
+	}
+}
+
+/* <---------------------------- Logout ~ start------------------------------------------> */
+.logout-btn {
+	font-size: calc(1rem, 1.5rem, 6rem) !important;
+	font-weight: 600;
+	border-radius: 2rem;
+}
+/* <---------------------------- Logout ~ end------------------------------------------> */
