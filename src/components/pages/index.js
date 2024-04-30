@@ -7,6 +7,7 @@ import Login from './Login';
 import ProductDetails from './ProductDetails';
 import Shop from './Shop';
 import Signup from './Signup';
+import Dashboard from './Dashboard';
 export {
 	About,
 	Contact,
@@ -17,4 +18,5 @@ export {
 	ProductDetails,
 	Cart,
 	CheckOut,
+	Dashboard,
 };

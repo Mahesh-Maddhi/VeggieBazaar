@@ -14,6 +14,7 @@ const Navbar = () => {
 			<Link to="/" className="navbar-brand">
 				VeggieBazaar
 			</Link>
+
 			<button
 				className="navbar-toggler"
 				type="button"
@@ -35,6 +36,10 @@ const Navbar = () => {
 				</ul>
 				<Search />
 				<div className="items">
+					<Link
+						to="/dashboard"
+						className="fa-solid fa-user icon mx-3 "
+						style={{ color: '#ad6f8c' }}></Link>
 					<Link to="/cart" className="fa-solid fa-cart-shopping icon">
 						{/* <span className="cart-items-count">0</span> */}
 					</Link>

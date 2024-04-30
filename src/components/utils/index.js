@@ -19,6 +19,9 @@ import GoogleMap from './GoogleMap';
 import CartTotal from './CartTotal';
 import BillingForm from './BillingForm';
 import PaymentMethod from './PaymentMethod';
+import UserDetails from './UserDetails';
+import Address from './Address';
+import Logout from './Logout';
 import ScrollToTop from './ScrollToTop';
 export {
 	Categories,
@@ -42,5 +45,8 @@ export {
 	BillingForm,
 	PaymentMethod,
 	CartTotal,
+	UserDetails,
+	Address,
+	Logout,
 	ScrollToTop,
 };

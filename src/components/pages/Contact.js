@@ -76,7 +76,7 @@ const Contact = () => {
 				</div>
 			</div>
 			<div className="container ">
-				<div className="map-form-card row justify-content-between g-5">
+				<div className="map-form-card row justify-content-between gap-5">
 					<div className="map  col-lg-6 ">
 						<GoogleMap />
 					</div>
