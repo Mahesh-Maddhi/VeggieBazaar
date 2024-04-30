@@ -26,7 +26,7 @@ const ScrollToTop = () => {
 		<div>
 			{isVisible && (
 				<button className="scroll-to-top-btn" onClick={scrollToTop}>
-					<i class="fa-solid fa-angles-up"></i>
+					<i className="fa-solid fa-angles-up"></i>
 				</button>
 			)}
 		</div>
