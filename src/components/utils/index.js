@@ -19,6 +19,9 @@ import GoogleMap from './GoogleMap';
 import CartTotal from './CartTotal';
 import BillingForm from './BillingForm';
 import PaymentMethod from './PaymentMethod';
+import UserDetails from './UserDetails';
+import Address from './Address';
+import Logout from './Logout';
 export {
 	Categories,
 	DealOfTheDay,
@@ -41,4 +44,7 @@ export {
 	BillingForm,
 	PaymentMethod,
 	CartTotal,
+	UserDetails,
+	Address,
+	Logout,
 };

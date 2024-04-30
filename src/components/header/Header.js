@@ -17,6 +17,7 @@ import {
 	ProductDetails,
 	Cart,
 	CheckOut,
+	Dashboard,
 } from '../pages';
 import { PageNotFound } from '../utils';
 import { useEffect } from 'react';
@@ -109,6 +110,14 @@ const Header = () => {
 			element: (
 				<Layout>
 					<CheckOut />
+				</Layout>
+			),
+		},
+		{
+			path: '/dashboard',
+			element: (
+				<Layout>
+					<Dashboard />
 				</Layout>
 			),
 		},

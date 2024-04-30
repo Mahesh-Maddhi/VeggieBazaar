@@ -963,6 +963,23 @@ label {
 	display: block;
 	width: 100%;
 }
+
+/* -------------dash-board------------- */
+.dashboard-section {
+	margin-top: 65px;
+}
+.add-button {
+	width: 100px;
+	height: 100px;
+}
+.add-button:hover {
+	text-decoration: none;
+}
+.add-button .icon {
+	color: var(--secondary-color);
+	font-size: 23px;
+	text-decoration: none;
+}
 /* ---------------page-not-found ------------- */
 
 .page-not-found {
