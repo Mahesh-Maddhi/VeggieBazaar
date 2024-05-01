@@ -8,25 +8,25 @@ const BillingForm = (props) => {
 			<div className="row align-items-end">
 				<div className="col-md-6">
 					<div className="form-group">
-						<label htmlFor="firstname">First Name</label>
+						<label htmlFor="fullName">Full Name</label>
 						<input
 							type="text"
 							className="form-control"
 							placeholder=""
 							required
-							name="firstName"
+							name="fullName"
 						/>
 					</div>
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label htmlFor="lastname">Last Name</label>
+						<label htmlFor="landmark">Land Mark</label>
 						<input
 							type="text"
 							className="form-control"
 							placeholder=""
 							required
-							name="lastName"
+							name="landmark"
 						/>
 					</div>
 				</div>
@@ -73,7 +73,7 @@ const BillingForm = (props) => {
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label htmlFor="street">Village / Mandal</label>
+						<label htmlFor="mandal">Village / Mandal</label>
 						<input
 							type="text"
 							className="form-control"
@@ -110,13 +110,13 @@ const BillingForm = (props) => {
 
 				<div className="col-md-6">
 					<div className="form-group">
-						<label htmlFor="phone">Phone</label>
+						<label htmlFor="mobile">Mobile</label>
 						<input
 							type="text"
 							className="form-control"
 							placeholder=""
 							required
-							name="phone"
+							name="mobile"
 						/>
 					</div>
 				</div>

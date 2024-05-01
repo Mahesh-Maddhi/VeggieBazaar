@@ -3,22 +3,6 @@ import { Banner, UserDetails, Address, Logout, requestServer } from '../utils';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 const Dashboard = () => {
-	// const addresses = [
-	// 	{
-	// 		street: 'Manikeshwari nagar',
-	// 		apartment: '',
-	// 		city: 'Hyderabad',
-	// 		postcode: '500007',
-	// 		state: 'Telangana',
-	// 	},
-	// 	{
-	// 		street: 'Tekulapally',
-	// 		apartment: "kummari's Apartments",
-	// 		city: 'Vikarabad',
-	// 		postcode: '500007',
-	// 		state: 'Telangana',
-	// 	},
-	// ];
 	const bannerDetails = {
 		section: 'Dashboard',
 		title: 'Dashboard',
@@ -28,11 +12,11 @@ const Dashboard = () => {
 	const navigate = useNavigate();
 
 	const token = localStorage.getItem('auth_token');
-	if (!token) {
-		navigate('/login');
-	}
 
 	const removeAddress = async (id) => {
+		if (!token) {
+			navigate('/login');
+		}
 		const newAddresses = userDetails.addresses.filter(
 			(address) => address._id !== id,
 		);
@@ -41,7 +25,6 @@ const Dashboard = () => {
 			...prev,
 			addresses: newAddresses,
 		}));
-		console.log('aftr', userDetails);
 
 		const options = {
 			method: 'DELETE',
@@ -113,14 +96,20 @@ const Dashboard = () => {
 			)}
 			{!token && (
 				<div className="text-center">
-					<h2 className="text-center mt-5">Please Login</h2>
-					<button
-						className="btn button primary-button px-4 mt-3"
-						onClick={() => {
-							navigate('/login');
-						}}>
+					<h3 className="text-center mt-5">
+						Hi User Please <strong>Login/Signup</strong> To Access
+						Your Details
+					</h3>
+					<Link
+						to="/login"
+						className="btn button primary-button px-4 mt-3">
 						Login
-					</button>
+					</Link>
+					<Link
+						to="/signup"
+						className="btn button primary-button px-4 mt-3 ml-3">
+						Sign Up
+					</Link>
 				</div>
 			)}
 		</section>

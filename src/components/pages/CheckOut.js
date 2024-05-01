@@ -1,14 +1,27 @@
 import React from 'react';
-import { Banner, BillingForm, CartTotal, PaymentMethod } from '../utils';
+import {
+	Banner,
+	BillingForm,
+	CartTotal,
+	PaymentMethod,
+	requestServer,
+} from '../utils';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 const CheckOut = () => {
+	const navigate = useNavigate();
 	const bannerDetails = {
 		section: 'Checkout',
 		title: 'Check Out',
 	};
-	const handleBilling = (e) => {
+	const token = localStorage.getItem('auth_token');
+	const handleBilling = async (e) => {
 		e.preventDefault();
-		console.log(e.target);
+		if (!token) {
+			toast.error('Need to Login before adding Address');
+			navigate('/login');
+		}
+
 		const formData = new FormData(e.target);
 		const formObject = Array.from(formData.entries()).reduce(
 			(acc, [key, value]) => {
@@ -17,7 +30,24 @@ const CheckOut = () => {
 			},
 			{},
 		);
-		console.log(formObject);
+		const options = {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `BEARER ${token}`,
+			},
+			body: JSON.stringify(formObject),
+		};
+		try {
+			const response = await requestServer('/addAddress', options);
+			if (response) {
+				toast.success(response.message);
+				e.target.reset();
+			}
+		} catch (error) {
+			console.log(error);
+			toast.error(error.message);
+		}
 	};
 	const handleOrder = (e) => {
 		e.preventDefault();

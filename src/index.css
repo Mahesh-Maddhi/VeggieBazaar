@@ -1151,6 +1151,13 @@ label {
 	min-height: 210px;
 }
 
+.payment-img {
+	width: 100%;
+	object-fit: cover;
+	margin-top: 20px;
+	border-radius: 1rem;
+}
+
 /* -------------dash-board------------- */
 .dashboard-section {
 	margin-top: 65px;

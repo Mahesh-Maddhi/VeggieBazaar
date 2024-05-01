@@ -115,15 +115,14 @@ const Header = () => {
 			),
 		},
 		{
-
 			path: '/dashboard',
 			element: (
 				<Layout>
 					<Dashboard />
-        </Layout>),
-        },
-        {
-
+				</Layout>
+			),
+		},
+		{
 			path: '/search',
 			element: (
 				<Layout>
