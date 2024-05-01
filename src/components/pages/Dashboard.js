@@ -34,7 +34,6 @@ const Dashboard = () => {
 			},
 		};
 		const response = await requestServer(`/deleteAddress/${id}`, options);
-		console.log(response);
 		if (response) {
 			const notify = () => toast.success(response.message);
 			notify();
@@ -50,12 +49,10 @@ const Dashboard = () => {
 		};
 		const fetchDetails = async () => {
 			const data = await requestServer(`/userDetails`, options);
-			// console.log('data', data);
 			setUserDetails(data);
 		};
 		fetchDetails();
 	}, [token]);
-	console.log('userData', userDetails);
 
 	return (
 		<section className="dashboard-section">
@@ -71,7 +68,6 @@ const Dashboard = () => {
 							<div className="row align-items-center">
 								{userDetails?.addresses?.length > 0 &&
 									userDetails?.addresses.map((address) => {
-										console.log(address);
 										return (
 											<Address
 												{...address}

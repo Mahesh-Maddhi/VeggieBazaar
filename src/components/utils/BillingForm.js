@@ -79,6 +79,7 @@ const BillingForm = (props) => {
 							className="form-control"
 							placeholder="village/Mandal"
 							name="mandal"
+							required
 						/>
 					</div>
 				</div>
@@ -139,7 +140,6 @@ const BillingForm = (props) => {
 								<input
 									type="radio"
 									className="mr-2"
-									required
 									name="shippingAddress"
 									value="previousAddress"
 								/>
@@ -149,7 +149,6 @@ const BillingForm = (props) => {
 								<input
 									type="radio"
 									className="mr-2"
-									required
 									name="shippingAddress"
 									value="newAddress"
 								/>

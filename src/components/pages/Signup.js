@@ -25,7 +25,6 @@ const Signup = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log(formData);
 		const options = {
 			method: 'POST',
 			headers: {
@@ -33,9 +32,7 @@ const Signup = () => {
 			},
 			body: JSON.stringify(formData),
 		};
-		console.log(options);
 		const responsedata = await requestServer('/addUser', options);
-		console.log('res', responsedata);
 		const notify = () => toast.success(responsedata?.message);
 		notify();
 		navigate('/login');

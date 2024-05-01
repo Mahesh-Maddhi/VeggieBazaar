@@ -8,6 +8,7 @@ import ProductDetails from './ProductDetails';
 import Shop from './Shop';
 import Signup from './Signup';
 import Dashboard from './Dashboard';
+import SearchResults from './SearchResults';
 export {
 	About,
 	Contact,
@@ -19,4 +20,5 @@ export {
 	Cart,
 	CheckOut,
 	Dashboard,
+	SearchResults,
 };

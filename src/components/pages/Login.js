@@ -4,7 +4,6 @@ import { requestServer } from '../utils';
 import { toast } from 'react-toastify';
 const Login = () => {
 	const navigate = useNavigate();
-	console.log('rendered');
 	useEffect(() => {
 		const token = localStorage.getItem('auth_token');
 		if (token) {
@@ -36,7 +35,6 @@ const Login = () => {
 				body: JSON.stringify(user),
 			};
 			const responsedata = await requestServer('/login', options);
-			console.log('res', responsedata);
 			if (responsedata?.token) {
 				localStorage.setItem('auth_token', responsedata.token);
 				const notify = () => toast.success('Login Successful');

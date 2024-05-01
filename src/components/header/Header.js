@@ -18,10 +18,10 @@ import {
 	Cart,
 	CheckOut,
 	Dashboard,
+	SearchResults,
 } from '../pages';
 import { PageNotFound, ScrollToTop } from '../utils';
 import { useEffect } from 'react';
-import SearchResults from '../pages/SearchResults';
 const Layout = ({ children }) => {
 	const location = useLocation();
 

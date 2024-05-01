@@ -29,9 +29,7 @@ const ProductDetails = () => {
 			},
 			body: JSON.stringify(data),
 		};
-		console.log(options);
 		const responsedata = await requestServer('/addToCart', options);
-		console.log('res-addto cart', responsedata);
 		if (responsedata) {
 			const notify = () => toast.success(responsedata?.message);
 

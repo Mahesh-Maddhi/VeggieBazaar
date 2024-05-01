@@ -12,13 +12,11 @@ const SearchResults = () => {
 	const [isLoading, setLoading] = useState(true);
 	const query = useQuery();
 	const q = query.get('q');
-	console.log(query, q);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			setLoading(true);
 			const responseData = await requestServer(`/search?q=${q}`);
-			console.log('res', responseData);
 			if (responseData?.length) {
 				setProducts(responseData);
 				setIsEmpty(false);
@@ -30,7 +28,6 @@ const SearchResults = () => {
 		};
 		fetchData();
 	}, [q]);
-	console.log(products);
 
 	return (
 		<section className="search-section">

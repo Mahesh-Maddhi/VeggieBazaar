@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+
 const requestServer = async (url, options = { method: 'GET' }) => {
 	if (url.startsWith('/')) {
 		url = `https://veggie-bazaar-backend-mongodb.vercel.app${url}`;
@@ -17,6 +19,8 @@ const requestServer = async (url, options = { method: 'GET' }) => {
 		console.log('responsedata', data);
 		return data;
 	} catch (error) {
+		toast.error('Something went wrong');
+		toast.error(error.message);
 		console.log(error.message);
 	}
 };

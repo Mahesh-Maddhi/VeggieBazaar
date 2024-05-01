@@ -17,8 +17,7 @@ const Contact = () => {
 			subject: e.target.elements.subject.value.trim(),
 			message: e.target.elements.message.value.trim(),
 		};
-		// console.log("form-data :", formData);
-		// connect to db here
+
 		const options = {
 			method: 'POST',
 			headers: {
@@ -26,12 +25,10 @@ const Contact = () => {
 			},
 			body: JSON.stringify(formData),
 		};
-		console.log('options :', options);
 		const sendMessages = await requestServer(
 			'/contact/addMessage',
 			options,
 		);
-		// console.log("sendMsg :", sendMessages);
 
 		const notify = () => toast.success(sendMessages?.message);
 		notify();

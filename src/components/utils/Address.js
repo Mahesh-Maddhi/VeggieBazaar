@@ -3,7 +3,6 @@ import React from 'react';
 const Address = (props) => {
 	const { _id, street, mandal, district, pincode, state, removeAddress } =
 		props;
-	console.log('props', props);
 
 	return (
 		<address className="col-md-6 col-lg-4 col-xl-3 address p-4 m-3 border shadow rounded-lg position-relative">

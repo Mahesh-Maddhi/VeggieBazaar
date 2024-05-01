@@ -1,8 +1,6 @@
 import React from 'react';
 const PaymentMethod = (props) => {
 	const { handleOrder } = props;
-	console.log(props);
-	console.log(handleOrder);
 	return (
 		<>
 			<form

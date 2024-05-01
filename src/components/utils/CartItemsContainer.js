@@ -25,12 +25,10 @@ const CartItemsContainer = () => {
 				Authorization: `BEARER ${token}`,
 			},
 		};
-		console.log(options);
 		const responsedata = await requestServer(
 			`/deleteProductFromCart/${deleteId}`,
 			options,
 		);
-		console.log('res- delete from  cart', responsedata);
 
 		const notify = () => toast.success(responsedata?.message);
 		notify();
