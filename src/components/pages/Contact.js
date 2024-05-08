@@ -17,8 +17,7 @@ const Contact = () => {
 			subject: e.target.elements.subject.value.trim(),
 			message: e.target.elements.message.value.trim(),
 		};
-		// console.log("form-data :", formData);
-		// connect to db here
+
 		const options = {
 			method: 'POST',
 			headers: {
@@ -31,7 +30,6 @@ const Contact = () => {
 			'/contact/addMessage',
 			options,
 		);
-		// console.log("sendMsg :", sendMessages);
 
 		const notify = () => toast.success(sendMessages?.message);
 		notify();
@@ -91,7 +89,7 @@ const Contact = () => {
 								id="userName"
 								aria-describedby="helpId"
 								placeholder="Your Name"
-								// required
+								required
 							/>
 						</div>
 						<div className="mb-3">
@@ -102,7 +100,7 @@ const Contact = () => {
 								id="userEmail"
 								aria-describedby="helpId"
 								placeholder="Your Email"
-								// required
+								required
 							/>
 						</div>
 						<div className="mb-3">
@@ -113,7 +111,7 @@ const Contact = () => {
 								id="subject"
 								aria-describedby="helpId"
 								placeholder="Subject"
-								// required
+								required
 							/>
 						</div>
 						<div className="mb-3">

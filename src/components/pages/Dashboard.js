@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Banner, UserDetails, Address, Logout, requestServer } from '../utils';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Cookies from 'js-cookie';
 const Dashboard = () => {
 	const bannerDetails = {
 		section: 'Dashboard',
@@ -11,10 +12,10 @@ const Dashboard = () => {
 
 	const navigate = useNavigate();
 
-	const token = localStorage.getItem('auth_token');
+	const isLoggedIn = Cookies.get('isLoggedIn') === 'true' ? true : false;
 
 	const removeAddress = async (id) => {
-		if (!token) {
+		if (!isLoggedIn) {
 			navigate('/login');
 		}
 		const newAddresses = userDetails.addresses.filter(
@@ -28,10 +29,6 @@ const Dashboard = () => {
 
 		const options = {
 			method: 'DELETE',
-			headers: {
-				'Content-Type': 'application/json',
-				Authorization: `BEARER ${token}`,
-			},
 		};
 		const response = await requestServer(`/deleteAddress/${id}`, options);
 		console.log(response);
@@ -41,26 +38,18 @@ const Dashboard = () => {
 		}
 	};
 	useEffect(() => {
-		const options = {
-			method: 'GET',
-			headers: {
-				Authorization: `Bearer ${token}`,
-				'Content-Type': 'application/json',
-			},
-		};
 		const fetchDetails = async () => {
-			const data = await requestServer(`/userDetails`, options);
-			// console.log('data', data);
+			const data = await requestServer(`/userDetails`);
 			setUserDetails(data);
 		};
 		fetchDetails();
-	}, [token]);
+	}, [isLoggedIn]);
 	console.log('userData', userDetails);
 
 	return (
 		<section className="dashboard-section">
 			<Banner {...bannerDetails} />
-			{token && (
+			{isLoggedIn && (
 				<div>
 					<div className="col-md-12">
 						<UserDetails {...userDetails} />
@@ -94,7 +83,7 @@ const Dashboard = () => {
 					</div>
 				</div>
 			)}
-			{!token && (
+			{!isLoggedIn && (
 				<div className="text-center">
 					<h3 className="text-center mt-5">
 						Hi User Please <strong>Login/Signup</strong> To Access

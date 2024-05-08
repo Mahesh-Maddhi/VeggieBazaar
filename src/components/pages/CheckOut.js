@@ -1,4 +1,5 @@
 import React from 'react';
+import Cookies from 'js-cookie';
 import {
 	Banner,
 	BillingForm,
@@ -14,10 +15,10 @@ const CheckOut = () => {
 		section: 'Checkout',
 		title: 'Check Out',
 	};
-	const token = localStorage.getItem('auth_token');
+	const isLoggedIn = Cookies.get('isLoggedIn') === 'true' ? true : false;
 	const handleBilling = async (e) => {
 		e.preventDefault();
-		if (!token) {
+		if (!isLoggedIn) {
 			toast.error('Need to Login before adding Address');
 			navigate('/login');
 		}
@@ -32,10 +33,6 @@ const CheckOut = () => {
 		);
 		const options = {
 			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				Authorization: `BEARER ${token}`,
-			},
 			body: JSON.stringify(formObject),
 		};
 		try {

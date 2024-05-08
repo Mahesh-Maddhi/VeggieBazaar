@@ -4,12 +4,13 @@ import requestServer from './requestServer';
 import { Link, useNavigate } from 'react-router-dom';
 import Coupon from './Coupon';
 import { toast } from 'react-toastify';
+import Cookies from 'js-cookie';
 const CartItemsContainer = () => {
 	const navigate = useNavigate();
 	const [cartItems, setCartItems] = useState([]);
 
-	const token = localStorage.getItem('auth_token');
-	if (!token) {
+	const isLoggedIn = Cookies.get('isLoggedIn') === 'true' ? true : false;
+	if (!isLoggedIn) {
 		navigate('/login');
 	}
 	const onDelete = async (deleteId) => {
@@ -20,10 +21,6 @@ const CartItemsContainer = () => {
 		setCartItems(newCartItems);
 		const options = {
 			method: 'DELETE',
-			headers: {
-				'Content-Type': 'application/json',
-				Authorization: `BEARER ${token}`,
-			},
 		};
 		console.log(options);
 		const responsedata = await requestServer(
@@ -38,14 +35,7 @@ const CartItemsContainer = () => {
 	useEffect(() => {
 		const fetchProducts = async () => {
 			try {
-				const options = {
-					method: 'GET',
-					headers: {
-						'Content-Type': 'application/json',
-						Authorization: `BEARER ${token}`,
-					},
-				};
-				const responsedata = await requestServer('/cart', options);
+				const responsedata = await requestServer('/cart');
 				return responsedata;
 			} catch (error) {
 				console.log(error);
@@ -56,7 +46,7 @@ const CartItemsContainer = () => {
 			setCartItems(data);
 		};
 		setProducts();
-	}, [token]);
+	}, [isLoggedIn]);
 	return (
 		<div className="container">
 			<div className="row">
