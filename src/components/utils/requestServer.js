@@ -12,8 +12,8 @@ const requestServer = async (url, useroptions) => {
 	const options = { ...defaultOptions, ...useroptions };
 
 	if (url.startsWith('/')) {
-		// url = `https://veggie-bazaar-backend-mongodb.vercel.app${url}`;
-		url = `http://localhost:7200${url}`;
+		url = `https://veggie-bazaar-backend-mongodb.vercel.app${url}`;
+		// url = `http://localhost:7200${url}`;
 	}
 	console.log(url);
 	console.log(options);
