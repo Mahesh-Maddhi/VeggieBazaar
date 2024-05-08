@@ -88,7 +88,7 @@ const Contact = () => {
 								id="userName"
 								aria-describedby="helpId"
 								placeholder="Your Name"
-								// required
+								required
 							/>
 						</div>
 						<div className="mb-3">
@@ -99,7 +99,7 @@ const Contact = () => {
 								id="userEmail"
 								aria-describedby="helpId"
 								placeholder="Your Email"
-								// required
+								required
 							/>
 						</div>
 						<div className="mb-3">
@@ -110,7 +110,7 @@ const Contact = () => {
 								id="subject"
 								aria-describedby="helpId"
 								placeholder="Subject"
-								// required
+								required
 							/>
 						</div>
 						<div className="mb-3">

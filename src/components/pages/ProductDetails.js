@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Spinner, requestServer } from '../utils';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Cookies from 'js-cookie';
 const ProductDetails = () => {
 	const { id } = useParams();
 
@@ -12,8 +13,9 @@ const ProductDetails = () => {
 	const [product, setProduct] = useState(defaultProduct);
 
 	const onAddToCart = async (productId) => {
-		const token = localStorage.getItem('auth_token');
-		if (!token) {
+		const isLoggedIn = Cookies.get('isLoggedIn') === 'true' ? true : false;
+
+		if (!isLoggedIn) {
 			navigate('/login');
 		}
 
@@ -23,10 +25,7 @@ const ProductDetails = () => {
 		};
 		const options = {
 			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				Authorization: `BEARER ${token}`,
-			},
+
 			body: JSON.stringify(data),
 		};
 		const responsedata = await requestServer('/addToCart', options);

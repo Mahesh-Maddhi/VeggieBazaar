@@ -1,13 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
+import requestServer from './requestServer';
 const Logout = () => {
 	const navigate = useNavigate();
 	const logout = () => {
-		localStorage.removeItem('auth_token');
+		const response = requestServer('/logout', { method: 'POST' });
+		if (!response) return toast.success('Somthing went Wrong');
+		toast.success(response?.message);
 		navigate('/');
-		toast.success('Logged out Successfully');
 	};
 	return (
 		<button

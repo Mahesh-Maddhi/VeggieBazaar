@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Categories, DealOfTheDay } from '../utils';
+import Cookies from 'js-cookie';
 
 const services = [
 	{
@@ -30,13 +31,12 @@ const services = [
 ];
 const Home = () => {
 	const [isLogin, setIsLogin] = useState(false);
+	const isLoggedIn = Cookies.get('isLoggedIn') === 'true' ? true : false;
 	useEffect(() => {
-		const token = localStorage.getItem('auth_token');
-
-		if (token) {
-			setIsLogin(true);
-		}
-	}, []);
+		console.log(isLoggedIn);
+		setIsLogin(isLoggedIn);
+	}, [isLoggedIn]);
+	console.log('isLogin', isLogin);
 
 	return (
 		<div>

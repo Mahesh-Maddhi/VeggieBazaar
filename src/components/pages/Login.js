@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { requestServer } from '../utils';
 import { toast } from 'react-toastify';
+import Cookies from 'js-cookie';
 const Login = () => {
 	const navigate = useNavigate();
 	useEffect(() => {
-		const token = localStorage.getItem('auth_token');
-		if (token) {
+		const isLoggedIn = Cookies.get('isLoggedIn') === 'true' ? true : false;
+
+		if (isLoggedIn) {
 			navigate('/');
 		}
 	});
@@ -29,24 +31,16 @@ const Login = () => {
 		if (user.email && user.password) {
 			const options = {
 				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
 				body: JSON.stringify(user),
 			};
 			const responsedata = await requestServer('/login', options);
-			if (responsedata?.token) {
-				localStorage.setItem('auth_token', responsedata.token);
-				const notify = () => toast.success('Login Successful');
-				notify();
+			console.log('res', responsedata);
+			if (responsedata) {
+				toast.success(responsedata.message);
 				navigate('/');
-			} else if (responsedata?.message) {
-				const notify = () => toast.success(responsedata.message);
-				notify();
-			} else {
-				const notify = () => toast.error('Something went wrong!');
-				notify();
-			}
+			} else if (responsedata?.message)
+				toast.success(responsedata.message);
+			else toast.error('Something went wrong!');
 		}
 
 		e.target.reset();
