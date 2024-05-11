@@ -15,7 +15,7 @@ const Search = () => {
 
 	return (
 		<form
-			className="form-inline my-2 my-lg-0"
+			className="d-flex align-items-center my-2 my-lg-0"
 			onSubmit={handleSearch}
 			role="search">
 			<input

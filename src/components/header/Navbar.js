@@ -15,16 +15,28 @@ const Navbar = () => {
 				VeggieBazaar
 			</Link>
 
-			<button
-				className="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent"
-				aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span className="navbar-toggler-icon"></span>
-			</button>
+			<div className="d-flex align-items-center">
+				<div className="items mr-3 d-lg-none">
+					<Link
+						to="/dashboard"
+						className="fa-solid fa-user icon mx-3 "
+						style={{ color: '#ad6f8c' }}></Link>
+					<Link to="/cart" className="fa-solid fa-cart-shopping icon">
+						{/* <span className="cart-items-count">0</span> */}
+					</Link>
+				</div>
+
+				<button
+					className="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span className="navbar-toggler-icon"></span>
+				</button>
+			</div>
 
 			<div
 				className="collapse navbar-collapse"
@@ -35,7 +47,7 @@ const Navbar = () => {
 					))}
 				</ul>
 				<Search />
-				<div className="items">
+				<div className="items d-none d-lg-block">
 					<Link
 						to="/dashboard"
 						className="fa-solid fa-user icon mx-3 "

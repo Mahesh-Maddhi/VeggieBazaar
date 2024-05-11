@@ -33,10 +33,8 @@ const Home = () => {
 	const [isLogin, setIsLogin] = useState(false);
 	const isLoggedIn = Cookies.get('isLoggedIn') === 'true' ? true : false;
 	useEffect(() => {
-		console.log(isLoggedIn);
 		setIsLogin(isLoggedIn);
 	}, [isLoggedIn]);
-	console.log('isLogin', isLogin);
 
 	return (
 		<section className="home-section">
