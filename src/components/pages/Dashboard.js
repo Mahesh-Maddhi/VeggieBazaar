@@ -44,7 +44,6 @@ const Dashboard = () => {
 		};
 		fetchDetails();
 	}, [isLoggedIn]);
-	console.log('userData', userDetails);
 
 	return (
 		<section className="dashboard-section">

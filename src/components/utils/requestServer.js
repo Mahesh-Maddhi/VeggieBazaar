@@ -1,10 +1,12 @@
 import { toast } from 'react-toastify';
-
+import Cookies from 'js-cookie';
 const requestServer = async (url, useroptions) => {
+	const token = Cookies.get('authToken');
 	const defaultOptions = {
 		method: 'GET',
 		headers: {
 			'Content-Type': 'application/json',
+			Authorization: `BEARER ${token}`,
 		},
 		credentials: 'include',
 	};
