@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import requestServer from './requestServer';
+import Cookies from 'js-cookie';
 const Logout = () => {
 	const navigate = useNavigate();
 	const logout = () => {
-		const response = requestServer('/logout', { method: 'POST' });
-		if (!response) return toast.success('Somthing went Wrong');
-		toast.success(response?.message);
+		Cookies.remove('authToken');
+		Cookies.remove('isLoggedIn');
+		toast.success('Logged Out Successfully');
 		navigate('/');
 	};
 	return (

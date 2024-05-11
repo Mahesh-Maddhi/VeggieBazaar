@@ -156,8 +156,10 @@ form .icon:active {
 /* ----------------------------------- */
 
 /* ---------------home---------------- */
-
 .home-section {
+	margin-top: 65px;
+}
+.welcome-section {
 	background-image: url('https://ik.imagekit.io/maheshmaddhi/veggieBazaar/fruits-and-vegetables-boxes.jpg');
 	background-position: center;
 	background-size: cover;
@@ -1184,6 +1186,13 @@ label {
 	font-size: clamp(20px, 25px, 40px);
 	cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+	.user-details {
+		flex-direction: column;
+		margin-top: 10px !important;
+		/* margin-bottom: 10px !important; */
+	}
+}
 
 /* --------------------------------------------page-not-found ------------------------------------------------------ */
 
@@ -1342,6 +1351,12 @@ address .line p {
 }
 .social-icons .fa-x-twitter:hover {
 	color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 768px) {
+	.credits p {
+		text-align: center !important;
+	}
 }
 
 .credits p a {

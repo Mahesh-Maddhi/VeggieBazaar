@@ -37,6 +37,7 @@ const Dashboard = () => {
 		}
 	};
 	useEffect(() => {
+		if (!isLoggedIn) return;
 		const fetchDetails = async () => {
 			const data = await requestServer(`/userDetails`);
 			setUserDetails(data);
@@ -71,7 +72,7 @@ const Dashboard = () => {
 								<Link
 									to="/checkout"
 									className="p-6 m-5 shadow d-flex justify-content-center align-items-center add-button rounded-circle">
-									<i class="fa-solid fa-plus icon"></i>
+									<i className="fa-solid fa-plus icon"></i>
 								</Link>
 							</div>
 						</div>

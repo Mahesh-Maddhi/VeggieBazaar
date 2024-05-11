@@ -39,8 +39,8 @@ const Home = () => {
 	console.log('isLogin', isLogin);
 
 	return (
-		<div>
-			<section className="home-section">
+		<section className="home-section">
+			<section className="welcome-section">
 				<h1 className="welcome-heading">
 					Welcome to <span>Veggie Bazaar</span>
 					!!!...
@@ -90,7 +90,7 @@ const Home = () => {
 			</section>
 			<Categories />
 			<DealOfTheDay />
-		</div>
+		</section>
 	);
 };
 
