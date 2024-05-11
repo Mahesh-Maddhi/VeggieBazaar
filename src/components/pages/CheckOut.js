@@ -20,7 +20,7 @@ const CheckOut = () => {
 		e.preventDefault();
 		if (!isLoggedIn) {
 			toast.error('Need to Login before adding Address');
-			navigate('/login');
+			return navigate('/login');
 		}
 
 		const formData = new FormData(e.target);

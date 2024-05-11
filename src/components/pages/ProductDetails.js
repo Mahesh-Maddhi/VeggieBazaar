@@ -16,7 +16,7 @@ const ProductDetails = () => {
 		const isLoggedIn = Cookies.get('isLoggedIn') === 'true' ? true : false;
 
 		if (!isLoggedIn) {
-			navigate('/login');
+			return navigate('/login');
 		}
 
 		const data = {

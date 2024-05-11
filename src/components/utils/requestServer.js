@@ -19,18 +19,17 @@ const requestServer = async (url, useroptions) => {
 	console.log(options);
 	try {
 		const response = await fetch(url, options);
-		// if (!response.ok) {
-		// 	throw new Error(
-		// 		`Request failed with status ${response.status} - ${response.statusText}`,
-		// 	);
-		// }
+		if (!response.ok) {
+			throw new Error(
+				`Request failed with status ${response.status} - ${response.statusText}`,
+			);
+		}
 
 		const data = await response.json();
 		console.log('responsedata', data);
 		return data;
 	} catch (error) {
-		// toast.error('Something went wrong');
-		toast.error(error.message);
+		toast.error(error.message || 'Something went wrong');
 		console.log(error.message);
 	}
 };

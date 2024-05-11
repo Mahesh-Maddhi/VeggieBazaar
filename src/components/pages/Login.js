@@ -9,7 +9,7 @@ const Login = () => {
 		const isLoggedIn = Cookies.get('isLoggedIn') === 'true' ? true : false;
 
 		if (isLoggedIn) {
-			navigate('/');
+			return navigate('/');
 		}
 	});
 

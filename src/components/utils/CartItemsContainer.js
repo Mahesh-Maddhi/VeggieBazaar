@@ -10,9 +10,8 @@ const CartItemsContainer = () => {
 	const [cartItems, setCartItems] = useState([]);
 
 	const isLoggedIn = Cookies.get('isLoggedIn') === 'true' ? true : false;
-	if (!isLoggedIn) {
-		navigate('/login');
-	}
+	if (!isLoggedIn) navigate('/login');
+
 	const onDelete = async (deleteId) => {
 		const newCartItems = cartItems.filter(
 			(cartItem) => cartItem.productId !== deleteId,

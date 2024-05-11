@@ -8,7 +8,7 @@ const Logout = () => {
 		Cookies.remove('authToken');
 		Cookies.remove('isLoggedIn');
 		toast.success('Logged Out Successfully');
-		navigate('/');
+		return navigate('/');
 	};
 	return (
 		<button

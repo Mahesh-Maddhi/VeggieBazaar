@@ -16,7 +16,7 @@ const Dashboard = () => {
 
 	const removeAddress = async (id) => {
 		if (!isLoggedIn) {
-			navigate('/login');
+			return navigate('/login');
 		}
 		const newAddresses = userDetails.addresses.filter(
 			(address) => address._id !== id,
