@@ -47,7 +47,7 @@ const Signup = () => {
 	return (
 		<section className="register-section">
 			<div className="registration-container">
-				<div className="registration-image-container">
+				<div className="registration-image-container d-none d-lg-block">
 					<img
 						className="registration-image"
 						src="https://ik.imagekit.io/maheshmaddhi/veggieBazaar/laptop.jpg"
@@ -56,7 +56,7 @@ const Signup = () => {
 					/>
 				</div>
 				<form className="registration-form" onSubmit={handleSubmit}>
-					<h2>Registration</h2>
+					<h2>SignUp</h2>
 					<label htmlFor="fullName" className="label">
 						Full Name
 					</label>

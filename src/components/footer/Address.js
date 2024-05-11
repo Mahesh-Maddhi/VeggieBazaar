@@ -15,11 +15,11 @@ const Address = () => {
 				</a>
 				<a className="line" href="mailto:maddimahesh111@gmail.com">
 					<i className="fa-solid fa-envelope"></i>
-					<p>maddimahesh111@gmail.com</p>
+					<p>mahesh@veggiebazaar.co.in</p>
 				</a>
 				<a className="line" href="tel:9133237943">
 					<i className="fa-solid fa-phone"></i>
-					<p>9133237943</p>
+					<p>+91 9876543210</p>
 				</a>
 			</address>
 		</section>
