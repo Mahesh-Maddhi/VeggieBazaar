@@ -8,7 +8,6 @@ const requestServer = async (url, useroptions) => {
 			'Content-Type': 'application/json',
 			Authorization: `BEARER ${token}`,
 		},
-		credentials: 'include',
 	};
 
 	const options = { ...defaultOptions, ...useroptions };

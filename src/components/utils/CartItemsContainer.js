@@ -21,19 +21,20 @@ const CartItemsContainer = () => {
 		const options = {
 			method: 'DELETE',
 		};
-		const responsedata = await requestServer(
+		const responseData = await requestServer(
 			`/deleteProductFromCart/${deleteId}`,
 			options,
 		);
 
-		const notify = () => toast.success(responsedata?.message);
+		const notify = () => toast.success(responseData?.message);
 		notify();
 	};
 	useEffect(() => {
+		if (!isLoggedIn) return navigate('/login');
 		const fetchProducts = async () => {
 			try {
-				const responsedata = await requestServer('/cart');
-				return responsedata;
+				const responseData = await requestServer('/cart');
+				return responseData;
 			} catch (error) {
 				console.log(error);
 			}

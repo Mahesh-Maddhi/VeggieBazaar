@@ -13,6 +13,7 @@ const About = () => {
 			description:
 				' MERN Stack developer with strong expertise in Express.js, React.js, and Node.js, MongoDB. Passionate about building scalable applications and ensuring efficient communication between front-end and back-end.Role: MERN Stack Engineer',
 			role: 'Full Stack Developer',
+			link: 'https://mahesh-maddhi.github.io/my-portfolio/',
 		},
 		{
 			title: 'Mahesh Kummari',
@@ -20,6 +21,7 @@ const About = () => {
 			description:
 				'Full-stack developer skilled in front-end and back-end technologies. Enjoys creating complete software solutions with a focus on user-friendly interfaces and robust server-side operations.Role: Full Stack Software Engineer.',
 			role: 'Full Stack Developer',
+			link: 'https://mahesh-kummari.github.io/portfolio/',
 		},
 	];
 
