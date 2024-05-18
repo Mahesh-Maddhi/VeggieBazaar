@@ -55,7 +55,7 @@ const CheckOut = () => {
 		<section className="checkout-section">
 			<Banner {...bannerDetails} />
 			<div className="container mt-3">
-				<div className="row justify-content-center">
+				<div className="row justify-content-center p-4">
 					<BillingForm handleBilling={handleBilling} />
 					<div className="col-xl-7"></div>
 					<div className="col-xl-5">
