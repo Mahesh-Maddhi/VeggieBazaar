@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from '../utils';
 import NavItem from './NavItem';
+import { useSelector } from 'react-redux';
 const navItems = [
 	{ name: 'Home', path: '/' },
 	{ name: 'About', path: '/about' },
@@ -9,6 +10,9 @@ const navItems = [
 	{ name: 'Contact', path: '/contact' },
 ];
 const Navbar = () => {
+	const cartItemsCount = useSelector(
+		(state) => state.cartItemsCount.Itemscount,
+	);
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light shadow">
 			<Link to="/" className="navbar-brand">
@@ -53,7 +57,9 @@ const Navbar = () => {
 						className="fa-solid fa-user icon mx-3 "
 						style={{ color: '#ad6f8c' }}></Link>
 					<Link to="/cart" className="fa-solid fa-cart-shopping icon">
-						{/* <span className="cart-items-count">0</span> */}
+						<span className="cart-items-count">
+							{cartItemsCount}
+						</span>
 					</Link>
 				</div>
 			</div>

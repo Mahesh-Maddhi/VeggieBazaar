@@ -5,9 +5,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import Coupon from './Coupon';
 import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
+import { useDispatch } from 'react-redux';
+import { setItemsCount } from '../../store/cartItemsCountSlice';
 const CartItemsContainer = () => {
 	const navigate = useNavigate();
 	const [cartItems, setCartItems] = useState([]);
+	const dispatch = useDispatch();
+	dispatch(setItemsCount(cartItems?.length));
 
 	const isLoggedIn = Cookies.get('isLoggedIn') === 'true' ? true : false;
 	if (!isLoggedIn) navigate('/login');

@@ -97,6 +97,7 @@ const Signup = () => {
 							placeholder="Enter your password"
 							value={formData.password}
 							onChange={handleInputChange}
+							minLength={8}
 							required
 						/>
 					</div>
@@ -113,6 +114,7 @@ const Signup = () => {
 							placeholder="Confirm your password"
 							value={formData.confirmPassword}
 							onChange={handleInputChange}
+							minLength={8}
 							required
 						/>
 						<i
@@ -135,6 +137,7 @@ const Signup = () => {
 						placeholder="Enter your mobile number"
 						value={formData.mobile}
 						onChange={handleInputChange}
+						minLength={10}
 						required
 					/>
 
