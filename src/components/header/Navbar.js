@@ -26,7 +26,9 @@ const Navbar = () => {
 						className="fa-solid fa-user icon mx-3 "
 						style={{ color: '#ad6f8c' }}></Link>
 					<Link to="/cart" className="fa-solid fa-cart-shopping icon">
-						{/* <span className="cart-items-count">0</span> */}
+						<span className="cart-items-count">
+							{cartItemsCount}
+						</span>
 					</Link>
 				</div>
 
