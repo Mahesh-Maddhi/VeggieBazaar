@@ -56,7 +56,7 @@ const Login = () => {
 	return (
 		<section className="login-section">
 			<div className="login-container">
-				<div className="col-12 col-lg-6">
+				<div className="col-12 col-lg-6 d-none d-lg-block">
 					<div className="login-image-container ">
 						<img
 							className="login-image"

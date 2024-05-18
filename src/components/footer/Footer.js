@@ -42,7 +42,7 @@ const Footer = () => {
 							</a>
 							and
 							<a
-								href="https://github.com/Mahesh-Kummari"
+								href="https://mahesh-kummari.github.io/portfolio/"
 								target="_blank"
 								rel="noopener noreferrer">
 								Mahesh Kummari
