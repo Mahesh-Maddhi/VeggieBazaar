@@ -30,15 +30,10 @@ const ProductDetails = () => {
 		};
 		const responsedata = await requestServer('/addToCart', options);
 		if (responsedata) {
-			const notify = () => toast.success(responsedata?.message);
-
-			notify();
-
+			toast.success(responsedata?.message);
 			navigate('/cart');
 		} else {
-			const notify = () => toast.error('something went wrong');
-
-			notify();
+			toast.error('something went wrong');
 		}
 	};
 

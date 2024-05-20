@@ -87,7 +87,7 @@ To ensure your web application or website looks great on various devices,I used 
 We'd like to thank our dedicated team for their contributions to VeggieBazaar. This project wouldn't be possible without their hard work and collaboration.
 
 -   **Mahesh Maddhi**: FullStack Developer Visit 👉 [Portfolio](https://mahesh-maddhi.github.io/my-portfolio/)
--   **Mahesh Kummari**: FullStack Developer Visit 👉 [Profile](https://github.com/Mahesh-Kummari)
+-   **Mahesh Kummari**: FullStack Developer Visit 👉 [Portfolio](https://mahesh-kummari.github.io/portfolio/)
 
 ## Acknowledgments
 

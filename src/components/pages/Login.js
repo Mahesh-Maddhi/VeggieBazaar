@@ -34,14 +34,13 @@ const Login = () => {
 				body: JSON.stringify(user),
 			};
 			const responsedata = await requestServer('/login', options);
-			console.log('res', responsedata);
 			if (responsedata?.token) {
 				toast.success(responsedata.message);
 				Cookies.set('authToken', responsedata.token, { expires: 30 });
 				Cookies.set('isLoggedIn', true, { expires: 30 });
 				navigate('/');
 			} else if (responsedata?.message)
-				toast.success(responsedata.message);
+				toast.warning(responsedata.message);
 			else toast.error('Something went wrong!');
 		}
 

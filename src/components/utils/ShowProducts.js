@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Products from './Products';
 import Spinner from './Spinner';
 import requestServer from './requestServer';
@@ -8,11 +8,12 @@ const ShowProducts = () => {
 	const [categoryProducts, setCategoryProducts] = useState([]);
 	const [isLoading, setLoading] = useState(true);
 
-	let localProducts;
+	let localProducts = useRef();
+	console.log(localProducts.current);
 	useEffect(() => {
-		localProducts = localStorage.getItem('localProducts');
+		localProducts.current = localStorage.getItem('localProducts');
 		if (localProducts && localProducts.length > 2) {
-			setCategoryProducts(JSON.parse(localProducts));
+			setCategoryProducts(JSON.parse(localProducts.current));
 			console.log('set-products-from-local');
 		} else {
 			console.log('set-products-from-cloud');

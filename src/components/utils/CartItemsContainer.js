@@ -8,6 +8,7 @@ import Cookies from 'js-cookie';
 import { useDispatch } from 'react-redux';
 import { setItemsCount } from '../../store/cartItemsCountSlice';
 import { setCartTotal } from '../../store/cartTotalSlice';
+
 const CartItemsContainer = () => {
 	const navigate = useNavigate();
 	const [cartItems, setCartItems] = useState([]);

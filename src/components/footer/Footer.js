@@ -11,10 +11,10 @@ const Footer = () => {
 			<NewsLetter />
 			<footer className="footer">
 				<section className="row">
-					<div className="col-12col-md-6 col-lg-3">
+					<div className="col-12 col-md-6 col-lg-3">
 						<Social />
 					</div>
-					<div className="col-12col-md-4 col-lg-2">
+					<div className="col-12 col-md-4 col-lg-2">
 						<Menu />
 					</div>
 					<div className="col-12 col-md-6 col-lg-3">
