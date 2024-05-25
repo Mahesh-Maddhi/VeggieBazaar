@@ -8,11 +8,10 @@ const ShowProducts = () => {
 	const [categoryProducts, setCategoryProducts] = useState([]);
 	const [isLoading, setLoading] = useState(true);
 
-	let localProducts = useRef();
-	console.log(localProducts.current);
+	let localProducts = useRef('[]');
 	useEffect(() => {
 		localProducts.current = localStorage.getItem('localProducts');
-		if (localProducts && localProducts.length > 2) {
+		if (localProducts.current && localProducts.current?.length > 2) {
 			setCategoryProducts(JSON.parse(localProducts.current));
 			console.log('set-products-from-local');
 		} else {
